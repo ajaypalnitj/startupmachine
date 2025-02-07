@@ -13,11 +13,41 @@
     <header>
         <nav>
             <div class="logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 0L37.3205 10V30L20 40L2.67949 30V10L20 0Z" fill="#2563EB"/>
-                    <path d="M20 8L29.8205 13.5V24.5L20 30L10.1795 24.5V13.5L20 8Z" fill="white"/>
+                <svg width="160" height="80" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background -->
+                    <rect width="400" height="200" fill="white"/>
+                    
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3B82F6"/>
+                            <stop offset="100%" style="stop-color:#2563EB"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#60A5FA"/>
+                            <stop offset="100%" style="stop-color:#3B82F6"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Main icon - overlapping rounded rectangles creating a dynamic tool/app icon -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1)" 
+                          transform="rotate(-15, 170, 90)"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2)" 
+                          transform="rotate(15, 210, 90)" 
+                          style="opacity: 0.9"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                 </svg>
-                <span>StartupMachine</span>
             </div>
             <div class="nav-links">
                 <a href="#products">Products</a>
@@ -114,11 +144,41 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0L29.8564 8V24L16 32L2.14359 24V8L16 0Z" fill="#2563EB"/>
-                    <path d="M16 6L23.9282 10.5V19.5L16 24L8.07179 19.5V10.5L16 6Z" fill="white"/>
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background -->
+                    <rect width="400" height="200" fill="var(--text)"/>
+                    
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3B82F6"/>
+                            <stop offset="100%" style="stop-color:#2563EB"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#60A5FA"/>
+                            <stop offset="100%" style="stop-color:#3B82F6"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Main icon - overlapping rounded rectangles creating a dynamic tool/app icon -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)" 
+                          style="opacity: 0.9"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                 </svg>
-                <span>StartupMachine</span>
             </div>
             <p>&copy; 2025 StartupMachine. All rights reserved.</p>
         </div>
