@@ -1,10 +1,18 @@
 :root {
-    --primary: #2563EB;
-    --primary-dark: #1d4ed8;
+    --primary: #4F46E5;
+    --primary-dark: #4338CA;
+    --secondary: #EC4899;
+    --accent: #0EA5E9;
     --text: #1f2937;
     --text-light: #6b7280;
     --background: #ffffff;
     --background-alt: #f3f4f6;
+}
+
+@property --gradient-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
 }
 
 * {
@@ -15,13 +23,49 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
     color: var(--text);
-    background: var(--background);
+    min-height: 100vh;
+    background: 
+        radial-gradient(100% 100% at 0% 0%, rgba(79, 70, 229, 0.25) 0%, transparent 50%),
+        radial-gradient(100% 100% at 100% 0%, rgba(14, 165, 233, 0.25) 0%, transparent 50%),
+        radial-gradient(100% 100% at 0% 100%, rgba(236, 72, 153, 0.25) 0%, transparent 50%),
+        radial-gradient(100% 100% at 100% 100%, rgba(79, 70, 229, 0.25) 0%, transparent 50%),
+        linear-gradient(to bottom right, rgba(79, 70, 229, 0.15), rgba(236, 72, 153, 0.15)),
+        var(--background);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(79, 70, 229, 0.15) 0%, transparent 50%);
+    animation: gradientMove 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes gradientMove {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0, 0); }
 }
 
 /* Header & Navigation */
@@ -36,7 +80,7 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0.5rem 1rem;
     display: flex;
@@ -47,7 +91,7 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 40px;
     color: var(--text);
 }
 
@@ -58,7 +102,7 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .nav-links a {
@@ -74,16 +118,27 @@ nav {
 
 /* Main Content */
 main {
-    margin-top: 5rem;
+    margin-top: 3.5rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Hero Section */
 .hero {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     text-align: center;
     position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
 }
 
 .hero h1 {
@@ -98,15 +153,15 @@ main {
 
 .hero p {
     font-size: 1rem;
-    color: var (--text-light);
+    color: var(--text-light);
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
 }
 
 .hero-graphics {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 .hero-icon {
@@ -115,35 +170,47 @@ main {
 
 /* Products Section */
 .products {
-    background: var(--background-alt);
-    padding: 3rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
 .products h2, .about h2, .contact h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .product-grid {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-    padding: 0 1rem;
+    gap: 1.5rem;
+    padding: 0;
 }
 
 .product-card {
-    background: var(--background);
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(79, 70, 229, 0.2);
 }
 
 .product-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 20px -5px rgba(79, 70, 229, 0.25);
+    border-color: rgba(79, 70, 229, 0.3);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .product-icon {
@@ -157,84 +224,130 @@ main {
 
 .product-card p {
     color: var(--text-light);
+    font-size: 0.95rem;
 }
 
 /* About Section */
 .about {
-    padding: 3rem 1rem;
-    max-width: 1200px;
+    padding: 2.5rem 1rem;
+    max-width: 1000px;
     margin: 0 auto;
+    background: linear-gradient(120deg, rgba(79, 70, 229, 0.08), transparent);
+    border-radius: 1rem;
 }
 
 .about > p {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
     font-size: 1rem;
     color: var(--text-light);
 }
 
 .values {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .value-card {
     text-align: center;
-    padding: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.15);
+}
+
+.value-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(79, 70, 229, 0.3);
+    box-shadow: 0 12px 20px -5px rgba(79, 70, 229, 0.25);
 }
 
 .value-card svg {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .value-card h4 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
 .value-card p {
     color: var(--text-light);
+    font-size: 0.95rem;
 }
 
 /* Contact Section */
 .contact {
-    background: var(--background-alt);
+    background: 
+        linear-gradient(120deg, var(--primary) -10%, transparent 70%),
+        linear-gradient(240deg, var(--secondary) -10%, transparent 70%),
+        var(--text);
     padding: 3rem 1rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.4) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact h2 {
+    color: white;
+    -webkit-text-fill-color: white;
 }
 
 .contact p {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
 }
 
 .contact-button {
     display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
+    background: white;
+    color: var(--primary);
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
     text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.2s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-button:hover {
-    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, white, rgba(255,255,255,0.95));
 }
 
 /* Footer */
 footer {
     background: var(--text);
     color: white;
-    padding: 3rem 2rem;
+    padding: 2rem;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -255,12 +368,8 @@ footer {
 
 /* Animations */
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 /* Responsive Design */
