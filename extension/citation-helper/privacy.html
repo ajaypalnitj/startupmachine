@@ -12,65 +12,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citation Helper Privacy Policy - StartupMachine</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Header & Navigation */
         header {
-            width: 100%;
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
             position: fixed;
             top: 0;
-            left: 0;
-            z-index: 100;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
+
         nav {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0.5rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 60px;
         }
-        
+
         .logo {
-            height: 80px;
             display: flex;
             align-items: center;
+            height: 40px;
+            color: var(--text);
         }
-        
+
         .logo svg {
-            height: 60px;
+            height: 40px;
             width: auto;
         }
-        
+
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
         }
-        
+
         .nav-links a {
             color: #4b5563;
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.2s;
         }
-        
+
         .nav-links a:hover {
             color: #4F46E5;
         }
 
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 1rem;
+            background: #111827;
+            color: white;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo svg {
+            height: 100%;
+            width: auto;
+        }
+
         main {
-            padding-top: 100px; /* Add padding to account for fixed header */
+            padding-top: 80px;
         }
 
         .privacy-content {
             max-width: 800px;
             margin: 2rem auto;
             padding: 0 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            padding: 2rem;
         }
         .privacy-content h1 {
             color: #111827;
@@ -136,7 +171,31 @@
             <h2>Overview</h2>
             <p>Citation Helper is committed to protecting your privacy. This privacy policy explains our data collection, use, and protection practices.</p>
 
+            <h2>Website Analytics</h2>
+            <p>Our privacy policy webpage uses Google Analytics to help us understand how visitors interact with our content. This analytics service collects standard internet log information and visitor behavior patterns. This includes:</p>
+            <ul>
+                <li>Pages visited and time spent on each page</li>
+                <li>Browser type and version</li>
+                <li>Operating system</li>
+                <li>Referral source</li>
+                <li>Anonymous usage statistics</li>
+            </ul>
+            <p>This information is processed in a way that does not identify individual users. We do not make, and do not allow Google to make, any attempt to find out the identities of those visiting our website.</p>
+
             <h2>Data Collection and Usage</h2>
+            <h3>Extension Analytics</h3>
+            <p>Citation Helper uses Google Analytics to collect anonymous usage data that helps us improve the extension. This includes:</p>
+            <ul>
+                <li>Extension installation and uninstallation events</li>
+                <li>Feature usage statistics</li>
+                <li>Extension version information</li>
+                <li>Basic technical information (browser version, operating system)</li>
+                <li>Error reports</li>
+            </ul>
+            <p>This analytics data is anonymous and cannot be used to identify individual users. We use this information solely to understand how the extension is used and to make improvements.</p>
+
+            <h3>Extension Data Collection</h3>
+            <p>In addition to analytics, the extension collects the following data necessary for its core functionality:</p>
             <h3>What We Collect</h3>
             <ul>
                 <li>Webpage metadata (title, author, date, URL) from the active tab</li>
@@ -154,17 +213,20 @@
             <h3>What We Don't Collect</h3>
             <ul>
                 <li>Personal information</li>
-                <li>Browsing history</li>
+                <li>Complete browsing history</li>
                 <li>Login credentials</li>
                 <li>Payment information</li>
+                <li>Individual user identifiers</li>
+                <li>Content of web pages you visit</li>
             </ul>
 
-            <h2>Data Storage</h2>
+            <h2>Data Storage and Transmission</h2>
             <ul>
-                <li>All data is stored locally on your device</li>
-                <li>No cloud storage or external servers</li>
-                <li>No data synchronization</li>
-                <li>No third-party access</li>
+                <li>Citation data is stored locally on your device</li>
+                <li>Anonymous analytics data is sent to Google Analytics</li>
+                <li>No personal data is transmitted to our servers</li>
+                <li>No data synchronization between devices</li>
+                <li>No third-party access to your citation data</li>
             </ul>
 
             <h2>Permissions</h2>
@@ -251,6 +313,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html> 
