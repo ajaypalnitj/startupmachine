@@ -1,95 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8QXH92Y7GE');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kindness Reminder Privacy Policy - StartupMachine</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Kindness Reminders Privacy Policy | StartupMachine</title>
+    <meta property="og:title" content="Kindness Reminders Privacy Policy | StartupMachine">
+    <meta property="og:description" content="Privacy policy for the Kindness Reminders Chrome extension by StartupMachine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/extensions/kindness-reminders/privacy.html">
+    <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0.5rem 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            height: 40px;
-            color: var(--text);
-        }
-
-        .logo svg {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: #4b5563;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #4F46E5;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 4rem;
-            padding: 2rem 1rem;
-            background: #111827;
-            color: white;
-        }
-
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .footer-logo {
-            height: 40px;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-logo svg {
-            height: 100%;
-            width: auto;
-        }
-
-        main {
-            padding-top: 80px;
-        }
-
+        /* Privacy Policy Specific Styles */
         .privacy-content {
             max-width: 800px;
             margin: 2rem auto;
@@ -126,9 +59,12 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/">
-                    <svg width="160" height="80" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <a href="../../index.html">
+                    <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
                         <rect width="400" height="200" fill="white"/>
+                        
+                        <!-- Gradient definitions -->
                         <defs>
                             <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#4F46E5"/>
@@ -139,8 +75,23 @@
                                 <stop offset="100%" style="stop-color:#4F46E5"/>
                             </linearGradient>
                         </defs>
-                        <rect x="120" y="40" width="100" height="100" rx="24" fill="url(#gradient1)" transform="rotate(-15, 170, 90)" style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
-                        <rect x="160" y="40" width="100" height="100" rx="24" fill="url(#gradient2)" transform="rotate(15, 210, 90)" style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                        
+                        <!-- Main icon with enhanced gradients -->
+                        <rect x="120" y="40" 
+                              width="100" height="100" 
+                              rx="24" 
+                              fill="url(#gradient1)" 
+                              transform="rotate(-15, 170, 90)"
+                              style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
+                        
+                        <rect x="160" y="40" 
+                              width="100" height="100" 
+                              rx="24" 
+                              fill="url(#gradient2)" 
+                              transform="rotate(15, 210, 90)"
+                              style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                              
+                        <!-- Speed lines -->
                         <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                         <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                         <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
@@ -148,16 +99,16 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="/#products">Products</a>
-                <a href="/#about">About</a>
-                <a href="/#contact">Contact</a>
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../about.html">About</a>
             </div>
         </nav>
     </header>
 
     <main>
         <div class="privacy-content">
-            <h1>Privacy Policy for Kindness Reminder Chrome Extension</h1>
+            <h1>Privacy Policy for Kindness Reminders Chrome Extension</h1>
             <p class="last-updated">Last Updated: February 26, 2024</p>
 
             <h2>Introduction</h2>
@@ -200,7 +151,7 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="200" fill="#111827"/>
+                    <!-- Gradient definitions -->
                     <defs>
                         <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#4F46E5"/>
@@ -211,17 +162,37 @@
                             <stop offset="100%" style="stop-color:#4F46E5"/>
                         </linearGradient>
                     </defs>
-                    <rect x="120" y="40" width="100" height="100" rx="24" fill="url(#gradient1-footer)" transform="rotate(-15, 170, 90)" style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
-                    <rect x="160" y="40" width="100" height="100" rx="24" fill="url(#gradient2-footer)" transform="rotate(15, 210, 90)" style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                    
+                    <!-- Footer icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
                     <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                     <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                     <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
                 </svg>
             </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../about.html">About</a>
+            </div>
             <p>&copy; 2025 StartupMachine. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="/script.js"></script>
+    <script src="../../script.js"></script>
 </body>
 </html> 

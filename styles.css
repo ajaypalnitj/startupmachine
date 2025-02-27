@@ -7,6 +7,10 @@
     --text-light: #6b7280;
     --background: #ffffff;
     --background-alt: #f3f4f6;
+    
+    /* New variables for extensions page */
+    --testimonial-bg: rgba(255, 255, 255, 0.9);
+    --card-hover: rgba(79, 70, 229, 0.1);
 }
 
 @property --gradient-angle {
@@ -114,6 +118,24 @@ nav {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+/* Navigation active state */
+.nav-links a.active {
+    color: var(--primary);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
 }
 
 /* Main Content */
@@ -368,6 +390,23 @@ footer {
     width: auto;
 }
 
+/* Footer links */
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -409,4 +448,263 @@ footer {
     .nav-links {
         display: none;
     }
+}
+
+/* Extensions page specific styles */
+.extensions, .features {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 1rem 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.extension-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.extension-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials section */
+.testimonials {
+    padding: 1rem 1rem;
+    background: linear-gradient(120deg, rgba(79, 70, 229, 0.08), transparent);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--testimonial-bg);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -5px rgba(79, 70, 229, 0.25);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.testimonial-content {
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Responsive adjustments for extensions page */
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* About page specific styles */
+.about-section, .team-section, .values-section {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-section h2, .team-section h2, .values-section h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-content, .team-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p, .team-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Responsive adjustments for about page */
+@media (max-width: 768px) {
+    .about-section, .team-section, .values-section {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section h2, .team-section h2, .values-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extension detail page styles */
+.extension-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.extension-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.extension-description {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.extension-description h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.extension-description h3 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--text);
+}
+
+.extension-description p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.extension-description ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.extension-description li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.secondary-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary);
+}
+
+.secondary-link:hover {
+    background: rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    .extension-detail {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .extension-icon {
+        flex: 0 0 200px;
+    }
+    
+    .extension-description {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .cta-buttons {
+        justify-content: center;
+    }
+}
+
+/* Extension links in index page */
+.extension-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.extension-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.extension-links a:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.extension-links a:hover {
+    color: var(--primary);
+    padding-left: 1.5rem;
+}
+
+.extension-links a:hover:before {
+    opacity: 1;
 }
