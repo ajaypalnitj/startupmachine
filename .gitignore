@@ -55,4 +55,7 @@ maintenance-scripts/
 # Miscellaneous
 .vercel
 .netlify
-_site/ 
+_site/
+
+# Maintenance scripts
+/scripts/ 

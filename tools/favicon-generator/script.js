@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements
     const fileInput = document.getElementById('file-input');
     const dropZone = document.getElementById('drop-zone');
+    const browseText = document.querySelector('.browse-text');
     const imagePreview = document.getElementById('image-preview');
     const preview16 = document.getElementById('preview-16');
     const preview32 = document.getElementById('preview-32');
@@ -42,25 +43,59 @@ document.addEventListener('DOMContentLoaded', function() {
     let originalImage = null;
     let processedImage = null;
     let generatedFavicons = [];
+    let isFileSelectInProgress = false;
     
-    // Event Listeners
+    // File Input Event Listeners
     fileInput.addEventListener('change', handleFileSelect);
-    dropZone.addEventListener('click', () => fileInput.click());
     
-    // Drag and drop functionality
+    // Prevent default behaviors for drag and drop
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        dropZone.addEventListener(eventName, preventDefaults, false);
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        }, false);
     });
     
+    // Add visual feedback for drag and drop
     ['dragenter', 'dragover'].forEach(eventName => {
-        dropZone.addEventListener(eventName, highlight, false);
+        dropZone.addEventListener(eventName, () => {
+            dropZone.classList.add('drag-over');
+        }, false);
     });
     
     ['dragleave', 'drop'].forEach(eventName => {
-        dropZone.addEventListener(eventName, unhighlight, false);
+        dropZone.addEventListener(eventName, () => {
+            dropZone.classList.remove('drag-over');
+        }, false);
     });
     
-    dropZone.addEventListener('drop', handleDrop, false);
+    // Handle file drop
+    dropZone.addEventListener('drop', (e) => {
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            handleFiles(files);
+        }
+    }, false);
+    
+    // Handle clicks on dropzone and browse text
+    dropZone.addEventListener('click', triggerFileInput);
+    browseText.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        triggerFileInput();
+    });
+    
+    function triggerFileInput() {
+        if (!isFileSelectInProgress) {
+            isFileSelectInProgress = true;
+            fileInput.click();
+            
+            // Reset the flag after a short delay
+            setTimeout(() => {
+                isFileSelectInProgress = false;
+            }, 300);
+        }
+    }
     
     // Option event listeners
     backgroundColor.addEventListener('input', updateBackgroundColor);
@@ -89,29 +124,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Functions
-    function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
-    
-    function highlight() {
-        dropZone.classList.add('drag-over');
-    }
-    
-    function unhighlight() {
-        dropZone.classList.remove('drag-over');
-    }
-    
-    function handleDrop(e) {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        handleFiles(files);
-    }
-    
     function handleFileSelect(e) {
         const files = e.target.files;
-        handleFiles(files);
+        if (files.length > 0) {
+            handleFiles(files);
+        }
     }
     
     function handleFiles(files) {
@@ -147,6 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Update preview
                 updatePreview();
+                
+                // Show success message
+                showToast('Image uploaded successfully!', 'success');
             };
             
             img.src = e.target.result;
@@ -689,34 +709,59 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
     
+    // Toast notification function
     function showToast(message, type = 'info') {
-        // Remove existing toast if any
-        const existingToast = document.querySelector('.toast');
-        if (existingToast) {
-            document.body.removeChild(existingToast);
+        // Check if a toast container exists, create one if it doesn't
+        let toastContainer = document.querySelector('.toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.className = 'toast-container';
+            document.body.appendChild(toastContainer);
         }
         
-        // Create new toast
+        // Create toast element
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
         toast.textContent = message;
         
-        // Add to body
-        document.body.appendChild(toast);
+        // Add close button
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'toast-close';
+        closeBtn.innerHTML = '&times;';
+        closeBtn.addEventListener('click', () => {
+            toast.remove();
+        });
         
-        // Trigger animation
-        setTimeout(() => {
-            toast.classList.add('show');
-        }, 10);
+        toast.appendChild(closeBtn);
+        toastContainer.appendChild(toast);
         
-        // Auto-hide after 3 seconds
+        // Auto remove toast after 5 seconds
         setTimeout(() => {
-            toast.classList.remove('show');
+            toast.classList.add('toast-fade-out');
             setTimeout(() => {
-                if (document.body.contains(toast)) {
-                    document.body.removeChild(toast);
-                }
+                toast.remove();
             }, 300);
-        }, 3000);
+        }, 5000);
+    }
+    
+    // Handle mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay = document.querySelector('.overlay');
+    
+    if (mobileMenuToggle && navLinks && overlay) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        overlay.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
     }
 }); 

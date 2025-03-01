@@ -1,0 +1,655 @@
+/* SVG Viewer Tool Styles */
+/* Base styles and resets specific to this tool */
+* {
+    box-sizing: border-box;
+}
+
+/* Base styles */
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary-color: #f3f4f6;
+    --border-color: #e5e7eb;
+    --text-color: #1f2937;
+    --light-text: #6b7280;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Tool Header */
+.tool-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tool-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-header p {
+    color: var(--light-text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tool Container */
+.tool-container {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Methods Tabs */
+.input-methods {
+    margin-bottom: 1.5rem;
+}
+
+.input-method-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.input-method-tab {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: var(--light-text);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-method-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.input-method-content {
+    display: none;
+}
+
+.input-method-content.active {
+    display: block;
+}
+
+/* Upload Section */
+.upload-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.drop-zone:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.drop-zone.drag-over {
+    border-color: var(--primary-color);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.drop-zone-icon {
+    font-size: 2.5rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.drop-zone-text {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.drop-zone-subtext {
+    color: var(--light-text);
+    font-size: 0.875rem;
+}
+
+.browse-text {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.browse-text:hover {
+    text-decoration: underline;
+}
+
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.svg-textarea-container {
+    margin-bottom: 1rem;
+}
+
+.svg-textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: monospace;
+    resize: vertical;
+}
+
+.load-svg-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.load-svg-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Editor Section */
+.editor-section {
+    display: none;
+    margin-top: 2rem;
+}
+
+.editor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .editor-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.preview-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.preview-title {
+    font-weight: 600;
+    margin: 0;
+}
+
+.svg-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.svg-preview.grid-bg {
+    background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), 
+                      linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #f3f4f6 75%), 
+                      linear-gradient(-45deg, transparent 75%, #f3f4f6 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.svg-preview svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.code-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.code-header {
+    margin-bottom: 1rem;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: var(--light-text);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    position: relative;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.code-display {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.copy-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Control Groups */
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.transform-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.transform-btn {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.transform-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.transform-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.dimensions-inputs {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dimension-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.dimension-input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 80px;
+}
+
+.aspect-ratio-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.background-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.color-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-input {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.color-text-input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 100px;
+}
+
+.pattern-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pattern-btn {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pattern-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.pattern-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.action-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.export-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.export-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.export-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Tool Info Section */
+.tool-info {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tool-info h2 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.tool-info h3 {
+    margin: 1.5rem 0 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.tool-info p {
+    margin-bottom: 1rem;
+    color: #4b5563;
+}
+
+.tool-info ul, .tool-info ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tool-info li {
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.tool-info strong {
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Privacy Note */
+.privacy-note {
+    max-width: 1000px;
+    margin: 1.5rem auto 0;
+    padding: 1rem 2rem;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.privacy-note p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+/* Toast Notification */
+.toast-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.toast {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast.success {
+    border-left: 4px solid var(--success-color);
+}
+
+.toast.error {
+    border-left: 4px solid var(--error-color);
+}
+
+.toast.warning {
+    border-left: 4px solid var(--warning-color);
+}
+
+.toast.info {
+    border-left: 4px solid var(--info-color);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .editor-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dimensions-inputs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .transform-buttons,
+    .pattern-buttons,
+    .action-buttons,
+    .export-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-container {
+        padding: 1.5rem;
+    }
+    
+    .editor-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .svg-preview, .code-container {
+        height: 300px;
+    }
+    
+    .tabs {
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-container {
+        padding: 1rem;
+    }
+    
+    .drop-zone {
+        height: 200px;
+    }
+    
+    .tabs {
+        justify-content: flex-start;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .control-buttons {
+        justify-content: center;
+    }
+    
+    .code-textarea {
+        height: 200px;
+    }
+} 

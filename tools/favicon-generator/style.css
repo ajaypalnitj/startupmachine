@@ -82,6 +82,9 @@ body {
 .drop-zone-content {
     text-align: center;
     padding: 1.5rem;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .drop-zone-content svg {
@@ -98,6 +101,9 @@ body {
     color: #3b82f6;
     font-weight: 500;
     cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 15;
 }
 
 .file-requirements {
@@ -107,12 +113,16 @@ body {
 
 .file-input {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
     opacity: 0;
-    cursor: pointer;
+    z-index: -1;
 }
 
 /* Editor Section */
@@ -594,25 +604,32 @@ body {
     color: #4b5563;
 }
 
-/* Toast Notification */
-.toast {
+/* Toast Notifications */
+.toast-container {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    padding: 0.75rem 1.5rem;
-    background-color: #1f2937;
-    color: white;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    z-index: 1000;
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.toast.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+.toast {
+    min-width: 250px;
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: toast-in 0.3s ease-in-out forwards;
+}
+
+.toast.info {
+    background-color: #3b82f6;
 }
 
 .toast.success {
@@ -621,6 +638,50 @@ body {
 
 .toast.error {
     background-color: #ef4444;
+}
+
+.toast.warning {
+    background-color: #f59e0b;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.8;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+.toast-fade-out {
+    animation: toast-out 0.3s ease-in-out forwards;
+}
+
+@keyframes toast-in {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
 }
 
 /* Responsive Adjustments */

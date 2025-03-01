@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD6DJPF0"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XYFD6DJPF0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -36,8 +34,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></head>
 <body>
     <header>
         <nav>
@@ -69,95 +67,101 @@
             </div>
 
             <div class="tool-container">
-                <div class="input-section">
-                    <h2>Website Information</h2>
-                    <div class="form-group">
-                        <label for="page-url">Page URL</label>
-                        <input type="url" id="page-url" placeholder="https://example.com/page" required>
+                <div class="form-container">
+                    <div class="form-column">
+                        <div class="input-section">
+                            <h2>Website Information</h2>
+                            <div class="form-group">
+                                <label for="page-url">Page URL</label>
+                                <input type="url" id="page-url" placeholder="https://example.com/page" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="page-title">Page Title</label>
+                                <input type="text" id="page-title" placeholder="Your Page Title" required="">
+                                <div class="character-count"><span id="title-count">0</span>/60 characters</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="page-description">Page Description</label>
+                                <textarea id="page-description" placeholder="Brief description of your page content" rows="3" required=""></textarea>
+                                <div class="character-count"><span id="description-count">0</span>/160 characters</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="page-keywords">Keywords (comma separated)</label>
+                                <input type="text" id="page-keywords" placeholder="keyword1, keyword2, keyword3">
+                            </div>
+                            <div class="form-group">
+                                <label for="page-author">Author/Organization</label>
+                                <input type="text" id="page-author" placeholder="Author or organization name">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="page-title">Page Title</label>
-                        <input type="text" id="page-title" placeholder="Your Page Title" required>
-                        <div class="character-count"><span id="title-count">0</span>/60 characters</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="page-description">Page Description</label>
-                        <textarea id="page-description" placeholder="Brief description of your page content" rows="3" required></textarea>
-                        <div class="character-count"><span id="description-count">0</span>/160 characters</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="page-keywords">Keywords (comma separated)</label>
-                        <input type="text" id="page-keywords" placeholder="keyword1, keyword2, keyword3">
-                    </div>
-                    <div class="form-group">
-                        <label for="page-author">Author/Organization</label>
-                        <input type="text" id="page-author" placeholder="Author or organization name">
-                    </div>
-                </div>
+                    
+                    <div class="form-column">
+                        <div class="social-section">
+                            <h2>Social Media Information</h2>
+                            <div class="form-group">
+                                <label for="og-title">Social Title (Open Graph/Twitter)</label>
+                                <input type="text" id="og-title" placeholder="Title for social media sharing">
+                                <div class="character-count"><span id="og-title-count">0</span>/60 characters</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="og-description">Social Description</label>
+                                <textarea id="og-description" placeholder="Description for social media sharing" rows="3"></textarea>
+                                <div class="character-count"><span id="og-description-count">0</span>/160 characters</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="og-image">Social Image URL</label>
+                                <input type="url" id="og-image" placeholder="https://example.com/image.jpg">
+                                <p class="input-tip">Recommended size: 1200×630 pixels (ratio 1.91:1)</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitter-card">Twitter Card Type</label>
+                                <select id="twitter-card">
+                                    <option value="summary_large_image">Summary with Large Image</option>
+                                    <option value="summary">Summary</option>
+                                    <option value="app">App</option>
+                                    <option value="player">Player</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitter-site">Twitter @username</label>
+                                <input type="text" id="twitter-site" placeholder="@yourusername">
+                            </div>
+                        </div>
 
-                <div class="social-section">
-                    <h2>Social Media Information</h2>
-                    <div class="form-group">
-                        <label for="og-title">Social Title (Open Graph/Twitter)</label>
-                        <input type="text" id="og-title" placeholder="Title for social media sharing">
-                        <div class="character-count"><span id="og-title-count">0</span>/60 characters</div>
+                        <div class="advanced-section">
+                            <h2>Advanced Options</h2>
+                            <div class="form-group">
+                                <label for="robots">Robots Directive</label>
+                                <select id="robots">
+                                    <option value="index, follow">index, follow (Default)</option>
+                                    <option value="noindex, follow">noindex, follow</option>
+                                    <option value="index, nofollow">index, nofollow</option>
+                                    <option value="noindex, nofollow">noindex, nofollow</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="canonical">Canonical URL</label>
+                                <input type="url" id="canonical" placeholder="https://example.com/canonical-page">
+                            </div>
+                            <div class="form-group">
+                                <label for="viewport">Viewport</label>
+                                <input type="text" id="viewport" value="width=device-width, initial-scale=1.0">
+                            </div>
+                            <div class="form-group">
+                                <label for="charset">Character Set</label>
+                                <input type="text" id="charset" value="UTF-8">
+                            </div>
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <input type="text" id="language" value="en">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="og-description">Social Description</label>
-                        <textarea id="og-description" placeholder="Description for social media sharing" rows="3"></textarea>
-                        <div class="character-count"><span id="og-description-count">0</span>/160 characters</div>
+                
+                    <div class="action-section">
+                        <button id="generate-btn" class="primary-btn">GENERATE META TAGS</button>
                     </div>
-                    <div class="form-group">
-                        <label for="og-image">Social Image URL</label>
-                        <input type="url" id="og-image" placeholder="https://example.com/image.jpg">
-                        <p class="input-tip">Recommended size: 1200×630 pixels (ratio 1.91:1)</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="twitter-card">Twitter Card Type</label>
-                        <select id="twitter-card">
-                            <option value="summary_large_image">Summary with Large Image</option>
-                            <option value="summary">Summary</option>
-                            <option value="app">App</option>
-                            <option value="player">Player</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="twitter-site">Twitter @username</label>
-                        <input type="text" id="twitter-site" placeholder="@yourusername">
-                    </div>
-                </div>
-
-                <div class="advanced-section">
-                    <h2>Advanced Options</h2>
-                    <div class="form-group">
-                        <label for="robots">Robots Directive</label>
-                        <select id="robots">
-                            <option value="index, follow">index, follow (Default)</option>
-                            <option value="noindex, follow">noindex, follow</option>
-                            <option value="index, nofollow">index, nofollow</option>
-                            <option value="noindex, nofollow">noindex, nofollow</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="canonical">Canonical URL</label>
-                        <input type="url" id="canonical" placeholder="https://example.com/canonical-page">
-                    </div>
-                    <div class="form-group">
-                        <label for="viewport">Viewport</label>
-                        <input type="text" id="viewport" value="width=device-width, initial-scale=1.0">
-                    </div>
-                    <div class="form-group">
-                        <label for="charset">Character Set</label>
-                        <input type="text" id="charset" value="UTF-8">
-                    </div>
-                    <div class="form-group">
-                        <label for="language">Language</label>
-                        <input type="text" id="language" value="en">
-                    </div>
-                </div>
-
-                <div class="action-section">
-                    <button id="generate-btn" class="primary-btn">GENERATE META TAGS</button>
                 </div>
 
                 <div id="results-container" class="results-container" style="display: none;">
@@ -172,7 +176,7 @@
                                 <pre><code id="meta-code"></code></pre>
                                 <button id="copy-btn" class="copy-btn">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                                        <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"></path>
                                     </svg>
                                     Copy
                                 </button>
@@ -305,5 +309,5 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html> 
+
+ <script src="../../script.js"></script></body></html>
