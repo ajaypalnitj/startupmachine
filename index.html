@@ -79,98 +79,168 @@
 
     <main>
         <section class="hero">
-            <h1>Building Tools That Make Life Easier</h1>
-            <p>We create powerful browser extensions, apps, and digital tools that streamline your workflow and boost productivity.</p>
+            <div class="hero-content">
+                <h1>Professional Tools for Modern Businesses</h1>
+                <p>Streamline your workflow with our suite of powerful web tools and browser extensions designed for productivity and efficiency.</p>
+                <div class="hero-cta">
+                    <a href="tools.html" class="button primary-button">Explore Tools</a>
+                    <a href="extensions.html" class="button secondary-button">Browse Extensions</a>
+                </div>
+            </div>
             <div class="hero-graphics">
-                <svg class="hero-icon" width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M120 20L200 65V155L120 200L40 155V65L120 20Z" stroke="#4F46E5" stroke-width="4"/>
-            <path d="M120 50L170 80V140L120 170L70 140V80L120 50Z" stroke="#EC4899" stroke-width="4"/>
-            <circle cx="120" cy="110" r="20" fill="#4F46E5"/>
+                <svg class="hero-icon" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="heroGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M160 40L260 100V220L160 280L60 220V100L160 40Z" stroke="url(#heroGradient1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M160 80L220 120V200L160 240L100 200V120L160 80Z" stroke="url(#heroGradient2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="160" cy="160" r="30" fill="#4F46E5" filter="drop-shadow(0px 4px 6px rgba(79, 70, 229, 0.3))"/>
                 </svg>
             </div>
         </section>
 
+        <section class="features">
+            <div class="section-header">
+                <h2>Why Choose StartupMachine</h2>
+                <p>We build tools that prioritize user experience, privacy, and efficiency</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="32" height="32" rx="6" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M16 24L22 30L32 18" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Privacy-Focused</h3>
+                    <p>All our tools process data locally in your browser whenever possible, ensuring your information stays private.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="16" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M24 14V24L31 31" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Time-Saving</h3>
+                    <p>Our tools are designed to automate repetitive tasks and streamline your workflow, saving you valuable time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 36V12C12 10.8954 12.8954 10 14 10H34C35.1046 10 36 10.8954 36 12V36C36 37.1046 35.1046 38 34 38H14C12.8954 38 12 37.1046 12 36Z" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M18 18H30" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 24H30" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 30H26" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>User-Friendly</h3>
+                    <p>Intuitive interfaces and thoughtful design make our tools accessible to users of all technical levels.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="products" class="products">
-            <h2>Our Products</h2>
+            <div class="section-header">
+                <h2>Our Solutions</h2>
+                <p>Discover the tools and extensions we've built to enhance your digital experience</p>
+            </div>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="20" stroke="#4F46E5" stroke-width="2"/>
-                            <circle cx="24" cy="24" r="8" fill="#EC4899"/>
-                            <path d="M24 4L24 14M24 34L24 44M4 24L14 24M34 24L44 24" stroke="#4F46E5" stroke-width="2"/>
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="12" width="40" height="40" rx="8" stroke="#4F46E5" stroke-width="3"/>
+                            <path d="M20 32H44" stroke="#4F46E5" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M32 20V44" stroke="#4F46E5" stroke-width="3" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3>Chrome Extensions</h3>
-                    <p>Enhance your browsing experience with our powerful Chrome extensions.</p>
-                    <a href="extensions.html" class="extension-link">View All Extensions</a>
-                
+                    <h3>Web Tools</h3>
+                    <p>Free online utilities that help you accomplish tasks directly in your browser without installing anything.</p>
+                    <a href="tools.html" class="button">Explore Tools</a>
                 </div>
                 <div class="product-card">
                     <div class="product-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="6" width="24" height="36" rx="12" stroke="#4F46E5" stroke-width="2"/>
-                            <circle cx="24" cy="36" r="2" fill="#EC4899"/>
-                            <path d="M20 10H28" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 20C16 17.7909 17.7909 16 20 16H44C46.2091 16 48 17.7909 48 20V44C48 46.2091 46.2091 48 44 48H20C17.7909 48 16 46.2091 16 44V20Z" stroke="#4F46E5" stroke-width="3"/>
+                            <path d="M16 24H48" stroke="#4F46E5" stroke-width="3"/>
+                            <circle cx="22" cy="20" r="2" fill="#4F46E5"/>
+                            <circle cx="28" cy="20" r="2" fill="#4F46E5"/>
                         </svg>
                     </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Beautiful, intuitive apps that help you stay productive on the go.</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="20" stroke="#4F46E5" stroke-width="2"/>
-                            <path d="M24 14V24L31 31" stroke="#EC4899" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="24" cy="24" r="3" fill="#4F46E5"/>
-                        </svg>
-                    </div>
-                    <h3>Automation Tools</h3>
-                    <p>Streamline your workflow with our smart automation solutions.</p>
+                    <h3>Browser Extensions</h3>
+                    <p>Enhance your browsing experience with our collection of powerful Chrome extensions.</p>
+                    <a href="extensions.html" class="button">View Extensions</a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>We're passionate about creating tools that simplify complex tasks and enhance digital productivity. Our mission is to make technology work better for everyone.</p>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-icon">
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#4F46E5" stroke-width="2"/>
-                    </svg>
-                    </div>
-                    <h3>Innovation</h3>
-                    <p>Pushing boundaries to create cutting-edge solutions</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="16" cy="16" r="12" stroke="#4F46E5" stroke-width="2"/>
-                        <path d="M16 10V22M10 16H22" stroke="#EC4899" stroke-width="2"/>
-                    </svg>
-                    </div>
-                    <h3>Simplicity</h3>
-                    <p>Making complex things beautifully simple</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26 6H6V26H26V6Z" stroke="#4F46E5" stroke-width="2"/>
-                        <path d="M10 16L14 20L22 12" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    </div>
-                    <h3>Reliability</h3>
-                    <p>Building tools you can depend on</p>
-                </div>
+        <section class="popular-tools">
+            <div class="section-header">
+                <h2>Popular Tools</h2>
+                <p>Our most-used web tools that help users solve common problems</p>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Get In Touch</h2>
-            <p>Interested in our products or have a question? We'd love to hear from you.</p>
-            <a href="mailto:hello@startupmachine.co" class="contact-button">Contact Us</a>
+            <div class="tools-highlight">
+                <a href="tools/color-palette-generator/" class="tool-highlight-card">
+                    <div class="tool-highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="12" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M16 4C9.373 4 4 9.373 4 16H16V4Z" fill="#4F46E5"/>
+                            <path d="M28 16C28 9.373 22.627 4 16 4V16H28Z" fill="#EC4899"/>
+                            <path d="M16 28C22.627 28 28 22.627 28 16H16V28Z" fill="#0EA5E9"/>
+                        </svg>
+                    </div>
+                    <h3>Color Palette Generator</h3>
+                    <p>Create beautiful color schemes for your projects</p>
+                </a>
+                <a href="tools/json-formatter/" class="tool-highlight-card">
+                    <div class="tool-highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 8H26V24H6V8Z" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M10 12H22" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M10 16H18" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M10 20H14" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>JSON Formatter</h3>
+                    <p>Format, validate and beautify JSON data</p>
+                </a>
+                <a href="tools/markdown-editor/" class="tool-highlight-card">
+                    <div class="tool-highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 8H26V24H6V8Z" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M9 16L12 19L15 16" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12V19" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 12H23" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 16H21" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 20H23" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Markdown Editor</h3>
+                    <p>Write and preview Markdown with real-time rendering</p>
+                </a>
+                <a href="tools/image-compressor/" class="tool-highlight-card">
+                    <div class="tool-highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="6" width="20" height="20" rx="2" stroke="#4F46E5" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="2" fill="#4F46E5"/>
+                            <path d="M6 20L11 15L16 20" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 18L20 15L26 21" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Image Compressor</h3>
+                    <p>Compress images without losing quality</p>
+                </a>
+            </div>
+            <div class="cta-center">
+                <a href="tools.html" class="button primary-button">View All Tools</a>
+            </div>
         </section>
     </main>
 

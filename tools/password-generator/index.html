@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8QXH92Y7GE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator | StartupMachine</title>
+    <meta name="description" content="Generate secure, random passwords with customizable options for length and character types. Free online tool with no data sent to servers.">
+    <meta name="keywords" content="password generator, secure password, random password, password security, strong password">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Password Generator | StartupMachine">
+    <meta property="og:description" content="Generate secure, random passwords with customizable options for length and character types. Free online tool with no data sent to servers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/password-generator/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background -->
+                    <rect width="400" height="200" fill="white"/>
+                    
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Main icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                          
+                    <!-- Speed lines -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                </svg>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tool-header">
+            <h1>Password Generator</h1>
+            <p>Generate secure, random passwords with customizable options for length and character types.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="password-display">
+                <div class="password-field">
+                    <input type="text" id="passwordOutput" readonly>
+                    <button id="copyButton" class="icon-button" title="Copy to clipboard">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 3C6.89543 3 6 3.89543 6 5V13C6 14.1046 6.89543 15 8 15H16C17.1046 15 18 14.1046 18 13V5C18 3.89543 17.1046 3 16 3H8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 7C4 5.89543 4.89543 5 6 5H14C15.1046 5 16 5.89543 16 7V15C16 16.1046 15.1046 17 14 17H6C4.89543 17 4 16.1046 4 15V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button id="refreshButton" class="icon-button" title="Generate new password">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 4V8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16V12H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.5 8C15.5466 5.66962 13.2559 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 12.5161 3.2 13.4832 3.56569 14.3483" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.5 12C4.45342 14.3304 6.74408 16 9.5 16C13.6421 16 17 12.6421 17 8.5C17 7.48386 16.8 6.51683 16.4343 5.65165" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="password-strength">
+                    <div class="strength-label">Password Strength:</div>
+                    <div class="strength-meter">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText">Weak</div>
+                </div>
+            </div>
+
+            <div class="password-options">
+                <h3>Password Options</h3>
+                
+                <div class="option-group">
+                    <label for="lengthSlider">Length:</label>
+                    <div class="slider-container">
+                        <input type="range" id="lengthSlider" min="4" max="64" value="16">
+                        <span id="lengthValue">16</span>
+                    </div>
+                </div>
+                
+                <div class="option-group checkbox-group">
+                    <input type="checkbox" id="uppercaseCheck" checked>
+                    <label for="uppercaseCheck">Include Uppercase Letters (A-Z)</label>
+                </div>
+                
+                <div class="option-group checkbox-group">
+                    <input type="checkbox" id="lowercaseCheck" checked>
+                    <label for="lowercaseCheck">Include Lowercase Letters (a-z)</label>
+                </div>
+                
+                <div class="option-group checkbox-group">
+                    <input type="checkbox" id="numbersCheck" checked>
+                    <label for="numbersCheck">Include Numbers (0-9)</label>
+                </div>
+                
+                <div class="option-group checkbox-group">
+                    <input type="checkbox" id="symbolsCheck" checked>
+                    <label for="symbolsCheck">Include Symbols (!@#$%^&*)</label>
+                </div>
+                
+                <div class="option-group checkbox-group">
+                    <input type="checkbox" id="excludeSimilarCheck">
+                    <label for="excludeSimilarCheck">Exclude Similar Characters (i, l, 1, L, o, 0, O)</label>
+                </div>
+                
+                <div class="option-group checkbox-group">
+                    <input type="checkbox" id="excludeAmbiguousCheck">
+                    <label for="excludeAmbiguousCheck">Exclude Ambiguous Symbols ({ } [ ] ( ) / \ ' " ` ~ , ; : . < >)</label>
+                </div>
+                
+                <button id="generateButton" class="button">Generate Password</button>
+            </div>
+
+            <div class="password-history">
+                <h3>Password History</h3>
+                <div class="history-list" id="passwordHistory">
+                    <!-- Password history will be added here dynamically -->
+                    <div class="empty-history">No passwords generated yet</div>
+                </div>
+                <button id="clearHistoryButton" class="button secondary-button">Clear History</button>
+            </div>
+        </div>
+
+        <div class="privacy-note">
+            <h3>Privacy Note</h3>
+            <p>All password generation is done locally in your browser. Your passwords are never sent to any server, ensuring complete privacy and security.</p>
+        </div>
+
+        <div class="tool-features">
+            <h2>Features</h2>
+            <ul>
+                <li>
+                    <strong>Secure Generation</strong>
+                    <p>Uses cryptographically strong random number generation for maximum security.</p>
+                </li>
+                <li>
+                    <strong>Customizable Options</strong>
+                    <p>Adjust length and character types to meet specific password requirements.</p>
+                </li>
+                <li>
+                    <strong>Strength Indicator</strong>
+                    <p>Visual feedback on password strength to help you create secure passwords.</p>
+                </li>
+                <li>
+                    <strong>Password History</strong>
+                    <p>Keep track of recently generated passwords for easy access.</p>
+                </li>
+                <li>
+                    <strong>One-Click Copy</strong>
+                    <p>Copy passwords to clipboard with a single click for easy use.</p>
+                </li>
+                <li>
+                    <strong>Local Processing</strong>
+                    <p>All processing happens in your browser - no server communication required.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="password-tips">
+            <h2>Password Security Tips</h2>
+            <ul>
+                <li>Use a different password for each account to prevent multiple account breaches.</li>
+                <li>Longer passwords (12+ characters) are generally more secure than complex shorter ones.</li>
+                <li>Consider using a password manager to securely store your passwords.</li>
+                <li>Enable two-factor authentication (2FA) whenever possible for additional security.</li>
+                <li>Change your passwords periodically, especially for sensitive accounts.</li>
+                <li>Avoid using personal information in your passwords (names, birthdays, etc.).</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Footer icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 StartupMachine
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

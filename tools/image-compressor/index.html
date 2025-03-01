@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor - Startup Machine</title>
+    <meta name="description" content="Compress and resize images directly in your browser. No upload needed, all processing happens locally.">
+    <meta name="keywords" content="image compressor, image optimization, compress images, reduce image size, web optimization">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Image Compressor | StartupMachine">
+    <meta property="og:description" content="Compress your images for the web without losing quality to improve loading times. Free online tool with no data sent to servers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/image-compressor/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add JSZip for multi-file downloads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="400" height="200" fill="white"/>
+                        
+                        <!-- Gradient definitions -->
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4F46E5"/>
+                                <stop offset="100%" style="stop-color:#EC4899"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#EC4899"/>
+                                <stop offset="100%" style="stop-color:#4F46E5"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Main icon with enhanced gradients -->
+                        <rect x="120" y="40" 
+                              width="100" height="100" 
+                              rx="24" 
+                              fill="url(#gradient1)" 
+                              transform="rotate(-15, 170, 90)"
+                              style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
+                        
+                        <rect x="160" y="40" 
+                              width="100" height="100" 
+                              rx="24" 
+                              fill="url(#gradient2)" 
+                              transform="rotate(15, 210, 90)"
+                              style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                              
+                        <!-- Speed lines -->
+                        <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../tools.html" class="active">Tools</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tool-header">
+            <h1>Image Compressor</h1>
+            <p>Compress and resize images directly in your browser. No upload needed, all processing happens locally.</p>
+        </div>
+
+        <div class="tool-container simplify compact">
+            <div class="simple-tool-section">
+                <div id="file-counter" class="file-counter"></div>
+            </div>
+
+            <div class="upload-container" id="drop-zone">
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16Z" fill="#4F46E5"/>
+                        <path d="M18 20H6C4.9 20 4 19.1 4 18V15H6V18H18V15H20V18C20 19.1 19.1 20 18 20Z" fill="#4F46E5"/>
+                    </svg>
+                </div>
+                <h4>Drop files or click here</h4>
+                <button class="file-btn">Choose File</button>
+                <input type="file" id="file-input" accept="image/*" multiple style="display: none;">
+                <p class="max-files-note">Maximum 10 images allowed</p>
+            </div>
+            
+            <div class="results-container" id="results-container">
+                <div id="image-results" class="image-results"></div>
+            </div>
+
+            <div class="settings-section">
+                <h4>Compress image files to:</h4>
+                <div class="format-dropdown">
+                    <select id="format-select">
+                        <option value="jpeg">JPG</option>
+                        <option value="png">PNG</option>
+                        <option value="webp">WebP</option>
+                    </select>
+                </div>
+
+                <div class="quality-options">
+                    <div class="quality-option">
+                        <input type="radio" id="best-quality" name="quality-preset" value="high" checked>
+                        <label for="best-quality">
+                            <span class="quality-title">Best Quality</span>
+                            <span class="quality-desc">No visual difference</span>
+                        </label>
+                    </div>
+                    <div class="quality-option">
+                        <input type="radio" id="smallest-file" name="quality-preset" value="low">
+                        <label for="smallest-file">
+                            <span class="quality-title">Smallest File</span>
+                            <span class="quality-desc">Tiny file size</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label for="quality-slider">Quality:</label>
+                    <div class="slider-labels">
+                        <span>Best compression</span>
+                        <span>Best quality</span>
+                    </div>
+                    <input type="range" id="quality-slider" min="0" max="100" value="80">
+                    <div class="slider-scale">
+                        <span>0%</span>
+                        <span>20%</span>
+                        <span>40%</span>
+                        <span>60%</span>
+                        <span>80%</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section bottom-action">
+                <button id="start-btn" class="start-button">START →</button>
+            </div>
+
+            <div class="privacy-note">
+                <small>Your Privacy: All compression happens locally in your browser. Images are never uploaded to any server.</small>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Footer icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <p>&copy; 2025 StartupMachine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
