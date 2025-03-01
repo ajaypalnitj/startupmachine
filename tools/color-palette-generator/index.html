@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8QXH92Y7GE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator | StartupMachine</title>
+    <meta name="description" content="Generate beautiful color palettes for your design projects with this easy-to-use tool.">
+    <meta name="keywords" content="color palette, color scheme, color generator, web design tools, color tools">
+    <meta name="author" content="StartupMachine">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="400" height="200" fill="white"/>
+                        
+                        <!-- Gradient definitions -->
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4F46E5"/>
+                                <stop offset="100%" style="stop-color:#EC4899"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#EC4899"/>
+                                <stop offset="100%" style="stop-color:#4F46E5"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Main icon with enhanced gradients -->
+                        <rect x="120" y="40" 
+                            width="100" height="100" 
+                            rx="24" 
+                            fill="url(#gradient1)" 
+                            transform="rotate(-15, 170, 90)"
+                            style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
+                        
+                        <rect x="160" y="40" 
+                            width="100" height="100" 
+                            rx="24" 
+                            fill="url(#gradient2)" 
+                            transform="rotate(15, 210, 90)"
+                            style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                            
+                        <!-- Speed lines -->
+                        <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-header">
+            <h1>Color Palette Generator</h1>
+            <p>Generate beautiful color palettes for your design projects with this easy-to-use tool.</p>
+        </section>
+
+        <section class="tool-container">
+            <div class="palette-options">
+                <div class="option-group">
+                    <h3>Generation Method</h3>
+                    <div class="method-selector">
+                        <button id="randomButton" class="method-button active">Random</button>
+                        <button id="baseColorButton" class="method-button">From Base Color</button>
+                        <button id="imageButton" class="method-button">From Image</button>
+                    </div>
+                </div>
+
+                <div id="baseColorOptions" class="option-group" style="display: none;">
+                    <h3>Base Color</h3>
+                    <div class="color-picker-container">
+                        <input type="color" id="baseColorPicker" value="#4F46E5">
+                        <input type="text" id="baseColorInput" value="#4F46E5">
+                    </div>
+                </div>
+
+                <div id="imageUploadOptions" class="option-group" style="display: none;">
+                    <h3>Upload Image</h3>
+                    <div class="image-upload-container">
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <div id="uploadPreview" class="upload-preview">
+                            <p>No image selected</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Palette Type</h3>
+                    <div class="palette-type-selector">
+                        <button id="analogousButton" class="palette-type-button active">Analogous</button>
+                        <button id="monochromaticButton" class="palette-type-button">Monochromatic</button>
+                        <button id="triadicButton" class="palette-type-button">Triadic</button>
+                        <button id="complementaryButton" class="palette-type-button">Complementary</button>
+                        <button id="splitComplementaryButton" class="palette-type-button">Split Complementary</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Number of Colors</h3>
+                    <div class="color-count-selector">
+                        <button class="color-count-button" data-count="3">3</button>
+                        <button class="color-count-button active" data-count="5">5</button>
+                        <button class="color-count-button" data-count="7">7</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <button id="generateButton" class="button">Generate Palette</button>
+                    <button id="lockButton" class="button button-outline">
+                        <span id="lockIcon">🔓</span> <span id="lockText">Unlock All</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="palette-display">
+                <div id="colorPalette" class="color-palette">
+                    <!-- Color swatches will be added here dynamically -->
+                </div>
+                <div class="palette-actions">
+                    <button id="exportButton" class="button">Export Palette</button>
+                    <div class="export-options" id="exportOptions" style="display: none;">
+                        <button id="exportCSS" class="export-option">CSS</button>
+                        <button id="exportSCSS" class="export-option">SCSS</button>
+                        <button id="exportJSON" class="export-option">JSON</button>
+                        <button id="exportImage" class="export-option">Image</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="export-preview" id="exportPreview" style="display: none;">
+            <div class="export-preview-header">
+                <h3>Export Preview</h3>
+                <button id="closeExportPreview" class="close-button">×</button>
+            </div>
+            <div class="export-preview-content">
+                <pre id="exportCode"></pre>
+                <button id="copyExport" class="button">Copy to Clipboard</button>
+            </div>
+        </section>
+
+        <section class="tool-info">
+            <h2>About Color Palettes</h2>
+            <p>A color palette is a collection of colors used in design projects to create visual harmony and consistency. The right color palette can evoke specific emotions, enhance brand recognition, and improve user experience.</p>
+            
+            <h3>Palette Types</h3>
+            <ul>
+                <li><strong>Analogous</strong>: Colors that are adjacent to each other on the color wheel, creating a harmonious and cohesive look.</li>
+                <li><strong>Monochromatic</strong>: Different shades, tones, and tints of a single color, offering a clean and elegant appearance.</li>
+                <li><strong>Triadic</strong>: Three colors equally spaced around the color wheel, providing strong visual contrast while maintaining harmony.</li>
+                <li><strong>Complementary</strong>: Colors opposite each other on the color wheel, creating maximum contrast and visual impact.</li>
+                <li><strong>Split Complementary</strong>: A base color plus two colors adjacent to its complement, offering high contrast with less tension than complementary schemes.</li>
+            </ul>
+            
+            <div class="privacy-note">
+                <h3>Privacy Note</h3>
+                <p>All color palette generation is done locally in your browser. Your images and color choices are never sent to our servers.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Footer icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <p>&copy; 2025 StartupMachine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

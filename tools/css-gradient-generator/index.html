@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8QXH92Y7GE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient Generator | StartupMachine</title>
+    <meta name="description" content="Create beautiful CSS gradients for your web projects with this easy-to-use generator.">
+    <meta name="keywords" content="css gradient, gradient generator, css gradient generator, web design tools, css tools">
+    <meta name="author" content="StartupMachine">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="400" height="200" fill="white"/>
+                        
+                        <!-- Gradient definitions -->
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4F46E5"/>
+                                <stop offset="100%" style="stop-color:#EC4899"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#EC4899"/>
+                                <stop offset="100%" style="stop-color:#4F46E5"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Main icon with enhanced gradients -->
+                        <rect x="120" y="40" 
+                            width="100" height="100" 
+                            rx="24" 
+                            fill="url(#gradient1)" 
+                            transform="rotate(-15, 170, 90)"
+                            style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
+                        
+                        <rect x="160" y="40" 
+                            width="100" height="100" 
+                            rx="24" 
+                            fill="url(#gradient2)" 
+                            transform="rotate(15, 210, 90)"
+                            style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                            
+                        <!-- Speed lines -->
+                        <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-header">
+            <h1>CSS Gradient Generator</h1>
+            <p>Create beautiful CSS gradients for your web projects with this easy-to-use generator.</p>
+        </section>
+
+        <section class="tool-container">
+            <div class="gradient-preview-container">
+                <div id="gradientPreview" class="gradient-preview"></div>
+                <div class="preview-controls">
+                    <button id="randomizeButton" class="button">Randomize</button>
+                    <div class="preview-size-controls">
+                        <button id="previewSizeSmall" class="preview-size-button active" data-size="small">S</button>
+                        <button id="previewSizeMedium" class="preview-size-button" data-size="medium">M</button>
+                        <button id="previewSizeLarge" class="preview-size-button" data-size="large">L</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gradient-controls-container">
+                <div class="gradient-type-controls">
+                    <h3>Gradient Type</h3>
+                    <div class="gradient-type-options">
+                        <button id="linearGradient" class="gradient-type-button active">Linear</button>
+                        <button id="radialGradient" class="gradient-type-button">Radial</button>
+                        <button id="conicGradient" class="gradient-type-button">Conic</button>
+                    </div>
+                </div>
+
+                <div class="gradient-direction-controls" id="linearControls">
+                    <h3>Direction</h3>
+                    <div class="direction-buttons">
+                        <button class="direction-button" data-direction="to top">↑</button>
+                        <button class="direction-button" data-direction="to top right">↗</button>
+                        <button class="direction-button" data-direction="to right">→</button>
+                        <button class="direction-button" data-direction="to bottom right">↘</button>
+                        <button class="direction-button active" data-direction="to bottom">↓</button>
+                        <button class="direction-button" data-direction="to bottom left">↙</button>
+                        <button class="direction-button" data-direction="to left">←</button>
+                        <button class="direction-button" data-direction="to top left">↖</button>
+                    </div>
+                    <div class="angle-control">
+                        <label for="angleInput">Angle:</label>
+                        <input type="number" id="angleInput" min="0" max="360" value="180">
+                        <span>deg</span>
+                    </div>
+                </div>
+
+                <div class="gradient-direction-controls" id="radialControls" style="display: none;">
+                    <h3>Shape</h3>
+                    <div class="shape-buttons">
+                        <button class="shape-button active" data-shape="circle">Circle</button>
+                        <button class="shape-button" data-shape="ellipse">Ellipse</button>
+                    </div>
+                    <h3>Position</h3>
+                    <div class="position-buttons">
+                        <button class="position-button" data-position="top left">↖</button>
+                        <button class="position-button" data-position="top">↑</button>
+                        <button class="position-button" data-position="top right">↗</button>
+                        <button class="position-button" data-position="left">←</button>
+                        <button class="position-button active" data-position="center">•</button>
+                        <button class="position-button" data-position="right">→</button>
+                        <button class="position-button" data-position="bottom left">↙</button>
+                        <button class="position-button" data-position="bottom">↓</button>
+                        <button class="position-button" data-position="bottom right">↘</button>
+                    </div>
+                </div>
+
+                <div class="gradient-direction-controls" id="conicControls" style="display: none;">
+                    <h3>Position</h3>
+                    <div class="position-buttons">
+                        <button class="conic-position-button" data-position="top left">↖</button>
+                        <button class="conic-position-button" data-position="top">↑</button>
+                        <button class="conic-position-button" data-position="top right">↗</button>
+                        <button class="conic-position-button" data-position="left">←</button>
+                        <button class="conic-position-button active" data-position="center">•</button>
+                        <button class="conic-position-button" data-position="right">→</button>
+                        <button class="conic-position-button" data-position="bottom left">↙</button>
+                        <button class="conic-position-button" data-position="bottom">↓</button>
+                        <button class="conic-position-button" data-position="bottom right">↘</button>
+                    </div>
+                    <div class="angle-control">
+                        <label for="conicAngleInput">Start Angle:</label>
+                        <input type="number" id="conicAngleInput" min="0" max="360" value="0">
+                        <span>deg</span>
+                    </div>
+                </div>
+
+                <div class="color-stops-container">
+                    <h3>Color Stops</h3>
+                    <div id="colorStopsContainer" class="color-stops">
+                        <!-- Color stops will be added here dynamically -->
+                    </div>
+                    <button id="addColorStop" class="button button-outline">Add Color Stop</button>
+                </div>
+
+                <div class="code-output-container">
+                    <h3>CSS Code</h3>
+                    <div class="code-output">
+                        <pre id="cssCode"></pre>
+                        <button id="copyCode" class="button button-outline">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tool-info">
+            <h2>About CSS Gradients</h2>
+            <p>CSS gradients allow you to display smooth transitions between two or more specified colors. They are often used for backgrounds, buttons, and other UI elements to create depth and visual interest.</p>
+            
+            <h3>Types of Gradients</h3>
+            <ul>
+                <li><strong>Linear Gradients</strong>: Colors flow in a straight line along a specified direction.</li>
+                <li><strong>Radial Gradients</strong>: Colors radiate from a central point in a circular or elliptical pattern.</li>
+                <li><strong>Conic Gradients</strong>: Colors rotate around a center point (like a color wheel).</li>
+            </ul>
+            
+            <h3>Browser Support</h3>
+            <p>Modern browsers support all three types of gradients. For older browsers, consider using fallback colors or alternative styling.</p>
+            
+            <div class="privacy-note">
+                <h3>Privacy Note</h3>
+                <p>All gradient generation is done locally in your browser. Your color choices and gradient settings are never sent to our servers.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Footer icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <p>&copy; 2025 StartupMachine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

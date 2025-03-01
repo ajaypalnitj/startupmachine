@@ -1,0 +1,237 @@
+/* JSON Formatter & Validator Styles */
+
+.tool-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem 2rem;
+}
+
+.tool-header h1 {
+    margin-bottom: 1rem;
+    color: #4F46E5;
+}
+
+.tool-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.json-editor-container,
+.json-output-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    min-height: 300px;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.editor-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.editor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+}
+
+.editor-options {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.editor-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+.editor-options input[type="number"] {
+    width: 50px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#jsonInput {
+    flex: 1;
+    width: 100%;
+    min-height: 250px;
+    padding: 16px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    border: none;
+    resize: none;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+}
+
+#jsonOutput {
+    flex: 1;
+    width: 100%;
+    min-height: 250px;
+    padding: 16px;
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #333;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.validation-result {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.validation-success {
+    color: #28a745;
+    background-color: #f0fff4;
+}
+
+.validation-error {
+    color: #dc3545;
+    background-color: #fff5f5;
+}
+
+.button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #4F46E5;
+    color: white;
+    border: none;
+}
+
+.button:hover {
+    background-color: #4338ca;
+}
+
+.button-outline {
+    background-color: transparent;
+    color: #4F46E5;
+    border: 1px solid #4F46E5;
+}
+
+.button-outline:hover {
+    background-color: #f0f4ff;
+}
+
+.tool-info {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tool-info h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.tool-info h3 {
+    font-size: 18px;
+    margin: 24px 0 12px;
+    color: #333;
+}
+
+.tool-info p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.tool-info ul {
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+.tool-info li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.privacy-note {
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4F46E5;
+    margin-top: 24px;
+}
+
+.privacy-note h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.privacy-note p {
+    margin-bottom: 0;
+}
+
+/* Syntax highlighting for JSON */
+.json-string { color: #008000; }
+.json-number { color: #0000ff; }
+.json-boolean { color: #b22222; }
+.json-null { color: #808080; }
+.json-key { color: #a52a2a; }
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .tool-container {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .editor-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .editor-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+} 
