@@ -177,38 +177,46 @@ function handleImageUpload(event) {
 }
 
 // Generate color palette
-function generatePalette() {
+async function generatePalette() {
     // Clear existing palette
     colorPalette.innerHTML = '';
+    
+    // Show loading indicator
+    colorPalette.innerHTML = '<div class="loading">Generating palette...</div>';
     
     // Generate colors based on method
     let colors = [];
     
-    switch (paletteState.method) {
-        case 'random':
-            colors = generateRandomPalette();
-            break;
-        case 'baseColor':
-            colors = generatePaletteFromBaseColor();
-            break;
-        case 'image':
-            if (paletteState.image) {
-                colors = extractColorsFromImage();
-            } else {
-                // Fallback to random if no image
+    try {
+        switch (paletteState.method) {
+            case 'random':
                 colors = generateRandomPalette();
-            }
-            break;
+                break;
+            case 'baseColor':
+                colors = generatePaletteFromBaseColor();
+                break;
+            case 'image':
+                if (paletteState.image) {
+                    colors = await extractColorsFromImage();
+                } else {
+                    // Fallback to random if no image
+                    colors = generateRandomPalette();
+                }
+                break;
+        }
+        
+        // Apply locked colors
+        colors = applyLockedColors(colors);
+        
+        // Store colors in state
+        paletteState.colors = colors;
+        
+        // Render palette
+        renderPalette(colors);
+    } catch (error) {
+        console.error('Error generating palette:', error);
+        colorPalette.innerHTML = '<div class="error">Error generating palette. Please try again.</div>';
     }
-    
-    // Apply locked colors
-    colors = applyLockedColors(colors);
-    
-    // Store colors in state
-    paletteState.colors = colors;
-    
-    // Render palette
-    renderPalette(colors);
 }
 
 // Generate random palette
@@ -352,10 +360,130 @@ function generatePaletteFromBaseColor() {
 
 // Extract colors from image
 function extractColorsFromImage() {
-    // This is a simplified version - in a real app, you'd use a color quantization algorithm
-    // For now, we'll generate a palette based on the base color method
-    // and pretend we extracted it from the image
-    return generatePaletteFromBaseColor();
+    return new Promise((resolve) => {
+        if (!paletteState.image) {
+            resolve(generateRandomPalette());
+            return;
+        }
+
+        // Create a canvas to analyze the image
+        const img = new Image();
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        img.onload = function() {
+            // Set canvas size to a manageable size regardless of image dimensions
+            const maxDimension = 100; // Small size for faster processing
+            const scale = Math.min(maxDimension / img.width, maxDimension / img.height);
+            
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            
+            // Draw image to canvas
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            
+            // Get image data
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            
+            // Initialize an object to store pixel counts by color
+            const colorCounts = {};
+            const pixelCount = canvas.width * canvas.height;
+            const pixelStep = Math.max(1, Math.floor(pixelCount / 1000)); // Sample up to 1000 pixels
+            
+            // Sample pixels
+            for (let i = 0; i < pixelCount; i += pixelStep) {
+                const offset = i * 4;
+                const r = imageData[offset];
+                const g = imageData[offset + 1];
+                const b = imageData[offset + 2];
+                
+                // Skip transparent pixels
+                if (imageData[offset + 3] < 128) continue;
+                
+                // Quantize colors to reduce variations (optional)
+                const quantizedR = Math.round(r / 16) * 16;
+                const quantizedG = Math.round(g / 16) * 16;
+                const quantizedB = Math.round(b / 16) * 16;
+                
+                const hex = rgbToHex(quantizedR, quantizedG, quantizedB);
+                
+                // Count occurrences of each color
+                if (colorCounts[hex]) {
+                    colorCounts[hex]++;
+                } else {
+                    colorCounts[hex] = 1;
+                }
+            }
+            
+            // Convert to array and sort by frequency
+            const sortedColors = Object.entries(colorCounts)
+                .sort((a, b) => b[1] - a[1])
+                .map(entry => entry[0]);
+            
+            // Use the most common color as the base
+            if (sortedColors.length > 0) {
+                paletteState.baseColor = sortedColors[0];
+                
+                // Create palette based on the palette type
+                let colors;
+                
+                // If we have enough colors, just use the most common ones
+                if (sortedColors.length >= paletteState.colorCount && paletteState.paletteType !== 'monochromatic') {
+                    colors = sortedColors.slice(0, paletteState.colorCount);
+                } else {
+                    // Otherwise, generate a palette based on the most common color
+                    const baseHSL = hexToHSL(paletteState.baseColor);
+                    const count = paletteState.colorCount;
+                    
+                    switch (paletteState.paletteType) {
+                        case 'analogous':
+                            colors = [];
+                            for (let i = 0; i < count; i++) {
+                                const hue = (baseHSL.h + (i - Math.floor(count / 2)) * 30) % 360;
+                                colors.push(hslToHex(hue, baseHSL.s, baseHSL.l));
+                            }
+                            break;
+                            
+                        case 'monochromatic':
+                            colors = [];
+                            for (let i = 0; i < count; i++) {
+                                const lightness = 30 + (i * (60 / (count - 1)));
+                                colors.push(hslToHex(baseHSL.h, baseHSL.s, lightness));
+                            }
+                            break;
+                            
+                        default:
+                            // For other types, just use the top colors and fill in if needed
+                            colors = sortedColors.slice(0, count);
+                            
+                            // If we don't have enough colors, fill with variations of the base color
+                            while (colors.length < count) {
+                                const colorIndex = colors.length % sortedColors.length;
+                                const baseColor = sortedColors[colorIndex];
+                                const colorHSL = hexToHSL(baseColor);
+                                
+                                // Adjust lightness to create variation
+                                const lightness = colorHSL.l + (colors.length * 10 - 20);
+                                colors.push(hslToHex(colorHSL.h, colorHSL.s, lightness));
+                            }
+                            break;
+                    }
+                }
+                
+                resolve(colors);
+            } else {
+                // Fallback to base color method if no colors found
+                resolve(generatePaletteFromBaseColor());
+            }
+        };
+        
+        img.src = paletteState.image;
+    });
+}
+
+// Helper function to convert RGB to hex
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
 }
 
 // Apply locked colors to the palette

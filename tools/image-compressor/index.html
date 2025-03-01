@@ -34,53 +34,24 @@
         <nav>
             <div class="logo">
                 <a href="../../index.html">
-                    <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Background -->
-                        <rect width="400" height="200" fill="white"/>
-                        
-                        <!-- Gradient definitions -->
-                        <defs>
-                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#4F46E5"/>
-                                <stop offset="100%" style="stop-color:#EC4899"/>
-                            </linearGradient>
-                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#EC4899"/>
-                                <stop offset="100%" style="stop-color:#4F46E5"/>
-                            </linearGradient>
-                        </defs>
-                        
-                        <!-- Main icon with enhanced gradients -->
-                        <rect x="120" y="40" 
-                              width="100" height="100" 
-                              rx="24" 
-                              fill="url(#gradient1)" 
-                              transform="rotate(-15, 170, 90)"
-                              style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
-                        
-                        <rect x="160" y="40" 
-                              width="100" height="100" 
-                              rx="24" 
-                              fill="url(#gradient2)" 
-                              transform="rotate(15, 210, 90)"
-                              style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
-                              
-                        <!-- Speed lines -->
-                        <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                        <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                        <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    </svg>
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
                 </a>
             </div>
             <div class="nav-links">
                 <a href="../../index.html">Home</a>
-                <a href="../../tools.html" class="active">Tools</a>
-                <a href="../../blog.html">Blog</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
                 <a href="../../about.html">About</a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
-
+    <div class="overlay"></div>
     <main>
         <div class="tool-header">
             <h1>Image Compressor</h1>
@@ -165,49 +136,42 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Gradient definitions -->
-                    <defs>
-                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#4F46E5"/>
-                            <stop offset="100%" style="stop-color:#EC4899"/>
-                        </linearGradient>
-                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#EC4899"/>
-                            <stop offset="100%" style="stop-color:#4F46E5"/>
-                        </linearGradient>
-                    </defs>
-                    
-                    <!-- Footer icon with enhanced gradients -->
-                    <rect x="120" y="40" 
-                          width="100" height="100" 
-                          rx="24" 
-                          fill="url(#gradient1-footer)" 
-                          transform="rotate(-15, 170, 90)"
-                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
-                    
-                    <rect x="160" y="40" 
-                          width="100" height="100" 
-                          rx="24" 
-                          fill="url(#gradient2-footer)" 
-                          transform="rotate(15, 210, 90)"
-                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
-                          
-                    <!-- Abstract speed lines representing productivity -->
-                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                </svg>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <a href="../../index.html">Home</a>
-                <a href="../../extensions.html">Extensions</a>
-                <a href="../../tools.html">Tools</a>
-                <a href="../../about.html">About</a>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
             </div>
-            <p>&copy; 2025 StartupMachine. All rights reserved.</p>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

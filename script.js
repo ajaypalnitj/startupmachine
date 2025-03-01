@@ -72,3 +72,40 @@ window.addEventListener('scroll', () => {
 
 // Add transition to header
 header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out';
+
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay = document.querySelector('.overlay');
+    const body = document.body;
+
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        mobileMenuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    }
+
+    // Add event listeners
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    overlay.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when a link is clicked
+    const menuLinks = navLinks.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navLinks.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // Close menu on window resize if it's open
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});

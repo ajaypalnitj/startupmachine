@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD6DJPF0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XYFD6DJPF0');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator | Startup Machine</title>
+    <meta name="description" content="Generate favicons for your website in multiple sizes and formats. Create a complete favicon package with just a few clicks.">
+    <meta name="keywords" content="favicon generator, website favicon, favicon maker, icon generator, app icon, web icon">
+    <meta name="author" content="Startup Machine">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/favicon-generator/">
+    <meta property="og:title" content="Favicon Generator | Startup Machine">
+    <meta property="og:description" content="Generate favicons for your website in multiple sizes and formats. Create a complete favicon package with just a few clicks.">
+    <meta property="og:image" content="https://startupmachine.co/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://startupmachine.co/tools/favicon-generator/">
+    <meta property="twitter:title" content="Favicon Generator | Startup Machine">
+    <meta property="twitter:description" content="Generate favicons for your website in multiple sizes and formats. Create a complete favicon package with just a few clicks.">
+    <meta property="twitter:image" content="https://startupmachine.co/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="overlay"></div>
+    <main>
+        <div class="container">
+            <div class="tool-header">
+                <h1>Favicon Generator</h1>
+                <p>Create a complete set of favicons for your website in multiple sizes and formats</p>
+            </div>
+
+            <div class="tool-container">
+                <div class="upload-section">
+                    <h2>Upload Image</h2>
+                    <div class="upload-container">
+                        <div id="drop-zone" class="drop-zone">
+                            <div class="drop-zone-content">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                                <p>Drag & drop an image here or <span class="browse-text">browse</span></p>
+                                <p class="file-requirements">PNG, JPG, or SVG (Square image recommended, min 260x260px)</p>
+                            </div>
+                            <input type="file" id="file-input" accept=".png,.jpg,.jpeg,.svg" class="file-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="editor-section" class="editor-section" style="display: none;">
+                    <h2>Customize Favicon</h2>
+                    <div class="editor-container">
+                        <div class="preview-panel">
+                            <div id="image-preview" class="image-preview"></div>
+                            <div class="size-previews">
+                                <div class="size-preview">
+                                    <div class="size-preview-item" id="preview-16"></div>
+                                    <span>16x16</span>
+                                </div>
+                                <div class="size-preview">
+                                    <div class="size-preview-item" id="preview-32"></div>
+                                    <span>32x32</span>
+                                </div>
+                                <div class="size-preview">
+                                    <div class="size-preview-item" id="preview-48"></div>
+                                    <span>48x48</span>
+                                </div>
+                                <div class="size-preview">
+                                    <div class="size-preview-item" id="preview-64"></div>
+                                    <span>64x64</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="options-panel">
+                            <div class="option-group">
+                                <label for="background-color">Background Color</label>
+                                <div class="color-input-container">
+                                    <input type="color" id="background-color" value="#ffffff">
+                                    <input type="text" id="background-color-text" value="#ffffff">
+                                </div>
+                            </div>
+                            <div class="option-group">
+                                <label for="padding-range">Padding</label>
+                                <div class="range-container">
+                                    <input type="range" id="padding-range" min="0" max="30" value="0">
+                                    <span id="padding-value">0%</span>
+                                </div>
+                            </div>
+                            <div class="option-group">
+                                <label for="border-radius-range">Border Radius</label>
+                                <div class="range-container">
+                                    <input type="range" id="border-radius-range" min="0" max="50" value="0">
+                                    <span id="border-radius-value">0%</span>
+                                </div>
+                            </div>
+                            <div class="option-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="transparent-background">
+                                    Transparent Background
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="output-options" class="output-options" style="display: none;">
+                    <h2>Output Options</h2>
+                    <div class="options-container">
+                        <div class="option-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="include-ico" checked>
+                                Include ICO file (16x16, 32x32, 48x48)
+                            </label>
+                        </div>
+                        <div class="option-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="include-png" checked>
+                                Include PNG files (16x16, 32x32, 48x48, 64x64, 128x128, 256x256)
+                            </label>
+                        </div>
+                        <div class="option-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="include-apple" checked>
+                                Include Apple Touch Icons (57x57, 60x60, 72x72, 76x76, 114x114, 120x120, 144x144, 152x152, 180x180)
+                            </label>
+                        </div>
+                        <div class="option-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="include-android" checked>
+                                Include Android Icons (36x36, 48x48, 72x72, 96x96, 144x144, 192x192, 512x512)
+                            </label>
+                        </div>
+                        <div class="option-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="include-ms" checked>
+                                Include Microsoft Tiles (70x70, 144x144, 150x150, 310x150, 310x310)
+                            </label>
+                        </div>
+                        <div class="option-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="include-html" checked>
+                                Generate HTML code
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <button id="generate-btn" class="primary-btn" disabled>GENERATE FAVICON PACKAGE</button>
+                </div>
+
+                <div id="results-container" class="results-container" style="display: none;">
+                    <h2>Generated Favicons</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="preview">Preview</button>
+                        <button class="tab-btn" data-tab="html">HTML Code</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="preview-tab" class="tab-pane active">
+                            <div class="preview-container">
+                                <div id="favicon-previews" class="favicon-previews"></div>
+                                <div class="download-action">
+                                    <button id="download-all-btn" class="secondary-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
+                                        </svg>
+                                        Download All Favicons
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="html-tab" class="tab-pane">
+                            <div class="code-container">
+                                <pre><code id="html-code"></code></pre>
+                                <button id="copy-html-btn" class="copy-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                                    </svg>
+                                    Copy HTML
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-info">
+                <h2>About Favicon Generator</h2>
+                <p>A favicon is a small icon associated with a website or web page. It is displayed in the browser's address bar, tabs, bookmarks, and other areas to help users identify your site visually. Having a well-designed favicon enhances your brand recognition and improves user experience.</p>
+                
+                <h3>Why Favicons Matter</h3>
+                <ul>
+                    <li><strong>Brand Recognition</strong> - Favicons help users quickly identify your site among multiple open tabs.</li>
+                    <li><strong>Professional Appearance</strong> - A custom favicon gives your website a more polished and professional look.</li>
+                    <li><strong>Improved User Experience</strong> - Favicons make it easier for users to navigate back to your site when they have multiple tabs open.</li>
+                    <li><strong>Mobile and Desktop Support</strong> - Modern favicons support various devices and platforms, from desktop browsers to mobile home screens.</li>
+                </ul>
+                
+                <h3>Favicon Best Practices</h3>
+                <div class="best-practices">
+                    <div class="practice-item">
+                        <h4>Use Simple Designs</h4>
+                        <p>Favicons are small, so simple designs with clear shapes work best. Avoid complex details that won't be visible at smaller sizes.</p>
+                    </div>
+                    <div class="practice-item">
+                        <h4>Start with a Square Image</h4>
+                        <p>Begin with a square image (at least 260x260 pixels) to ensure proper scaling across all favicon sizes.</p>
+                    </div>
+                    <div class="practice-item">
+                        <h4>Consider Transparent Backgrounds</h4>
+                        <p>For modern browsers, transparent backgrounds can help your favicon blend seamlessly with different browser themes.</p>
+                    </div>
+                    <div class="practice-item">
+                        <h4>Test Across Browsers</h4>
+                        <p>Different browsers display favicons differently, so test your favicon across multiple browsers to ensure it looks good everywhere.</p>
+                    </div>
+                </div>
+                
+                <h3>Supported Formats</h3>
+                <p>Our Favicon Generator creates a comprehensive package of favicon files to ensure compatibility across all platforms:</p>
+                <ul>
+                    <li><strong>ICO Format</strong> - The traditional favicon format supported by all browsers.</li>
+                    <li><strong>PNG Format</strong> - Modern format that supports transparency, used by many browsers and platforms.</li>
+                    <li><strong>Apple Touch Icons</strong> - Special icons for iOS devices when users add your site to their home screen.</li>
+                    <li><strong>Android Icons</strong> - Icons for Android devices when users add your site to their home screen.</li>
+                    <li><strong>Microsoft Tiles</strong> - Icons for Windows devices and Microsoft Edge browser.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-note">
+                <p><strong>Privacy Note:</strong> All processing happens locally in your browser. Your images never leave your device.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include JSZip library for creating zip files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Include FileSaver.js for saving files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

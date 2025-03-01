@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD6DJPF0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XYFD6DJPF0');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tags Generator | Startup Machine</title>
+    <meta name="description" content="Generate comprehensive meta tags for your website to improve SEO and social media sharing. Create Open Graph, Twitter Cards, and basic SEO meta tags.">
+    <meta name="keywords" content="meta tags generator, SEO meta tags, Open Graph tags, Twitter Cards, social media meta tags, HTML meta tags">
+    <meta name="author" content="Startup Machine">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/meta-tags-generator/">
+    <meta property="og:title" content="Meta Tags Generator | Startup Machine">
+    <meta property="og:description" content="Generate comprehensive meta tags for your website to improve SEO and social media sharing. Create Open Graph, Twitter Cards, and basic SEO meta tags.">
+    <meta property="og:image" content="https://startupmachine.co/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://startupmachine.co/tools/meta-tags-generator/">
+    <meta property="twitter:title" content="Meta Tags Generator | Startup Machine">
+    <meta property="twitter:description" content="Generate comprehensive meta tags for your website to improve SEO and social media sharing. Create Open Graph, Twitter Cards, and basic SEO meta tags.">
+    <meta property="twitter:image" content="https://startupmachine.co/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="overlay"></div>
+    <main>
+        <div class="container">
+            <div class="tool-header">
+                <h1>Meta Tags Generator</h1>
+                <p>Create comprehensive meta tags for your website to improve SEO and social media sharing</p>
+            </div>
+
+            <div class="tool-container">
+                <div class="input-section">
+                    <h2>Website Information</h2>
+                    <div class="form-group">
+                        <label for="page-url">Page URL</label>
+                        <input type="url" id="page-url" placeholder="https://example.com/page" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="page-title">Page Title</label>
+                        <input type="text" id="page-title" placeholder="Your Page Title" required>
+                        <div class="character-count"><span id="title-count">0</span>/60 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="page-description">Page Description</label>
+                        <textarea id="page-description" placeholder="Brief description of your page content" rows="3" required></textarea>
+                        <div class="character-count"><span id="description-count">0</span>/160 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="page-keywords">Keywords (comma separated)</label>
+                        <input type="text" id="page-keywords" placeholder="keyword1, keyword2, keyword3">
+                    </div>
+                    <div class="form-group">
+                        <label for="page-author">Author/Organization</label>
+                        <input type="text" id="page-author" placeholder="Author or organization name">
+                    </div>
+                </div>
+
+                <div class="social-section">
+                    <h2>Social Media Information</h2>
+                    <div class="form-group">
+                        <label for="og-title">Social Title (Open Graph/Twitter)</label>
+                        <input type="text" id="og-title" placeholder="Title for social media sharing">
+                        <div class="character-count"><span id="og-title-count">0</span>/60 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="og-description">Social Description</label>
+                        <textarea id="og-description" placeholder="Description for social media sharing" rows="3"></textarea>
+                        <div class="character-count"><span id="og-description-count">0</span>/160 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="og-image">Social Image URL</label>
+                        <input type="url" id="og-image" placeholder="https://example.com/image.jpg">
+                        <p class="input-tip">Recommended size: 1200×630 pixels (ratio 1.91:1)</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="twitter-card">Twitter Card Type</label>
+                        <select id="twitter-card">
+                            <option value="summary_large_image">Summary with Large Image</option>
+                            <option value="summary">Summary</option>
+                            <option value="app">App</option>
+                            <option value="player">Player</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="twitter-site">Twitter @username</label>
+                        <input type="text" id="twitter-site" placeholder="@yourusername">
+                    </div>
+                </div>
+
+                <div class="advanced-section">
+                    <h2>Advanced Options</h2>
+                    <div class="form-group">
+                        <label for="robots">Robots Directive</label>
+                        <select id="robots">
+                            <option value="index, follow">index, follow (Default)</option>
+                            <option value="noindex, follow">noindex, follow</option>
+                            <option value="index, nofollow">index, nofollow</option>
+                            <option value="noindex, nofollow">noindex, nofollow</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="canonical">Canonical URL</label>
+                        <input type="url" id="canonical" placeholder="https://example.com/canonical-page">
+                    </div>
+                    <div class="form-group">
+                        <label for="viewport">Viewport</label>
+                        <input type="text" id="viewport" value="width=device-width, initial-scale=1.0">
+                    </div>
+                    <div class="form-group">
+                        <label for="charset">Character Set</label>
+                        <input type="text" id="charset" value="UTF-8">
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <input type="text" id="language" value="en">
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <button id="generate-btn" class="primary-btn">GENERATE META TAGS</button>
+                </div>
+
+                <div id="results-container" class="results-container" style="display: none;">
+                    <h2>Generated Meta Tags</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="html">HTML</button>
+                        <button class="tab-btn" data-tab="preview">Preview</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="html-tab" class="tab-pane active">
+                            <div class="code-container">
+                                <pre><code id="meta-code"></code></pre>
+                                <button id="copy-btn" class="copy-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div id="preview-tab" class="tab-pane">
+                            <div class="preview-container">
+                                <div class="preview-section">
+                                    <h3>Google Search Preview</h3>
+                                    <div class="google-preview">
+                                        <div id="preview-title" class="preview-title">Your Page Title</div>
+                                        <div id="preview-url" class="preview-url">https://example.com/page</div>
+                                        <div id="preview-description" class="preview-description">Brief description of your page content that will appear in search results.</div>
+                                    </div>
+                                </div>
+                                <div class="preview-section">
+                                    <h3>Facebook/LinkedIn Preview</h3>
+                                    <div class="social-preview facebook-preview">
+                                        <div id="fb-image" class="preview-image">
+                                            <div class="image-placeholder">Image Preview</div>
+                                        </div>
+                                        <div class="preview-content">
+                                            <div id="fb-url" class="preview-domain">example.com</div>
+                                            <div id="fb-title" class="preview-title">Your Social Title</div>
+                                            <div id="fb-description" class="preview-description">Your social description will appear here.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-section">
+                                    <h3>Twitter Preview</h3>
+                                    <div class="social-preview twitter-preview">
+                                        <div id="twitter-image" class="preview-image">
+                                            <div class="image-placeholder">Image Preview</div>
+                                        </div>
+                                        <div class="preview-content">
+                                            <div id="twitter-url" class="preview-domain">example.com</div>
+                                            <div id="twitter-title" class="preview-title">Your Social Title</div>
+                                            <div id="twitter-description" class="preview-description">Your social description will appear here.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-info">
+                <h2>About Meta Tags Generator</h2>
+                <p>Meta tags are snippets of text that describe a page's content; they don't appear on the page itself, but in the page's source code. Meta tags are essentially little content descriptors that help tell search engines and social media platforms what a web page is about.</p>
+                
+                <h3>Why Meta Tags Matter</h3>
+                <ul>
+                    <li><strong>SEO Improvement</strong> - Properly implemented meta tags can improve your search engine rankings.</li>
+                    <li><strong>Better Social Sharing</strong> - Open Graph and Twitter Card tags control how your content appears when shared on social media.</li>
+                    <li><strong>Increased Click-Through Rates</strong> - Compelling titles and descriptions can increase the likelihood that users will click on your link in search results.</li>
+                </ul>
+                
+                <h3>Types of Meta Tags</h3>
+                <div class="meta-types">
+                    <div class="meta-type">
+                        <h4>Basic SEO Tags</h4>
+                        <p>These include the title, description, and keywords tags that help search engines understand your content.</p>
+                    </div>
+                    <div class="meta-type">
+                        <h4>Open Graph Tags</h4>
+                        <p>Used by Facebook, LinkedIn, and other social platforms to display rich previews when your content is shared.</p>
+                    </div>
+                    <div class="meta-type">
+                        <h4>Twitter Cards</h4>
+                        <p>Similar to Open Graph but specifically designed for Twitter to control how your content appears in tweets.</p>
+                    </div>
+                </div>
+                
+                <h3>Best Practices</h3>
+                <ul>
+                    <li>Keep titles under 60 characters to ensure they display properly in search results.</li>
+                    <li>Write descriptions under 160 characters that accurately summarize your page content.</li>
+                    <li>Use high-quality images for social sharing (1200×630 pixels is recommended).</li>
+                    <li>Include relevant keywords naturally in your titles and descriptions.</li>
+                    <li>Use canonical URLs to prevent duplicate content issues.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-note">
+                <p><strong>Privacy Note:</strong> All processing happens locally in your browser. Your data never leaves your device.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

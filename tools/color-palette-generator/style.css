@@ -485,4 +485,43 @@
     .color-actions {
         align-self: flex-end;
     }
+}
+
+/* Loading and Error States */
+.loading, .error {
+    padding: 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.loading {
+    position: relative;
+}
+
+.loading:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4F46E5;
+    border-right: 3px solid #4F46E5;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: calc(50% + 30px);
+    left: calc(50% - 20px);
+}
+
+.error {
+    color: #e53e3e;
+    border: 1px solid #e53e3e;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 } 

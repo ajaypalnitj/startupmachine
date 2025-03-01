@@ -30,42 +30,10 @@
     <header>
         <nav>
             <div class="logo">
-                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Background -->
-                    <rect width="400" height="200" fill="white"/>
-                    
-                    <!-- Gradient definitions -->
-                    <defs>
-                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#4F46E5"/>
-                            <stop offset="100%" style="stop-color:#EC4899"/>
-                        </linearGradient>
-                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#EC4899"/>
-                            <stop offset="100%" style="stop-color:#4F46E5"/>
-                        </linearGradient>
-                    </defs>
-                    
-                    <!-- Main icon with enhanced gradients -->
-                    <rect x="120" y="40" 
-                          width="100" height="100" 
-                          rx="24" 
-                          fill="url(#gradient1)" 
-                          transform="rotate(-15, 170, 90)"
-                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
-                    
-                    <rect x="160" y="40" 
-                          width="100" height="100" 
-                          rx="24" 
-                          fill="url(#gradient2)" 
-                          transform="rotate(15, 210, 90)"
-                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
-                          
-                    <!-- Speed lines -->
-                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                </svg>
+                <a href="index.html">
+                    <img src="logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -129,7 +97,7 @@
                 <a href="tools/color-palette-generator/" class="button">Open Tool</a>
             </div>
             
-            <div class="tool-card coming-soon">
+            <div class="tool-card">
                 <div class="tool-icon">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 12L24 6L36 12V36L24 42L12 36V12Z" stroke="#4F46E5" stroke-width="2"/>
@@ -139,7 +107,7 @@
                 </div>
                 <h3>SVG Optimizer</h3>
                 <p>Optimize SVG files by removing unnecessary metadata and compressing paths.</p>
-                <span class="coming-soon-badge">Coming Soon</span>
+                <a href="tools/svg-optimizer/" class="button">Open Tool</a>
             </div>
             
             <div class="tool-card">
@@ -207,6 +175,43 @@
                 <p>Generate secure, random passwords with customizable options for length and character types.</p>
                 <a href="tools/password-generator/" class="button">Open Tool</a>
             </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12L24 6L36 12V36L24 42L12 36V12Z" stroke="#4F46E5" stroke-width="2"/>
+                        <path d="M24 6V24M24 42V24M24 24L36 12M24 24L12 36" stroke="#4F46E5" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="4" fill="#EC4899"/>
+                    </svg>
+                </div>
+                <h3>SVG Optimizer</h3>
+                <p>Optimize SVG files by removing unnecessary metadata and compressing paths.</p>
+                <a href="tools/svg-optimizer/" class="button">Open Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="#4F46E5" stroke-width="2"/>
+                        <path d="M14 14H34M14 22H28M14 30H24" stroke="#EC4899" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Meta Tags Generator</h3>
+                <p>Generate HTML meta tags for better SEO and social media sharing.</p>
+                <a href="tools/meta-tags-generator/" class="button">Open Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="#4F46E5" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="8" fill="#EC4899"/>
+                    </svg>
+                </div>
+                <h3>Favicon Generator</h3>
+                <p>Create favicons for websites from an image in multiple sizes and formats.</p>
+                <a href="tools/favicon-generator/" class="button">Open Tool</a>
+            </div>
         </section>
 
         <section class="more-tools">
@@ -214,15 +219,38 @@
             <p>We're constantly working on new tools to help developers and designers. Here are some of the tools we're planning to add:</p>
             
             <ul class="tools-list">
-                <li>Meta Tags Generator - Generate HTML meta tags for better SEO</li>
-                <li>Favicon Generator - Create favicons for websites from an image</li>
                 <li>CSS Minifier - Minify CSS code to reduce file size</li>
                 <li>JavaScript Minifier - Minify JavaScript code to improve loading times</li>
-                <li>HTML Entity Encoder/Decoder - Convert special characters to HTML entities and vice versa</li>
-                <li>Base64 Encoder/Decoder - Encode and decode Base64 strings</li>
                 <li>URL Parser - Parse and analyze URL components</li>
                 <li>Responsive Design Tester - Test how a website looks on different screen sizes</li>
             </ul>
+            
+            <h2>Recently Added Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M14 18H34M14 24H28M14 30H22" stroke="#EC4899" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Text Case Converter</h3>
+                    <p>Convert text between different cases: lowercase, uppercase, title case, camel case, snake case, and more.</p>
+                    <a href="tools/text-case-converter/" class="button">Open Tool</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M16 16L24 24L32 16M16 32L24 24L32 32" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>HTML Entity Encoder/Decoder</h3>
+                    <p>Convert special characters to HTML entities and vice versa for proper display in web pages.</p>
+                    <a href="tools/html-entity-converter/" class="button">Open Tool</a>
+                </div>
+            </div>
             
             <div class="suggestion-box">
                 <h3>Have a Tool Suggestion?</h3>
@@ -232,51 +260,42 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Gradient definitions -->
-                    <defs>
-                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#4F46E5"/>
-                            <stop offset="100%" style="stop-color:#EC4899"/>
-                        </linearGradient>
-                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#EC4899"/>
-                            <stop offset="100%" style="stop-color:#4F46E5"/>
-                        </linearGradient>
-                    </defs>
-                    
-                    <!-- Footer icon with enhanced gradients -->
-                    <rect x="120" y="40" 
-                          width="100" height="100" 
-                          rx="24" 
-                          fill="url(#gradient1-footer)" 
-                          transform="rotate(-15, 170, 90)"
-                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
-                    
-                    <rect x="160" y="40" 
-                          width="100" height="100" 
-                          rx="24" 
-                          fill="url(#gradient2-footer)" 
-                          transform="rotate(15, 210, 90)"
-                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
-                          
-                    <!-- Abstract speed lines representing productivity -->
-                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
-                </svg>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="extensions.html">Extensions</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="extensions.html">Extensions</a>
-                <a href="tools.html">Tools</a>
-                <a href="about.html">About</a>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 StartupMachine. All rights reserved.</p>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

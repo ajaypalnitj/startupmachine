@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Optimizer - Startup Machine</title>
+    <meta name="description" content="Optimize SVG files by removing unnecessary code, reducing file size without losing quality. Free online tool with no data sent to servers.">
+    <meta name="keywords" content="svg optimizer, svg cleaner, optimize svg, compress svg, svg minifier, web optimization, vector graphics">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="SVG Optimizer | StartupMachine">
+    <meta property="og:description" content="Optimize SVG files by removing unnecessary code, reducing file size without losing quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/svg-optimizer/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="overlay"></div>
+    <main>
+        <div class="tool-header">
+            <h1>SVG Optimizer</h1>
+            <p>Optimize SVG files by removing unnecessary code, reducing file size without losing quality.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="simple-tool-section">
+                <div id="file-counter" class="file-counter"></div>
+            </div>
+
+            <div class="upload-container" id="drop-zone">
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16Z" fill="#4F46E5"/>
+                        <path d="M18 20H6C4.9 20 4 19.1 4 18V15H6V18H18V15H20V18C20 19.1 19.1 20 18 20Z" fill="#4F46E5"/>
+                    </svg>
+                </div>
+                <h4>Drop SVG files or click here</h4>
+                <button class="file-btn">Choose File</button>
+                <input type="file" id="file-input" accept=".svg" multiple style="display: none;">
+                <p class="max-files-note">Maximum 10 files allowed</p>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Optimization Options</h3>
+                <div class="option-group">
+                    <label class="option-label">
+                        <input type="checkbox" id="remove-comments" checked>
+                        <span>Remove comments</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="remove-metadata" checked>
+                        <span>Remove metadata</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="remove-unused-ids" checked>
+                        <span>Remove unused IDs</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="remove-empty-attrs" checked>
+                        <span>Remove empty attributes</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="collapse-groups">
+                        <span>Collapse useless groups</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="round-precision" checked>
+                        <span>Round numeric precision</span>
+                    </label>
+                    <div class="precision-container" id="precision-container">
+                        <label for="precision-slider">Precision:</label>
+                        <input type="range" id="precision-slider" min="1" max="5" value="3">
+                        <span id="precision-value">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button id="start-btn" class="start-button">OPTIMIZE SVG</button>
+            </div>
+
+            <div class="results-container" id="results-container">
+                <h3>Results</h3>
+                <div id="svg-results" class="svg-results"></div>
+                <div class="download-all-container">
+                    <button id="download-all-btn" class="secondary-button" disabled>Download All</button>
+                </div>
+            </div>
+
+            <div class="tool-info">
+                <h3>About SVG Optimization</h3>
+                <p>SVG (Scalable Vector Graphics) files often contain unnecessary code added by design software. This tool helps you reduce SVG file size while maintaining quality by:</p>
+                <ul>
+                    <li><strong>Removing Comments:</strong> Eliminates comments that are helpful for development but unnecessary for rendering.</li>
+                    <li><strong>Removing Metadata:</strong> Strips non-essential information like editor data, timestamps, etc.</li>
+                    <li><strong>Removing Unused IDs:</strong> Cleans up unused identifiers that increase file size.</li>
+                    <li><strong>Removing Empty Attributes:</strong> Gets rid of attributes with empty values.</li>
+                    <li><strong>Collapsing Groups:</strong> Simplifies nested group structures without transformations or styles.</li>
+                    <li><strong>Rounding Numbers:</strong> Reduces precision of decimal values to the chosen precision.</li>
+                </ul>
+                <p>Optimized SVGs are faster to load, process, and render, improving your website's performance and user experience.</p>
+            </div>
+
+            <div class="privacy-note">
+                <small>Your Privacy: All optimization happens locally in your browser. Your SVG files are never uploaded to any server.</small>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add JSZip for downloading multiple files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
