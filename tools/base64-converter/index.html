@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Encoder/Decoder - Startup Machine</title>
+    <meta name="description" content="Encode text to Base64 or decode Base64 to text with this free online tool. Perfect for developers working with data encoding.">
+    <meta name="keywords" content="base64, encoder, decoder, base64 converter, text encoding, data encoding, web development">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Base64 Encoder/Decoder | StartupMachine">
+    <meta property="og:description" content="Encode text to Base64 or decode Base64 to text with this free online tool. Perfect for developers working with data encoding.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/base64-converter/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="400" height="200" fill="white"/>
+                        
+                        <!-- Gradient definitions -->
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4F46E5"/>
+                                <stop offset="100%" style="stop-color:#EC4899"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#EC4899"/>
+                                <stop offset="100%" style="stop-color:#4F46E5"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Main icon with enhanced gradients -->
+                        <rect x="120" y="40" 
+                              width="100" height="100" 
+                              rx="24" 
+                              fill="url(#gradient1)" 
+                              transform="rotate(-15, 170, 90)"
+                              style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.25))"/>
+                        
+                        <rect x="160" y="40" 
+                              width="100" height="100" 
+                              rx="24" 
+                              fill="url(#gradient2)" 
+                              transform="rotate(15, 210, 90)"
+                              style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.25))"/>
+                              
+                        <!-- Speed lines -->
+                        <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                        <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html" class="active">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tool-header">
+            <h1>Base64 Encoder/Decoder</h1>
+            <p>Convert text to Base64 encoding or decode Base64 back to text. A useful tool for developers working with data encoding.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="tool-tabs">
+                <button class="tab-btn active" data-tab="encode">Encode</button>
+                <button class="tab-btn" data-tab="decode">Decode</button>
+            </div>
+            
+            <div class="input-container">
+                <h3>Input</h3>
+                <textarea id="input-text" placeholder="Enter text to encode or Base64 to decode..."></textarea>
+                <div class="text-stats">
+                    <span id="character-count">0 characters</span>
+                </div>
+            </div>
+            
+            <div class="conversion-options">
+                <h3>Options</h3>
+                <div class="options-grid">
+                    <div class="option-group encode-options">
+                        <label class="option-label">
+                            <input type="checkbox" id="encode-url-safe">
+                            <span>URL-safe encoding (replace + with - and / with _)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" id="encode-no-padding">
+                            <span>Remove padding (= characters)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="option-group decode-options hidden">
+                        <label class="option-label">
+                            <input type="checkbox" id="decode-url-safe" checked>
+                            <span>Accept URL-safe encoding (- and _)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" id="decode-fix-padding" checked>
+                            <span>Auto-fix missing padding</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="file-upload-option">
+                    <label class="file-upload-label">
+                        <span>Or upload a file:</span>
+                        <input type="file" id="file-input" class="file-input">
+                        <div class="custom-file-button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                            </svg>
+                            Choose File
+                        </div>
+                    </label>
+                    <span id="file-name">No file chosen</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="convert-btn" class="convert-btn">Encode</button>
+                    <button id="clear-btn" class="secondary-btn">Clear</button>
+                </div>
+            </div>
+            
+            <div class="result-container">
+                <div class="result-header">
+                    <h3>Result</h3>
+                    <div class="result-actions">
+                        <button id="download-btn" class="action-btn" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
+                            </svg>
+                            Download
+                        </button>
+                        <button id="copy-btn" class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                            </svg>
+                            Copy
+                        </button>
+                    </div>
+                </div>
+                <div id="result-text" class="result-box"></div>
+            </div>
+            
+            <div class="tool-info">
+                <h3>About Base64 Encoding</h3>
+                <p>Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format by translating it into a radix-64 representation.</p>
+                
+                <div class="info-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What is Base64 used for?</span>
+                            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Base64 encoding is commonly used when binary data needs to be stored or transferred as text. Common use cases include:</p>
+                            <ul>
+                                <li><strong>Email Attachments:</strong> MIME format uses Base64 to encode binary attachments.</li>
+                                <li><strong>Data URIs:</strong> Embedding images or other binary data directly in HTML or CSS.</li>
+                                <li><strong>API Communication:</strong> Sending binary data in JSON payloads.</li>
+                                <li><strong>Storing Binary Data:</strong> When binary data needs to be stored in text-based storage systems.</li>
+                                <li><strong>Avoiding Special Character Issues:</strong> When data might contain characters that could be problematic in certain contexts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Base64 Encoding Details</span>
+                            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Base64 encoding works by:</p>
+                            <ol>
+                                <li>Taking 3 bytes (24 bits) of binary data</li>
+                                <li>Dividing those 24 bits into 4 groups of 6 bits each</li>
+                                <li>Converting each 6-bit value (0-63) to a character from the Base64 alphabet</li>
+                            </ol>
+                            <p>The standard Base64 alphabet consists of:</p>
+                            <ul>
+                                <li>A-Z (26 characters)</li>
+                                <li>a-z (26 characters)</li>
+                                <li>0-9 (10 characters)</li>
+                                <li>+ and / (2 characters)</li>
+                            </ul>
+                            <p>When the input length is not divisible by 3, padding with = characters is used.</p>
+                            <p>URL-safe Base64 replaces + with - and / with _ to avoid issues with URL encoding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="privacy-note">
+                <small>Your Privacy: All processing happens locally in your browser. Your text and files are never sent to any server.</small>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradient1-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#EC4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradient2-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EC4899"/>
+                            <stop offset="100%" style="stop-color:#4F46E5"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Footer icon with enhanced gradients -->
+                    <rect x="120" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient1-footer)" 
+                          transform="rotate(-15, 170, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.4))"/>
+                    
+                    <rect x="160" y="40" 
+                          width="100" height="100" 
+                          rx="24" 
+                          fill="url(#gradient2-footer)" 
+                          transform="rotate(15, 210, 90)"
+                          style="filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.4))"/>
+                          
+                    <!-- Abstract speed lines representing productivity -->
+                    <path d="M180 70 L220 70" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M170 90 L230 90" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                    <path d="M180 110 L220 110" stroke="white" stroke-width="4" stroke-linecap="round" style="opacity: 0.8"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <p>&copy; 2025 StartupMachine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
