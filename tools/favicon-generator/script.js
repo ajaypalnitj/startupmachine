@@ -136,15 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const file = files[0];
         const fileType = file.type;
+        const fileName = file.name.toLowerCase();
         
-        // Check if file is an image
-        if (!fileType.match('image.*')) {
-            showToast('Please select an image file (PNG, JPG, or SVG).', 'error');
-            return;
-        }
+        // Check if file is an image (PNG, JPG, or SVG)
+        const isPNG = fileType.includes('image/png');
+        const isJPG = fileType.includes('image/jpeg');
+        const isSVG = fileType.includes('image/svg+xml') || fileName.endsWith('.svg');
         
-        // Check if file is PNG, JPG, or SVG
-        if (!fileType.match('image/png') && !fileType.match('image/jpeg') && !fileType.match('image/svg+xml')) {
+        if (!isPNG && !isJPG && !isSVG) {
             showToast('Please select a PNG, JPG, or SVG file.', 'error');
             return;
         }
