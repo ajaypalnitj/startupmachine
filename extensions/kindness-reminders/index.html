@@ -23,7 +23,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-</head>
+<style id="inline-variables">
+            :root {
+                --primary: #4F46E5;
+                --secondary: #EC4899;
+                --text: #111827;
+                --text-light: #6B7280;
+                --bg-light: #F5F7FB;
+                --bg-dark: #F9FAFB;
+                --border-color: #E5E7EB;
+                --border-color-light: rgba(229, 231, 235, 0.5);
+                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            }
+        </style></head>
 <body>
     <header>
         <nav>
@@ -48,14 +61,14 @@
     </header>
     <div class="overlay"></div>
     <main>
-        <section class="hero">
-            <h1>Kindness Reminders</h1>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Kindness Reminders</h1>
             <p>Gentle reminders to be kind in online interactions with inspirational quotes</p>
         </section>
 
         <section class="extensions">
-            <div class="extension-detail">
-                <div class="extension-icon">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0px auto 1.5rem;">
                     <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="24" cy="24" r="20" stroke="#4F46E5" stroke-width="2"></circle>
                         <path d="M16 24C16 19.6 19.6 16 24 16C28.4 16 32 19.6 32 24" stroke="#EC4899" stroke-width="2"></path>
@@ -65,23 +78,23 @@
                     </svg>
                 </div>
                 
-                <div class="extension-description">
-                    <h2>About Kindness Reminders</h2>
-                    <p>In today's fast-paced digital world, it's easy to forget the importance of kindness in our online interactions. The Kindness Reminders extension is designed to help you maintain a positive and empathetic approach to your digital communications.</p>
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Kindness Reminders</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">In today's fast-paced digital world, it's easy to forget the importance of kindness in our online interactions. The Kindness Reminders extension is designed to help you maintain a positive and empathetic approach to your digital communications.</p>
                     
-                    <p>With thoughtfully curated inspirational quotes and gentle reminders, this extension encourages mindfulness and compassion in all your online activities.</p>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">With thoughtfully curated inspirational quotes and gentle reminders, this extension encourages mindfulness and compassion in all your online activities.</p>
                     
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li><strong>Inspirational Quotes:</strong> Access a collection of thoughtful kindness quotes at any time by clicking the extension icon</li>
-                        <li><strong>New Quote Button:</strong> Get a fresh kindness quote with a single click whenever you need inspiration</li>
-                        <li><strong>Save Favorites:</strong> Save your favorite quotes to revisit them later whenever you need a boost</li>
-                        <li><strong>Daily Quote Notifications:</strong> Start your day with a kindness quote notification to set a positive tone</li>
-                        <li><strong>Share Functionality:</strong> Easily copy quotes to share in messages and spread kindness to others</li>
-                        <li><strong>Customizable Settings:</strong> Adjust notification frequency and features to suit your preferences</li>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Key Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Inspirational Quotes:</strong> Access a collection of thoughtful kindness quotes at any time by clicking the extension icon</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>New Quote Button:</strong> Get a fresh kindness quote with a single click whenever you need inspiration</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Save Favorites:</strong> Save your favorite quotes to revisit them later whenever you need a boost</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Daily Quote Notifications:</strong> Start your day with a kindness quote notification to set a positive tone</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Share Functionality:</strong> Easily copy quotes to share in messages and spread kindness to others</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Customizable Settings:</strong> Adjust notification frequency and features to suit your preferences</li>
                     </ul>
                     
-                    <h3>Sample Kindness Quotes</h3>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Sample Kindness Quotes</h3>
                     <div class="quote-examples">
                         <blockquote>"In a world where you can be anything, be kind."</blockquote>
                         <blockquote>"Kindness is a language which the deaf can hear and the blind can see." — Mark Twain</blockquote>
@@ -89,22 +102,22 @@
                         <blockquote>"Be kind, for everyone you meet is fighting a harder battle." — Plato</blockquote>
                     </div>
                     
-                    <h3>How It Works</h3>
-                    <ol>
-                        <li>Install the Kindness Reminders extension from the Chrome Web Store</li>
-                        <li>Click on the extension icon in your browser toolbar to see a kindness quote</li>
-                        <li>Use the refresh button to get a new quote whenever you need inspiration</li>
-                        <li>Customize your notification settings in the options page</li>
-                        <li>Save your favorite quotes for easy access later</li>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">How It Works</h3>
+                    <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Install the Kindness Reminders extension from the Chrome Web Store</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Click on the extension icon in your browser toolbar to see a kindness quote</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Use the refresh button to get a new quote whenever you need inspiration</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Customize your notification settings in the options page</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Save your favorite quotes for easy access later</li>
                     </ol>
                     
-                    <h3>Privacy Focused</h3>
-                    <p>Your privacy matters to us. The Kindness Reminders extension operates entirely within your browser and doesn't collect any personal data. All your saved quotes and preferences are stored locally on your device.</p>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Privacy Focused</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Your privacy matters to us. The Kindness Reminders extension operates entirely within your browser and doesn't collect any personal data. All your saved quotes and preferences are stored locally on your device.</p>
                     
-                    <div class="cta-buttons">
-                        <a href="https://chromewebstore.google.com/detail/kindness-reminder/ehgcnbefdmchldekgaammmnchlclopej" class="extension-link" target="_blank">Add to Chrome</a>
-                        <a href="privacy.html" class="secondary-link">Privacy Policy</a>
-                        <a href="../../extensions.html" class="secondary-link">View All Extensions</a>
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="https://chromewebstore.google.com/detail/kindness-reminder/ehgcnbefdmchldekgaammmnchlclopej" class="extension-link" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; color: white; text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: var(--logo-gradient);">Add to Chrome</a>
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
                     </div>
                 </div>
             </div>

@@ -63,217 +63,255 @@
     <div class="overlay"></div>
 
     <main>
-        <div class="tool-header">
-            <h1>SVG Viewer &amp; Editor</h1>
-            <p>Upload or paste SVG files to view, edit, and convert them to different formats. Optimize SVGs for web use and export them as PNG or data URI.</p>
-        </div>
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>SVG Viewer &amp; Editor</h1>
+                <p>Upload or paste SVG files to view, edit, and convert them to different formats. Optimize SVGs for web use and export them as PNG or data URI.</p>
+            </div>
 
-        <div class="upload-section">
-            <div class="input-methods">
-                <div class="input-method-tabs">
-                    <div class="input-method-tab active" data-target="upload-file">Upload File</div>
-                    <div class="input-method-tab" data-target="paste-code">Paste SVG Code</div>
-                </div>
-                
-                <div class="input-method-content" id="upload-file" style="display: block;">
-                    <div class="drop-zone" id="drop-zone">
-                        <div class="drop-zone-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="17 8 12 3 7 8"></polyline>
-                                <line x1="12" y1="3" x2="12" y2="15"></line>
-                            </svg>
+            <div class="upload-section">
+                <div class="input-methods">
+                    <div class="input-method-tabs">
+                        <div class="input-method-tab active" data-target="upload-file">Upload File</div>
+                        <div class="input-method-tab" data-target="paste-code">Paste SVG Code</div>
+                    </div>
+                    
+                    <div class="input-method-content" id="upload-file" style="display: block;">
+                        <div class="drop-zone" id="drop-zone">
+                            <div class="drop-zone-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <div class="drop-zone-text">Drag &amp; drop your SVG file here</div>
+                            <div class="drop-zone-subtext">or <span class="browse-text">browse</span> to upload</div>
+                            <input type="file" id="file-input" class="file-input" accept=".svg">
                         </div>
-                        <div class="drop-zone-text">Drag &amp; drop your SVG file here</div>
-                        <div class="drop-zone-subtext">or <span class="browse-text">browse</span> to upload</div>
-                        <input type="file" id="file-input" class="file-input" accept=".svg">
                     </div>
-                </div>
-                
-                <div class="input-method-content" id="paste-code" style="display: none;">
-                    <div class="svg-textarea-container">
-                        <textarea id="svg-textarea" class="svg-textarea" placeholder="Paste your SVG code here..."></textarea>
+                    
+                    <div class="input-method-content" id="paste-code" style="display: none;">
+                        <div class="svg-textarea-container">
+                            <textarea id="svg-textarea" class="svg-textarea" placeholder="Paste your SVG code here..."></textarea>
+                        </div>
+                        <button id="load-svg-btn" class="load-svg-btn">Load SVG</button>
                     </div>
-                    <button id="load-svg-btn" class="load-svg-btn">Load SVG</button>
                 </div>
             </div>
-        </div>
 
-        <div class="editor-section" id="editor-section">
-            <div class="editor-grid">
-                <div class="preview-container">
-                    <div class="preview-header">
-                        <h3 class="preview-title">Preview</h3>
-                    </div>
-                    <div class="svg-preview" id="svg-preview"></div>
-                </div>
-                
-                <div class="code-container">
-                    <div class="code-header">
-                        <div class="tab-buttons">
-                            <div class="tab-btn active" data-target="svg-code-tab">SVG</div>
-                            <div class="tab-btn" data-target="jsx-code-tab">React JSX</div>
-                            <div class="tab-btn" data-target="vue-code-tab">Vue</div>
-                            <div class="tab-btn" data-target="angular-code-tab">Angular</div>
+            <div class="editor-section" id="editor-section">
+                <div class="editor-grid">
+                    <!-- First column: Preview and Code -->
+                    <div class="preview-code-column">
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h3 class="preview-title">Preview</h3>
+                            </div>
+                            <div class="svg-preview" id="svg-preview"></div>
+                        </div>
+                        
+                        <div class="code-container">
+                            <div class="code-header">
+                                <div class="tab-buttons">
+                                    <div class="tab-btn active" data-target="svg-code-tab">SVG</div>
+                                    <div class="tab-btn" data-target="jsx-code-tab">React JSX</div>
+                                    <div class="tab-btn" data-target="vue-code-tab">Vue</div>
+                                    <div class="tab-btn" data-target="angular-code-tab">Angular</div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="svg-code-tab" style="display: block;">
+                                <button class="copy-btn" data-target="svg-code">
+                                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy
+                                </button>
+                                <pre class="code-display" id="svg-code"></pre>
+                            </div>
+                            
+                            <div class="tab-content" id="jsx-code-tab" style="display: none;">
+                                <button class="copy-btn" data-target="jsx-code">
+                                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy
+                                </button>
+                                <pre class="code-display" id="jsx-code"></pre>
+                            </div>
+                            
+                            <div class="tab-content" id="vue-code-tab" style="display: none;">
+                                <button class="copy-btn" data-target="vue-code">
+                                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy
+                                </button>
+                                <pre class="code-display" id="vue-code"></pre>
+                            </div>
+                            
+                            <div class="tab-content" id="angular-code-tab" style="display: none;">
+                                <button class="copy-btn" data-target="angular-code">
+                                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy
+                                </button>
+                                <pre class="code-display" id="angular-code"></pre>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="tab-content" id="svg-code-tab" style="display: block;">
-                        <button class="copy-btn" data-target="svg-code">
-                            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            Copy
-                        </button>
-                        <pre class="code-display" id="svg-code"></pre>
-                    </div>
-                    
-                    <div class="tab-content" id="jsx-code-tab" style="display: none;">
-                        <button class="copy-btn" data-target="jsx-code">
-                            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            Copy
-                        </button>
-                        <pre class="code-display" id="jsx-code"></pre>
-                    </div>
-                    
-                    <div class="tab-content" id="vue-code-tab" style="display: none;">
-                        <button class="copy-btn" data-target="vue-code">
-                            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            Copy
-                        </button>
-                        <pre class="code-display" id="vue-code"></pre>
-                    </div>
-                    
-                    <div class="tab-content" id="angular-code-tab" style="display: none;">
-                        <button class="copy-btn" data-target="angular-code">
-                            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            Copy
-                        </button>
-                        <pre class="code-display" id="angular-code"></pre>
+                    <!-- Second column: Controls -->
+                    <div class="controls-column">
+                        <div class="controls-container">
+                            <h3 class="controls-title">Controls</h3>
+                            
+                            <div class="control-group">
+                                <div class="control-label">Transform</div>
+                                <div class="transform-buttons">
+                                    <button id="rotate-left" class="transform-btn" title="Rotate Left">
+                                        <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 10 4 15 9 20"></polyline>
+                                            <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="rotate-right" class="transform-btn" title="Rotate Right">
+                                        <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="15 10 20 15 15 20"></polyline>
+                                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="flip-horizontal" class="transform-btn" title="Flip Horizontal">
+                                        <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3"></path>
+                                            <path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"></path>
+                                            <path d="M12 2v20"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="flip-vertical" class="transform-btn" title="Flip Vertical">
+                                        <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 8h18"></path>
+                                            <path d="M3 16h18"></path>
+                                            <path d="M2 12h20"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="control-group">
+                                <div class="control-label">Dimensions</div>
+                                <div class="dimensions-inputs">
+                                    <div class="dimension-input-group">
+                                        <label for="width-input">Width</label>
+                                        <input type="number" id="width-input" class="dimension-input" min="1">
+                                    </div>
+                                    <div class="dimension-input-group">
+                                        <label for="height-input">Height</label>
+                                        <input type="number" id="height-input" class="dimension-input" min="1">
+                                    </div>
+                                    <div class="aspect-ratio-container">
+                                        <input type="checkbox" id="aspect-ratio-lock" checked>
+                                        <label for="aspect-ratio-lock">Lock aspect ratio</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="control-group">
+                                <div class="control-label">Background</div>
+                                <div class="background-controls">
+                                    <div class="color-input-group">
+                                        <input type="color" id="bg-color-input" class="color-input" value="#ffffff">
+                                        <input type="text" id="bg-color-text" class="color-text-input" value="#ffffff">
+                                    </div>
+                                    <div class="pattern-buttons">
+                                        <button id="bg-none" class="pattern-btn" data-pattern="transparent">Transparent</button>
+                                        <button id="bg-color" class="pattern-btn" data-pattern="color">Color</button>
+                                        <button id="bg-grid" class="pattern-btn" data-pattern="grid">Grid</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="control-group">
+                                <div class="control-label">Actions</div>
+                                <div class="action-buttons">
+                                    <button id="optimize-btn" class="action-btn">Optimize SVG</button>
+                                    <button id="prettify-btn" class="action-btn">Prettify SVG</button>
+                                </div>
+                            </div>
+                            
+                            <div class="control-group">
+                                <div class="control-label">Export</div>
+                                <div class="export-buttons">
+                                    <button id="svg-export" class="export-btn">
+                                        <svg class="export-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="7 10 12 15 17 10"></polyline>
+                                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                                        </svg>
+                                        Export SVG
+                                    </button>
+                                    <button id="png-export" class="export-btn">
+                                        <svg class="export-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="7 10 12 15 17 10"></polyline>
+                                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                                        </svg>
+                                        Export PNG
+                                    </button>
+                                    <button id="data-uri-export" class="export-btn">
+                                        <svg class="export-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="7 10 12 15 17 10"></polyline>
+                                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                                        </svg>
+                                        Data URI
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="controls-container">
-                <h3 class="controls-title">Controls</h3>
+            <!-- Add tool info section -->
+            <div class="tool-info">
+                <h2>About SVG Viewer &amp; Editor</h2>
+                <p>This free online tool allows you to view, edit, and convert SVG files in your browser with no data transmitted to any server. All processing happens locally in your browser, ensuring your SVG content remains private.</p>
                 
-                <div class="control-group">
-                    <div class="control-label">Transform</div>
-                    <div class="transform-buttons">
-                        <button id="rotate-left" class="transform-btn" title="Rotate Left">
-                            <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 10 4 15 9 20"></polyline>
-                                <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
-                            </svg>
-                        </button>
-                        <button id="rotate-right" class="transform-btn" title="Rotate Right">
-                            <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="15 10 20 15 15 20"></polyline>
-                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
-                            </svg>
-                        </button>
-                        <button id="flip-horizontal" class="transform-btn" title="Flip Horizontal">
-                            <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3"></path>
-                                <path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"></path>
-                                <path d="M12 2v20"></path>
-                            </svg>
-                        </button>
-                        <button id="flip-vertical" class="transform-btn" title="Flip Vertical">
-                            <svg class="transform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 8h18"></path>
-                                <path d="M3 16h18"></path>
-                                <path d="M2 12h20"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Multiple Import Options:</strong> Upload your SVG file or paste SVG code directly.</li>
+                    <li><strong>Transform Tools:</strong> Rotate, flip horizontally or vertically, and resize your SVG.</li>
+                    <li><strong>Background Options:</strong> View your SVG against various backgrounds including transparent, solid color, or grid pattern.</li>
+                    <li><strong>Optimization:</strong> Reduce file size with our optimization tool that removes unnecessary attributes and whitespace.</li>
+                    <li><strong>Code Generation:</strong> Convert SVG to ready-to-use code for React, Vue, or Angular components.</li>
+                    <li><strong>Multiple Export Formats:</strong> Download your SVG as SVG file, PNG image, or as a data URI for inline embedding.</li>
+                </ul>
                 
-                <div class="control-group">
-                    <div class="control-label">Dimensions</div>
-                    <div class="dimensions-inputs">
-                        <div class="dimension-input-group">
-                            <label for="width-input">Width</label>
-                            <input type="number" id="width-input" class="dimension-input" min="1">
-                        </div>
-                        <div class="dimension-input-group">
-                            <label for="height-input">Height</label>
-                            <input type="number" id="height-input" class="dimension-input" min="1">
-                        </div>
-                        <div class="aspect-ratio-container">
-                            <input type="checkbox" id="aspect-ratio-lock" checked="">
-                            <label for="aspect-ratio-lock">Lock aspect ratio</label>
-                        </div>
-                    </div>
-                </div>
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Upload your SVG file using drag-and-drop or file browser, or paste SVG code.</li>
+                    <li>Use the controls to transform your SVG - rotate, flip, or resize as needed.</li>
+                    <li>Change the background to see how your SVG looks in different contexts.</li>
+                    <li>Optimize your SVG if you want to reduce file size.</li>
+                    <li>Export your SVG in your desired format or copy code for your framework.</li>
+                </ol>
                 
-                <div class="control-group">
-                    <div class="control-label">Background</div>
-                    <div class="background-controls">
-                        <div class="color-input-group">
-                            <input type="color" id="bg-color-input" class="color-input" value="#ffffff">
-                            <input type="text" id="bg-color-text" class="color-text-input" value="#ffffff">
-                        </div>
-                        <div class="pattern-buttons">
-                            <button id="bg-none" class="pattern-btn" data-pattern="transparent">Transparent</button>
-                            <button id="bg-color" class="pattern-btn" data-pattern="color">Color</button>
-                            <button id="bg-grid" class="pattern-btn" data-pattern="grid">Grid</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="control-group">
-                    <div class="control-label">Actions</div>
-                    <div class="action-buttons">
-                        <button id="optimize-btn" class="action-btn">Optimize SVG</button>
-                        <button id="prettify-btn" class="action-btn">Prettify SVG</button>
-                    </div>
-                </div>
-                
-                <div class="control-group">
-                    <div class="control-label">Export</div>
-                    <div class="export-buttons">
-                        <button id="svg-export" class="export-btn">
-                            <svg class="export-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Export SVG
-                        </button>
-                        <button id="png-export" class="export-btn">
-                            <svg class="export-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Export PNG
-                        </button>
-                        <button id="data-uri-export" class="export-btn">
-                            <svg class="export-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Data URI
-                        </button>
-                    </div>
-                </div>
+                <h3>Privacy First</h3>
+                <p>This tool runs entirely in your browser - your SVG files and code are never uploaded to any server. This ensures your designs and assets remain completely private while still giving you powerful editing capabilities.</p>
+            </div>
+            
+            <div class="privacy-note">
+                <p>Your SVG files never leave your browser. All processing happens locally for maximum privacy.</p>
             </div>
         </div>
     </main>
-
-    
 
     <footer>
         <div class="footer-container">
@@ -318,4 +356,5 @@
     <script src="../../script.js"></script>
     <script src="script.js"></script>
 
- <div id="toast" class="toast"></div></body></html>
+    <div id="toast" class="toast"></div>
+</body></html>

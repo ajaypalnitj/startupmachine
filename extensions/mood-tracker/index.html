@@ -23,7 +23,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-</head>
+<style id="inline-variables">
+            :root {
+                --primary: #4F46E5;
+                --secondary: #EC4899;
+                --text: #111827;
+                --text-light: #6B7280;
+                --bg-light: #F5F7FB;
+                --bg-dark: #F9FAFB;
+                --border-color: #E5E7EB;
+                --border-color-light: rgba(229, 231, 235, 0.5);
+                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            }
+        </style></head>
 <body>
     <header>
         <nav>
@@ -48,14 +61,14 @@
     </header>
     <div class="overlay"></div>
     <main>
-        <section class="hero">
-            <h1>Mood Tracker</h1>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Mood Tracker</h1>
             <p>Track your emotional wellbeing and develop greater self-awareness</p>
         </section>
 
         <section class="extensions">
-            <div class="extension-detail">
-                <div class="extension-icon">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0px auto 1.5rem;">
                     <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="24" cy="24" r="20" stroke="#4F46E5" stroke-width="2"></circle>
                         <circle cx="17" cy="19" r="2" fill="#EC4899"></circle>
@@ -64,44 +77,44 @@
                     </svg>
                 </div>
                 
-                <div class="extension-description">
-                    <h2>About Mood Tracker</h2>
-                    <p>Mood Tracker is a simple yet powerful tool to help you track your emotional wellbeing and develop greater self-awareness. With just a few clicks, you can record your mood, receive personalized recommendations, and gain insights into your emotional patterns over time.</p>
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Mood Tracker</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Mood Tracker is a simple yet powerful tool to help you track your emotional wellbeing and develop greater self-awareness. With just a few clicks, you can record your mood, receive personalized recommendations, and gain insights into your emotional patterns over time.</p>
                     
-                    <p>Whether you're looking to improve your emotional intelligence, manage stress, or simply become more mindful of your feelings, Mood Tracker provides the tools you need in an easy-to-use interface.</p>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Whether you're looking to improve your emotional intelligence, manage stress, or simply become more mindful of your feelings, Mood Tracker provides the tools you need in an easy-to-use interface.</p>
                     
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li><strong>Mood Tracking:</strong> Record your mood with 5 different emoji options (Excited, Happy, Neutral, Tired, Stressed)</li>
-                        <li><strong>Personalized Responses:</strong> Receive encouraging messages based on your current mood</li>
-                        <li><strong>Smart Recommendations:</strong> Get tailored suggestions to enhance or manage your emotional state</li>
-                        <li><strong>Inspirational Quotes:</strong> View mood-specific quotes from thought leaders and philosophers</li>
-                        <li><strong>Mood History:</strong> Track your mood over time with an easy-to-use interface</li>
-                        <li><strong>Visualizations:</strong> See your mood patterns with calendar and distribution charts</li>
-                        <li><strong>Achievement System:</strong> Unlock achievements as you consistently track your moods</li>
-                        <li><strong>Streak Tracking:</strong> Monitor your daily mood tracking streak for motivation</li>
-                        <li><strong>Customizable Themes:</strong> Choose from 6 beautiful themes to personalize your experience</li>
-                        <li><strong>Emoji Style Options:</strong> Select from 4 different emoji style sets to match your preference</li>
-                        <li><strong>Data Management:</strong> Export your mood data and control data retention periods</li>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Key Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Mood Tracking:</strong> Record your mood with 5 different emoji options (Excited, Happy, Neutral, Tired, Stressed)</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Personalized Responses:</strong> Receive encouraging messages based on your current mood</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Smart Recommendations:</strong> Get tailored suggestions to enhance or manage your emotional state</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Inspirational Quotes:</strong> View mood-specific quotes from thought leaders and philosophers</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Mood History:</strong> Track your mood over time with an easy-to-use interface</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Visualizations:</strong> See your mood patterns with calendar and distribution charts</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Achievement System:</strong> Unlock achievements as you consistently track your moods</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Streak Tracking:</strong> Monitor your daily mood tracking streak for motivation</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Customizable Themes:</strong> Choose from 6 beautiful themes to personalize your experience</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Emoji Style Options:</strong> Select from 4 different emoji style sets to match your preference</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Data Management:</strong> Export your mood data and control data retention periods</li>
                     </ul>
                     
-                    <h3>How It Works</h3>
-                    <p>Using Mood Tracker is simple:</p>
-                    <ol>
-                        <li>Click on the Mood Tracker icon in your Chrome toolbar</li>
-                        <li>Select the emoji that best represents your current mood</li>
-                        <li>Read your personalized message, recommendation, and inspirational quote</li>
-                        <li>Track your progress and view insights about your mood patterns over time</li>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">How It Works</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Using Mood Tracker is simple:</p>
+                    <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Click on the Mood Tracker icon in your Chrome toolbar</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Select the emoji that best represents your current mood</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Read your personalized message, recommendation, and inspirational quote</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Track your progress and view insights about your mood patterns over time</li>
                     </ol>
-                    <p>The more consistently you track your mood, the more valuable insights you'll gain about your emotional patterns.</p>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">The more consistently you track your mood, the more valuable insights you'll gain about your emotional patterns.</p>
                     
-                    <h3>Privacy Focused</h3>
-                    <p>Your privacy matters to us. All your mood data is stored locally in your browser - we don't collect or transmit any personal information. You're in complete control of your data.</p>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Privacy Focused</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Your privacy matters to us. All your mood data is stored locally in your browser - we don't collect or transmit any personal information. You're in complete control of your data.</p>
                     
-                    <div class="cta-buttons">
-                        <a href="https://chromewebstore.google.com/detail/mood-tracker/pbdhbibkmagkbnnfkfkkggbombnjmnfl" class="extension-link" target="_blank">Add to Chrome</a>
-                        <a href="privacy.html" class="secondary-link">Privacy Policy</a>
-                        <a href="../../extensions.html" class="secondary-link">View All Extensions</a>
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="https://chromewebstore.google.com/detail/mood-tracker/pbdhbibkmagkbnnfkfkkggbombnjmnfl" class="extension-link" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; color: white; text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: var(--logo-gradient);">Add to Chrome</a>
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
                     </div>
                 </div>
             </div>

@@ -20,9 +20,19 @@ lerna-debug.log*
 node_modules/
 jspm_packages/
 
+# Package files
+package-lock.json
+package.json
+yarn.lock
+.yarn-integrity
+
 # Distribution directories
 dist/
 build/
+out/
+.next/
+.nuxt/
+public/
 
 # Environment variables
 .env
@@ -58,4 +68,7 @@ maintenance-scripts/
 _site/
 
 # Maintenance scripts
-/scripts/ 
+/scripts/
+
+# Website analytics
+analytics.js 

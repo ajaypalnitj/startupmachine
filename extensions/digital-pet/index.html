@@ -23,7 +23,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-</head>
+<style id="inline-variables">
+            :root {
+                --primary: #4F46E5;
+                --secondary: #EC4899;
+                --text: #111827;
+                --text-light: #6B7280;
+                --bg-light: #F5F7FB;
+                --bg-dark: #F9FAFB;
+                --border-color: #E5E7EB;
+                --border-color-light: rgba(229, 231, 235, 0.5);
+                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            }
+        </style></head>
 <body>
     <header>
         <nav>
@@ -48,14 +61,14 @@
     </header>
     <div class="overlay"></div>
     <main>
-        <section class="hero">
-            <h1>Digital Pet</h1>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Digital Pet</h1>
             <p>Your adorable browser companion that makes web browsing more fun!</p>
         </section>
 
         <section class="extensions">
-            <div class="extension-detail">
-                <div class="extension-icon">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0px auto 1.5rem;">
                     <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="24" cy="24" r="16" stroke="#4F46E5" stroke-width="2"></circle>
                         <circle cx="20" cy="20" r="2" fill="#EC4899"></circle>
@@ -65,25 +78,25 @@
                     </svg>
                 </div>
                 
-                <div class="extension-description">
-                    <h2>About Digital Pet</h2>
-                    <p>Tired of browsing alone? Meet your new virtual companion! Digital Pet is a fun and interactive Chrome extension that adds an adorable pet to your browser, making your web experience more enjoyable and engaging.</p>
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Digital Pet</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Tired of browsing alone? Meet your new virtual companion! Digital Pet is a fun and interactive Chrome extension that adds an adorable pet to your browser, making your web experience more enjoyable and engaging.</p>
                     
-                    <h3>Features</h3>
-                    <ul>
-                        <li><strong>🐱 Interactive Pet Companion:</strong> A cute virtual pet that follows you while you browse!</li>
-                        <li><strong>🎮 Pet Care System:</strong> Feed, clean, and take care of your pet to keep them happy.</li>
-                        <li><strong>👔 Customization:</strong> Dress up your pet with various accessories and choose different pet types.</li>
-                        <li><strong>🎵 Sound Effects:</strong> Enjoy cute pet sounds and interactions.</li>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🐱 Interactive Pet Companion:</strong> A cute virtual pet that follows you while you browse!</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🎮 Pet Care System:</strong> Feed, clean, and take care of your pet to keep them happy.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>👔 Customization:</strong> Dress up your pet with various accessories and choose different pet types.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🎵 Sound Effects:</strong> Enjoy cute pet sounds and interactions.</li>
                     </ul>
                     
-                    <h3>How It Works</h3>
-                    <p>Digital Pet seamlessly integrates with your browser, adding a lovable companion to your web experience. Your pet will follow your cursor, react to your browsing activities, and even need care and attention! Feed them, play with them, and watch them grow happier with your interaction.</p>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">How It Works</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Digital Pet seamlessly integrates with your browser, adding a lovable companion to your web experience. Your pet will follow your cursor, react to your browsing activities, and even need care and attention! Feed them, play with them, and watch them grow happier with your interaction.</p>
                     
-                    <div class="cta-buttons">
-                        <a href="#" class="extension-link" target="_blank">Coming Soon</a>
-                        <a href="privacy.html" class="secondary-link">Privacy Policy</a>
-                        <a href="../../extensions.html" class="secondary-link">View All Extensions</a>
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="#" class="secondary-link" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Coming Soon</a>
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
                     </div>
                 </div>
             </div>
