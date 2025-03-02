@@ -10,15 +10,58 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Palette Generator | StartupMachine</title>
-    <meta name="description" content="Generate beautiful color palettes for your design projects with this easy-to-use tool.">
-    <meta name="keywords" content="color palette, color scheme, color generator, web design tools, color tools">
+    <title>Color Palette Generator | Extract Colors from Images | StartupMachine</title>
+    <meta name="description" content="Generate beautiful color palettes for your design projects or extract color schemes from images with our free and easy-to-use tool. Perfect for designers, developers, and marketers.">
+    <meta name="keywords" content="color palette generator, extract colors from image, color scheme creator, web design tools, color tools, color picker, color extraction, design color palette, UI color scheme">
     <meta name="author" content="StartupMachine">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/tools/color-palette-generator/">
+    <meta property="og:title" content="Color Palette Generator | Extract Colors from Images">
+    <meta property="og:description" content="Create stunning color palettes or extract color schemes from any image with our free tool. Perfect for design projects and brand development.">
+    <meta property="og:image" content="https://startupmachine.co/tools/color-palette-generator/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://startupmachine.co/tools/color-palette-generator/">
+    <meta property="twitter:title" content="Color Palette Generator | Extract Colors from Images">
+    <meta property="twitter:description" content="Create stunning color palettes or extract color schemes from any image with our free tool. Perfect for design projects and brand development.">
+    <meta property="twitter:image" content="https://startupmachine.co/tools/color-palette-generator/twitter-card.jpg">
+    
+    <!-- Canonical URL -->
+    <meta rel="canonical" href="https://startupmachine.co/tools/color-palette-generator/">
+    
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Color Palette Generator",
+      "url": "https://startupmachine.co/tools/color-palette-generator/",
+      "description": "Generate beautiful color palettes for your design projects or extract color schemes from images with our free and easy-to-use tool.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "StartupMachine",
+        "url": "https://startupmachine.co"
+      },
+      "keywords": "color palette generator, extract colors from image, color scheme creator, web design tools",
+      "screenshot": "https://startupmachine.co/tools/color-palette-generator/og-image.jpg"
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -45,14 +88,14 @@
     <div class="overlay"></div>
     <main>
         <section class="tool-header">
-            <h1>Color Palette Generator</h1>
-            <p>Generate beautiful color palettes for your design projects with this easy-to-use tool.</p>
+            <h1>Color Palette Generator - Extract Colors from Images</h1>
+            <p>Create stunning color palettes for your design projects or extract unique color schemes directly from your images. Perfect for web design, branding, UI/UX, and graphic design projects. Our advanced color extraction algorithm ensures you get the most representative colors from any image.</p>
         </section>
 
         <section class="tool-container">
             <div class="palette-options">
                 <div class="option-group">
-                    <h3>Generation Method</h3>
+                    <h2>Generation Method</h2>
                     <div class="method-selector">
                         <button id="randomButton" class="method-button active">Random</button>
                         <button id="baseColorButton" class="method-button">From Base Color</button>
@@ -61,7 +104,7 @@
                 </div>
 
                 <div id="baseColorOptions" class="option-group" style="display: none;">
-                    <h3>Base Color</h3>
+                    <h2>Base Color</h2>
                     <div class="color-picker-container">
                         <input type="color" id="baseColorPicker" value="#4F46E5">
                         <input type="text" id="baseColorInput" value="#4F46E5">
@@ -69,7 +112,7 @@
                 </div>
 
                 <div id="imageUploadOptions" class="option-group" style="display: none;">
-                    <h3>Upload Image</h3>
+                    <h2>Upload Image</h2>
                     <div class="image-upload-container">
                         <input type="file" id="imageUpload" accept="image/*">
                         <div id="uploadPreview" class="upload-preview">
@@ -79,7 +122,7 @@
                 </div>
 
                 <div class="option-group">
-                    <h3>Palette Type</h3>
+                    <h2>Palette Type</h2>
                     <div class="palette-type-selector">
                         <button id="analogousButton" class="palette-type-button active">Analogous</button>
                         <button id="monochromaticButton" class="palette-type-button">Monochromatic</button>
@@ -90,7 +133,7 @@
                 </div>
 
                 <div class="option-group">
-                    <h3>Number of Colors</h3>
+                    <h2>Number of Colors</h2>
                     <div class="color-count-selector">
                         <button class="color-count-button" data-count="3">3</button>
                         <button class="color-count-button active" data-count="5">5</button>
@@ -153,6 +196,41 @@
         </section>
     </main>
 
+    <section class="seo-content">
+        <div class="container">
+            <h2>Why Use Our Color Palette Generator?</h2>
+            <p>Our advanced color palette generator is designed for designers, developers, and creative professionals who need accurate and visually appealing color schemes. Whether you're designing a website, creating a logo, or developing a brand identity, our tool provides powerful features to help you achieve the perfect color harmony.</p>
+            
+            <div class="seo-features">
+                <div class="seo-feature">
+                    <h3>Extract Colors from Images</h3>
+                    <p>Our image color extraction algorithm analyzes your uploaded images to identify dominant and complementary colors. Unlike other tools that simply extract the most common colors, our system ensures the palette is visually balanced and representative of the image's true character.</p>
+                </div>
+                
+                <div class="seo-feature">
+                    <h3>Multiple Color Harmony Options</h3>
+                    <p>Create professional color schemes using color theory principles like analogous, monochromatic, triadic, complementary, and split-complementary relationships. These scientifically proven color relationships ensure your designs maintain visual harmony.</p>
+                </div>
+                
+                <div class="seo-feature">
+                    <h3>Easy Export Options</h3>
+                    <p>Export your palette in various formats including CSS variables, SCSS variables, and JSON. This makes it easy to implement your color scheme in your web projects, design systems, or development frameworks.</p>
+                </div>
+            </div>
+            
+            <h2>Applications for Color Palettes</h2>
+            <ul class="seo-applications">
+                <li><strong>Web Design</strong>: Create consistent and accessible color schemes for websites.</li>
+                <li><strong>Brand Identity</strong>: Develop brand color palettes that convey your brand's personality.</li>
+                <li><strong>UI/UX Design</strong>: Design user interfaces with harmonious color relationships.</li>
+                <li><strong>Print Design</strong>: Prepare color palettes that translate well to printed materials.</li>
+                <li><strong>Social Media</strong>: Create visually cohesive social media content with consistent colors.</li>
+                <li><strong>Illustration</strong>: Find complementary colors for digital or traditional artwork.</li>
+            </ul>
+            
+            <p>Whether you're a professional designer or just starting out, our color palette generator helps you create beautiful, harmonious color schemes for any project. Try our image extraction feature to discover unique color palettes from your favorite photos or artwork.</p>
+        </div>
+    </section>
     
     <footer>
         <div class="footer-container">
