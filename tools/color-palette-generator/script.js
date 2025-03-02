@@ -372,8 +372,8 @@ function extractColorsFromImage() {
         const ctx = canvas.getContext('2d');
         
         img.onload = function() {
-            // Set canvas size to a manageable size regardless of image dimensions
-            const maxDimension = 100; // Small size for faster processing
+            // Use a higher resolution for better color sampling
+            const maxDimension = 300; // Increased from 100 for better sampling
             const scale = Math.min(maxDimension / img.width, maxDimension / img.height);
             
             canvas.width = img.width * scale;
@@ -388,7 +388,7 @@ function extractColorsFromImage() {
             // Initialize an object to store pixel counts by color
             const colorCounts = {};
             const pixelCount = canvas.width * canvas.height;
-            const pixelStep = Math.max(1, Math.floor(pixelCount / 1000)); // Sample up to 1000 pixels
+            const pixelStep = Math.max(1, Math.floor(pixelCount / 5000)); // Sample up to 5000 pixels (increased from 1000)
             
             // Sample pixels
             for (let i = 0; i < pixelCount; i += pixelStep) {
@@ -400,10 +400,10 @@ function extractColorsFromImage() {
                 // Skip transparent pixels
                 if (imageData[offset + 3] < 128) continue;
                 
-                // Quantize colors to reduce variations (optional)
-                const quantizedR = Math.round(r / 16) * 16;
-                const quantizedG = Math.round(g / 16) * 16;
-                const quantizedB = Math.round(b / 16) * 16;
+                // Use less aggressive quantization (8 instead of 16)
+                const quantizedR = Math.round(r / 8) * 8;
+                const quantizedG = Math.round(g / 8) * 8;
+                const quantizedB = Math.round(b / 8) * 8;
                 
                 const hex = rgbToHex(quantizedR, quantizedG, quantizedB);
                 
@@ -420,61 +420,108 @@ function extractColorsFromImage() {
                 .sort((a, b) => b[1] - a[1])
                 .map(entry => entry[0]);
             
-            // Use the most common color as the base
-            if (sortedColors.length > 0) {
-                paletteState.baseColor = sortedColors[0];
+            // Filter out very similar colors to ensure diversity
+            // This helps avoid having multiple shades of the same color
+            const distinctColors = [];
+            const hslValues = {};
+            
+            // Convert to HSL for better similarity comparison
+            for (const color of sortedColors) {
+                hslValues[color] = hexToHSL(color);
+            }
+            
+            // Filter for distinct colors
+            for (const color of sortedColors) {
+                // If we have enough distinct colors, break
+                if (distinctColors.length >= paletteState.colorCount) break;
                 
-                // Create palette based on the palette type
-                let colors;
+                const colorHSL = hslValues[color];
                 
-                // If we have enough colors, just use the most common ones
-                if (sortedColors.length >= paletteState.colorCount && paletteState.paletteType !== 'monochromatic') {
-                    colors = sortedColors.slice(0, paletteState.colorCount);
-                } else {
-                    // Otherwise, generate a palette based on the most common color
-                    const baseHSL = hexToHSL(paletteState.baseColor);
-                    const count = paletteState.colorCount;
+                // Check if this color is distinct from those we've already selected
+                let isDistinct = true;
+                for (const selectedColor of distinctColors) {
+                    const selectedHSL = hslValues[selectedColor];
                     
-                    switch (paletteState.paletteType) {
-                        case 'analogous':
-                            colors = [];
-                            for (let i = 0; i < count; i++) {
-                                const hue = (baseHSL.h + (i - Math.floor(count / 2)) * 30) % 360;
-                                colors.push(hslToHex(hue, baseHSL.s, baseHSL.l));
-                            }
-                            break;
-                            
-                        case 'monochromatic':
-                            colors = [];
-                            for (let i = 0; i < count; i++) {
-                                const lightness = 30 + (i * (60 / (count - 1)));
-                                colors.push(hslToHex(baseHSL.h, baseHSL.s, lightness));
-                            }
-                            break;
-                            
-                        default:
-                            // For other types, just use the top colors and fill in if needed
-                            colors = sortedColors.slice(0, count);
-                            
-                            // If we don't have enough colors, fill with variations of the base color
-                            while (colors.length < count) {
-                                const colorIndex = colors.length % sortedColors.length;
-                                const baseColor = sortedColors[colorIndex];
-                                const colorHSL = hexToHSL(baseColor);
-                                
-                                // Adjust lightness to create variation
-                                const lightness = colorHSL.l + (colors.length * 10 - 20);
-                                colors.push(hslToHex(colorHSL.h, colorHSL.s, lightness));
-                            }
-                            break;
+                    // Calculate distance in HSL space
+                    const hueDiff = Math.abs(colorHSL.h - selectedHSL.h);
+                    const hueDist = Math.min(hueDiff, 360 - hueDiff) / 180.0;
+                    const satDist = Math.abs(colorHSL.s - selectedHSL.s) / 100.0;
+                    const lightDist = Math.abs(colorHSL.l - selectedHSL.l) / 100.0;
+                    
+                    // Weight hue more than saturation and lightness
+                    const distance = Math.sqrt(hueDist * hueDist * 5 + satDist * satDist + lightDist * lightDist);
+                    
+                    // If it's too similar to an existing color, mark as not distinct
+                    if (distance < 0.15) {  // Threshold for considering colors distinct
+                        isDistinct = false;
+                        break;
                     }
                 }
                 
-                resolve(colors);
-            } else {
-                // Fallback to base color method if no colors found
-                resolve(generatePaletteFromBaseColor());
+                if (isDistinct) {
+                    distinctColors.push(color);
+                }
             }
+            
+            // If we couldn't find enough distinct colors, add the most frequent ones
+            while (distinctColors.length < paletteState.colorCount && distinctColors.length < sortedColors.length) {
+                const nextColor = sortedColors.find(color => !distinctColors.includes(color));
+                if (nextColor) {
+                    distinctColors.push(nextColor);
+                } else {
+                    break;
+                }
+            }
+            
+            // Based on palette type, we might still want to do special processing
+            let colors = distinctColors;
+            
+            // If we don't have enough colors or specific palette types are requested
+            if (distinctColors.length < paletteState.colorCount || 
+                ['monochromatic', 'analogous', 'complementary', 'triadic', 'splitComplementary'].includes(paletteState.paletteType)) {
+                
+                // Use the most common color as the base
+                paletteState.baseColor = distinctColors[0] || sortedColors[0] || '#4F46E5';
+                
+                // Generate palette based on the selected palette type
+                switch (paletteState.paletteType) {
+                    case 'monochromatic':
+                        // For monochromatic, we always generate from the base color
+                        colors = generatePaletteFromBaseColor();
+                        break;
+                        
+                    case 'analogous':
+                    case 'complementary':
+                    case 'triadic':
+                    case 'splitComplementary':
+                        // If we have specific harmony types and not enough colors
+                        if (distinctColors.length < paletteState.colorCount) {
+                            colors = generatePaletteFromBaseColor();
+                        }
+                        break;
+                        
+                    default:
+                        // If we don't have enough colors for other types, supplement with variations
+                        if (distinctColors.length < paletteState.colorCount) {
+                            // Fill with variations of existing colors
+                            const baseHSL = hexToHSL(paletteState.baseColor);
+                            while (colors.length < paletteState.colorCount) {
+                                const index = colors.length % distinctColors.length;
+                                const variationHSL = hexToHSL(distinctColors[index]);
+                                
+                                // Adjust lightness to create variation
+                                variationHSL.l = Math.max(30, Math.min(85, variationHSL.l + (colors.length % 2 === 0 ? 15 : -15)));
+                                colors.push(hslToHex(variationHSL.h, variationHSL.s, variationHSL.l));
+                            }
+                        }
+                        break;
+                }
+            }
+            
+            // Ensure we have exactly the right number of colors
+            colors = colors.slice(0, paletteState.colorCount);
+            
+            resolve(colors);
         };
         
         img.src = paletteState.image;
