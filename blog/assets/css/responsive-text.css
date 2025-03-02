@@ -1,0 +1,426 @@
+/* Responsive Text Styling for Blog Posts
+   Ensures all text content renders properly across all device sizes
+   without breaking existing layouts
+*/
+
+/* Base text settings */
+* {
+    box-sizing: border-box;
+}
+
+/* Global text wrapping fix - gentle approach */
+body {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+}
+
+/* Text container settings */
+.post-content {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Ensure all content inside post stays within boundaries */
+.post-content * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Introduction paragraphs specific fix */
+.introduction {
+    max-width: 100%;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+    white-space: normal;
+}
+
+.introduction p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+}
+
+/* SUPER-ENHANCED FIX FOR LIST ITEMS - Top priority issue */
+.post-content li, 
+.content-highlight-box li,
+ul li, 
+ol li,
+li *,
+.info-box li,
+.note-box li {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    display: list-item !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    margin-right: 0 !important;
+    width: auto !important;
+}
+
+/* Ensure list item content is visible and properly formatted */
+li p, li span, li strong, li em, li code, li a {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    display: inline !important;
+    width: auto !important;
+    text-align: left !important;
+}
+
+/* Fix for list margins and padding */
+.post-content ul, 
+.post-content ol,
+.content-highlight-box ul,
+.content-highlight-box ol,
+.info-box ul,
+.info-box ol {
+    padding-left: 2rem !important;
+    margin-left: 0 !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Fix for colored boxes that contain lists */
+.content-highlight-box,
+.info-box,
+.note-box {
+    overflow: visible !important;
+    max-width: 100% !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Fix specifically for the blue info box shown in screenshots */
+.info-box {
+    padding: 1.25rem !important;
+    margin: 1.5rem 0 !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+/* TARGETED FIX FOR CONCLUSION SECTION - Enhanced */
+h2#conclusion, 
+h2#conclusion + p,
+h2[id="conclusion"],
+h2[id="conclusion"] + p,
+h2[id="conclusion"] ~ p,
+.conclusion,
+.conclusion p,
+h2:contains("Conclusion"), 
+h2:contains("Conclusion") + p,
+h2:contains("Conclusion") ~ p {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    width: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    padding-right: 0 !important;
+    text-overflow: clip !important;
+}
+
+/* TARGETED FIX FOR CTA BOX - Enhanced with larger font */
+.cta-box,
+.cta-box h3,
+.cta-box p,
+.cta-box a,
+.cta-box .button,
+.cta-box span,
+.cta-box div {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    width: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    padding-right: 0 !important;
+    text-overflow: clip !important;
+}
+
+.cta-box .button {
+    display: inline-block !important;
+    margin: 1rem auto !important;
+}
+
+/* ENHANCED FIX FOR INFO BOXES - Second priority issue */
+.info-box,
+.content-highlight-box,
+.note-box,
+.info-box p,
+.content-highlight-box p,
+.note-box p,
+.info-box h4,
+.content-highlight-box h4,
+.note-box h4 {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    width: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    padding-right: 0 !important;
+    text-overflow: clip !important;
+}
+
+/* Ensure any small text elements don't get cut off */
+small, 
+.small, 
+.caption, 
+.image-caption, 
+figcaption, 
+.post-meta,
+.post-category,
+.post-reading-time {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    white-space: normal !important;
+}
+
+/* General text responsiveness - targeted to post content only */
+.post-content p, 
+.post-content div {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* Responsive headings */
+@media (max-width: 768px) {
+    .post-header h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        line-height: 1.3;
+        overflow-wrap: break-word;
+    }
+    
+    .post-content h2 {
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
+        line-height: 1.4;
+        overflow-wrap: break-word;
+    }
+    
+    .post-content h3 {
+        font-size: clamp(1.25rem, 2.5vw, 1.4rem);
+        line-height: 1.4;
+        overflow-wrap: break-word;
+    }
+    
+    .post-content h4 {
+        font-size: clamp(1.1rem, 2vw, 1.2rem);
+        line-height: 1.5;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Code blocks and pre-formatted text */
+.code-example,
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+/* Tables responsiveness */
+.comparison-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Images and media */
+.tool-screenshot,
+.post-hero-image,
+.featured-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 992px) {
+    .post-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .post-header {
+        padding: 100px 0 15px;
+    }
+    
+    .tool-screenshot-container {
+        max-width: 100%;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Fix for long URLs and code */
+    .post-content a {
+        word-break: break-word;
+        max-width: 100%;
+    }
+    
+    /* Extra aggressive fix for conclusion and CTA on mobile */
+    h2#conclusion, 
+    h2#conclusion + p,
+    h2[id="conclusion"],
+    h2[id="conclusion"] + p,
+    h2[id="conclusion"] ~ p,
+    .conclusion,
+    .conclusion p,
+    h2:contains("Conclusion"), 
+    h2:contains("Conclusion") + p,
+    h2:contains("Conclusion") ~ p,
+    .cta-box,
+    .cta-box h3,
+    .cta-box p,
+    .cta-box a,
+    .cta-box .button,
+    .cta-box span,
+    .cta-box div {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+        width: auto !important;
+        overflow: visible !important;
+        display: block !important;
+        text-overflow: clip !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Enhanced mobile fix for list items */
+    .post-content li, 
+    .content-highlight-box li,
+    ul li, 
+    ol li, 
+    li *,
+    .info-box li,
+    .note-box li {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+    
+    /* Fix for info boxes on mobile */
+    .info-box,
+    .content-highlight-box,
+    .note-box {
+        padding: 1rem !important;
+        margin: 1.5rem 0 !important;
+        width: 100% !important;
+    }
+    
+    .cta-box {
+        padding: 1rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .cta-box .button {
+        display: inline-block !important;
+        margin: 1rem auto !important;
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .post-categories {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .cta-box {
+        padding: 15px;
+    }
+    
+    /* Better list appearance on small screens */
+    .post-content ul, 
+    .post-content ol {
+        padding-left: 1rem;
+    }
+}
+
+/* Targeted fixes for text overflow elements */
+.post-content, 
+.introduction, 
+.introduction p,
+.post-content p,
+.post-content div,
+.post-content ul,
+.post-content ol,
+.info-box,
+.info-box p,
+.note-box,
+.note-box p,
+.image-caption,
+.screenshot-caption,
+figcaption,
+.small,
+small,
+.cta-box,
+.cta-box h3,
+.cta-box p,
+.step-container,
+.step-container p,
+.content-highlight-box,
+.content-highlight-box p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: visible;
+} 
