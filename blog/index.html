@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartupMachine Blog - Insights for Startups and Developers</title>
+    <meta name="description" content="Discover insightful articles on development tools, browser extensions, and resources for startups and makers.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons - Updated to latest version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Swiper JS for Carousels -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../extensions.html">Extensions</a>
+                <a href="../tools.html">Tools</a>
+                <a href="index.html" class="active">Blog</a>
+                <a href="../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <div class="overlay"></div>
+
+    <main>
+        <!-- Combined Header & Category Filters -->
+        <section class="compact-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1>Blog</h1>
+                    <p class="blog-tagline">Insights and tips for developers and startups</p>
+                    <div class="category-filters">
+                        <a href="#all" class="category-pill active" data-category="all">
+                            <span>All</span>
+                        </a>
+                        <a href="#design" class="category-pill" data-category="design">
+                            <i class="fas fa-palette"></i>
+                            <span>Design</span>
+                        </a>
+                        <a href="#development" class="category-pill" data-category="development">
+                            <i class="fas fa-code"></i>
+                            <span>Development</span>
+                        </a>
+                        <a href="#tools" class="category-pill" data-category="tools">
+                            <i class="fas fa-tools"></i>
+                            <span>Tools</span>
+                        </a>
+                        <a href="#extensions" class="category-pill" data-category="extensions">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Extensions</span>
+                        </a>
+                        <a href="#tutorials" class="category-pill" data-category="tutorials">
+                            <i class="fas fa-book"></i>
+                            <span>Tutorials</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Blog Content -->
+        <section class="blog-content-section">
+            <div class="container">
+                <div class="blog-layout">
+                    <!-- Main Blog Posts Column -->
+                    <div class="blog-main">
+                        <!-- All Posts Section -->
+                        <section class="all-posts-section">
+                            <div class="all-posts-header">
+                                <h2>All Articles</h2>
+                            </div>
+                            <div class="posts-grid">
+                                <!-- Chrome Extension Icon Generator Post -->
+                                <article class="post-card" data-categories="design, tools, development">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_initial.png" alt="Chrome Extension Icon Generator tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>10 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#design" class="post-category design">Design</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#development" class="post-category development">Development</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/creating-professional-icons-for-browser-extensions.html">
+                                            <h2>Creating Professional Icons for Browser Extensions: A Complete Guide</h2>
+                                        </a>
+                                        <p>Learn how to design and generate professional icons for Chrome extensions with our free tool. Master multiple sizes and formats.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">May 15, 2025</div>
+                                        </div>
+                                        <a href="posts/creating-professional-icons-for-browser-extensions.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <article class="post-card" data-categories="design,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/color-palette-generator_initial.png" alt="Color palette extraction tool interface showing a photograph with extracted color swatches" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>8 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#design" class="post-category design">Design</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/extracting-colors-from-photos.html">
+                                            <h2>How to Extract and Use a Color Palette from Your Favorite Photos</h2>
+                                        </a>
+                                        <p>Learn how to extract beautiful and harmonious color palettes from any image using our palette generator tool. Perfect for web design, branding, and creative projects.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">February 15, 2025</div>
+                                        </div>
+                                        <a href="posts/extracting-colors-from-photos.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/base64-converter/base64-converter_initial.png" alt="Base64 Encoder/Decoder tool interface showing the text input area and encoding options" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>10 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/converting-images-to-base64.html">
+                                            <h2>Converting Images to Base64: A Complete Guide for Web Developers</h2>
+                                        </a>
+                                        <p>Learn how to convert images to Base64 encoding for embedding directly into your web projects. Discover the benefits, best practices, and performance considerations.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 1, 2025</div>
+                                        </div>
+                                        <a href="posts/converting-images-to-base64.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- Image Compressor Post -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/image-compressor/image-compressor_initial.png" alt="Image compressor tool interface with drag and drop area" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>12 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/optimizing-images-for-web-performance-a-step-by-step-compression-guide.html">
+                                            <h2>Optimizing Images for Web Performance: A Step-by-Step Compression Guide</h2>
+                                        </a>
+                                        <p>Learn how to optimize images for faster website loading times using compression techniques that maintain visual quality while reducing file sizes.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 2, 2025</div>
+                                        </div>
+                                        <a href="posts/optimizing-images-for-web-performance-a-step-by-step-compression-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- SVG Optimizer Tutorial Post -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/svg-optimizer/svg-optimizer_initial.png" alt="SVG Optimizer tool interface showing optimization options" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>9 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/how-to-optimize-svg-files-for-better-web-performance.html">
+                                            <h2>How to Optimize SVG Files for Better Web Performance</h2>
+                                        </a>
+                                        <p>Learn how to reduce SVG file sizes and optimize vector graphics for better web performance with our step-by-step guide using the SVG Optimizer tool.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">February 27, 2025</div>
+                                        </div>
+                                        <a href="posts/how-to-optimize-svg-files-for-better-web-performance.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- HTML Entity Encoding and Decoding Guide -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/html-entity-converter/html-entity-converter_initial.png" alt="HTML Entity Encoder/Decoder tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>8 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/html-entity-encoding-and-decoding-guide.html">
+                                            <h2>HTML Entity Encoding and Decoding: A Complete Guide</h2>
+                                        </a>
+                                        <p>Learn how to properly encode and decode HTML entities to ensure your web content displays correctly and securely across all browsers.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 10, 2025</div>
+                                        </div>
+                                        <a href="posts/html-entity-encoding-and-decoding-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- Text Case Converter Guide -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/text-case-converter/text-case-converter_initial.png" alt="Text Case Converter tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>7 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/how-to-use-text-case-converter-formatting-guide.html">
+                                            <h2>Text Case Converter Guide for Efficient Formatting</h2>
+                                        </a>
+                                        <p>Discover how to quickly transform text between different cases including camelCase, snake_case, PascalCase, and more for cleaner coding and content formatting.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 15, 2025</div>
+                                        </div>
+                                        <a href="posts/how-to-use-text-case-converter-formatting-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- CSS Gradient Generator Guide -->
+                                <article class="post-card" data-categories="design,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/css-gradient-generator/css-gradient-generator_initial-interface.png" alt="CSS Gradient Generator tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>11 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#design" class="post-category design">Design</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/creating-beautiful-css-gradients-comprehensive-guide.html">
+                                            <h2>Creating Beautiful CSS Gradients: A Comprehensive Guide</h2>
+                                        </a>
+                                        <p>Master the art of creating stunning CSS gradients for your web projects with our step-by-step guide and free gradient generator tool.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">April 2, 2025</div>
+                                        </div>
+                                        <a href="posts/creating-beautiful-css-gradients-comprehensive-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- JSON Formatter Guide -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/json-formatter/json-formatter_initial.png" alt="JSON Formatter and Validator tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>9 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/json-formatter-validator-guide.html">
+                                            <h2>JSON Formatting and Validation: Best Practices for Developers</h2>
+                                        </a>
+                                        <p>Learn how to properly format, validate, and debug JSON data to ensure your API integrations and data handling are error-free.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">April 10, 2025</div>
+                                        </div>
+                                        <a href="posts/json-formatter-validator-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <!-- URL Encoder/Decoder Guide -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/html-entity-converter/html-entity-converter_initial.png" alt="HTML Entity Converter tool interface used for URL encoding" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>7 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/html-entity-encoding-and-decoding-guide.html">
+                                            <h2>Understanding URL Encoding and Decoding for Web Development</h2>
+                                        </a>
+                                        <p>Explore the essentials of URL encoding and decoding to handle special characters properly in web applications and APIs.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">April 18, 2025</div>
+                                        </div>
+                                        <a href="posts/html-entity-encoding-and-decoding-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <!-- Password Generator Guide -->
+                                <article class="post-card" data-categories="security,tools,development">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/password-generator/password-generator_initial.png" alt="Password Generator tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>9 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#security" class="post-category security">Security</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#development" class="post-category development">Development</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/creating-perfect-favicons-for-your-website.html">
+                                            <h2>Creating Secure Passwords: A Comprehensive Guide for Digital Safety</h2>
+                                        </a>
+                                        <p>Learn how to generate strong, secure passwords that protect your accounts while still being manageable for daily use.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 25, 2025</div>
+                                        </div>
+                                        <a href="posts/creating-perfect-favicons-for-your-website.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <!-- QR Code Generator Guide -->
+                                <article class="post-card" data-categories="marketing,tools,development">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/password-generator/password-generator_initial.png" alt="Password Generator tool interface used for QR Code Guide" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>8 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#marketing" class="post-category marketing">Marketing</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#development" class="post-category development">Development</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/creating-perfect-favicons-for-your-website.html">
+                                            <h2>QR Codes for Business and Marketing: Implementation Guide</h2>
+                                        </a>
+                                        <p>Discover how to create and implement QR codes effectively for marketing campaigns, business cards, product packaging, and more.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">April 5, 2025</div>
+                                        </div>
+                                        <a href="posts/creating-perfect-favicons-for-your-website.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <!-- Image Format Converter Guide -->
+                                <article class="post-card" data-categories="development,tools,tutorials">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/image-format-converter/image-format-converter_initial.png" alt="Image Format Converter tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>10 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#development" class="post-category development">Development</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#tutorials" class="post-category tutorials">Tutorials</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/converting-between-image-formats-complete-guide.html">
+                                            <h2>Choosing the Right Image Format for Your Website: JPEG vs PNG vs WebP</h2>
+                                        </a>
+                                        <p>Learn how to select the optimal image format for different web scenarios to balance quality and performance for your website.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 20, 2025</div>
+                                        </div>
+                                        <a href="posts/converting-between-image-formats-complete-guide.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <!-- Markdown Editor Guide -->
+                                <article class="post-card" data-categories="writing,tools,development">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/markdown-editor/markdown-editor_initial.png" alt="Markdown Editor tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>11 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#writing" class="post-category writing">Writing</a>
+                                        <a href="#tools" class="post-category tools">Tools</a>
+                                        <a href="#development" class="post-category development">Development</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/markdown-editor-guide-for-efficient-writing.html">
+                                            <h2>Mastering Markdown for Documentation and Content Creation</h2>
+                                        </a>
+                                        <p>Learn how to use Markdown syntax efficiently for creating well-formatted documentation, README files, and web content.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">April 12, 2025</div>
+                                        </div>
+                                        <a href="posts/markdown-editor-guide-for-efficient-writing.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                                
+                                <!-- Meta Tags Generator Guide -->
+                                <article class="post-card" data-categories="seo,marketing,development">
+                                    <div class="post-card-image">
+                                        <img src="assets/images/posts/tools/meta-tags-generator/meta-tags-generator_initial.png" alt="Meta Tags Generator tool interface" loading="lazy">
+                                        <div class="post-reading-time">
+                                            <i class="far fa-clock"></i>
+                                            <span>9 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-categories">
+                                        <a href="#seo" class="post-category seo">SEO</a>
+                                        <a href="#marketing" class="post-category marketing">Marketing</a>
+                                        <a href="#development" class="post-category development">Development</a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="posts/optimizing-meta-tags-for-better-seo-and-social-sharing.html">
+                                            <h2>Optimizing Meta Tags for Better SEO and Social Sharing</h2>
+                                        </a>
+                                        <p>Learn how to create effective meta tags that improve your website's search engine visibility and create attractive social media previews.</p>
+                                        <div class="post-meta">
+                                            <div class="post-author">
+                                                <span>SM Team</span>
+                                            </div>
+                                            <div class="post-date">March 18, 2025</div>
+                                        </div>
+                                        <a href="posts/optimizing-meta-tags-for-better-seo-and-social-sharing.html" class="read-more">
+                                            Read Article <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                        
+                        <!-- Load More Posts Button -->
+                        <div class="load-more-container">
+                            <button class="load-more-btn disabled">
+                                <span>All Articles Loaded</span>
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <aside class="blog-sidebar">
+                        <!-- Popular Articles -->
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Popular Articles</h3>
+                            <div class="popular-posts">
+                                <a href="posts/extracting-colors-from-photos.html" class="popular-post">
+                                    <div class="popular-post-image">
+                                        <img src="assets/images/posts/tools/color-palette-generator_initial.png" alt="Extracting Color Palettes">
+                                    </div>
+                                    <div class="popular-post-content">
+                                        <h4>How to Extract and Use a Color Palette from Photos</h4>
+                                        <div class="mini-meta">
+                                            <span><i class="far fa-eye"></i> 1.2K views</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="posts/creating-professional-icons-for-browser-extensions.html" class="popular-post">
+                                    <div class="popular-post-image">
+                                        <img src="assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_initial.png" alt="Chrome Extension Icons">
+                                    </div>
+                                    <div class="popular-post-content">
+                                        <h4>Creating Professional Icons for Browser Extensions</h4>
+                                        <div class="mini-meta">
+                                            <span><i class="far fa-eye"></i> 985 views</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="posts/optimizing-images-for-web-performance-a-step-by-step-compression-guide.html" class="popular-post">
+                                    <div class="popular-post-image">
+                                        <img src="assets/images/posts/tools/image-compressor/image-compressor_initial.png" alt="Image Compression">
+                                    </div>
+                                    <div class="popular-post-content">
+                                        <h4>Optimizing Images for Web Performance</h4>
+                                        <div class="mini-meta">
+                                            <span><i class="far fa-eye"></i> 764 views</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Topics -->
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Topics</h3>
+                            <div class="topic-cloud">
+                                <a href="#design" class="topic-tag" data-count="12">Design</a>
+                                <a href="#development" class="topic-tag" data-count="15">Development</a>
+                                <a href="#tools" class="topic-tag" data-count="15">Tools</a>
+                                <a href="#extensions" class="topic-tag" data-count="6">Extensions</a>
+                                <a href="#tutorials" class="topic-tag" data-count="10">Tutorials</a>
+                                <a href="#security" class="topic-tag" data-count="5">Security</a>
+                                <a href="#marketing" class="topic-tag" data-count="4">Marketing</a>
+                                <a href="#writing" class="topic-tag" data-count="3">Writing</a>
+                                <a href="#ux" class="topic-tag" data-count="7">UX Design</a>
+                                <a href="#performance" class="topic-tag" data-count="6">Performance</a>
+                                <a href="#accessibility" class="topic-tag" data-count="3">Accessibility</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../index.html">
+                        <img src="../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Tools</a></li>
+                    <li><a href="../extensions.html">Extensions</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="../script.js"></script>
+    <script src="assets/js/blog.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const categoryButtons = document.querySelectorAll('.category-pill');
+            const postCards = document.querySelectorAll('.post-card');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const category = this.dataset.category;
+                    
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter posts
+                    postCards.forEach(card => {
+                        if (category === 'all' || card.dataset.categories.includes(category)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // All posts are now visible by default, so the Load More button is disabled
+            const loadMoreBtn = document.querySelector('.load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.disabled = true;
+                loadMoreBtn.classList.add('disabled');
+            }
+        });
+    </script>
+</body>
+</html> 

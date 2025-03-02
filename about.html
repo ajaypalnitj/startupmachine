@@ -25,6 +25,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style id="inline-variables">
+            :root {
+                --primary: #4F46E5;
+                --secondary: #EC4899;
+                --text: #111827;
+                --text-light: #6B7280;
+                --bg-light: #F5F7FB;
+                --bg-dark: #F9FAFB;
+                --border-color: #E5E7EB;
+                --border-color-light: rgba(229, 231, 235, 0.5);
+                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            }
+        </style>
 </head>
 <body>
     <header>
@@ -39,6 +53,7 @@
                 <a href="index.html">Home</a>
                 <a href="extensions.html">Extensions</a>
                 <a href="tools.html">Tools</a>
+                <a href="blog/index.html">Blog</a>
                 <a href="about.html" class="active">About</a>
             </div>
         </nav>
@@ -51,84 +66,120 @@
     <div class="overlay"></div>
 
     <main>
-        <section class="hero">
-            <h1>About StartupMachine</h1>
-            <p>We're passionate about creating tools that simplify complex tasks and enhance digital productivity. Our mission is to make technology work better for everyone.</p>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">About StartupMachine</h1>
+            <p>We build powerful digital tools that enhance productivity and simplify complex tasks. Our mission is to create technology that works intelligently for you, saving time and reducing friction in your digital workflows.</p>
         </section>
 
-        <section class="about-section">
-            <h2>Our Story</h2>
-            <div class="about-content">
-                <p>StartupMachine was founded in 2020 by a team of developers and designers who were frustrated with the limitations of existing productivity tools. We set out to create elegant, efficient solutions that would help people work smarter, not harder.</p>
+        <section class="about-section" style="max-width: 1000px; margin: 0 auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+            <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">What We Do</h2>
+            <div class="about-content" style="line-height: 1.6;">
+                <p style="margin-bottom: 1rem;">StartupMachine specializes in creating browser extensions and web tools that solve real problems for professionals, students, and creatives. Our products are designed with a focus on user experience, performance, and reliability.</p>
                 
-                <p>What began as a small collection of Chrome extensions has grown into a comprehensive suite of digital tools designed to streamline workflows and boost productivity across various platforms.</p>
+                <p style="margin-bottom: 1rem;">We develop intelligent Chrome extensions that enhance your browsing experience, automate repetitive tasks, and add powerful features to the websites you use every day. Our web-based tools provide specialized solutions for design, productivity, and content creation needs.</p>
                 
-                <p>Today, our tools are used by professionals, students, and creatives around the world who share our passion for efficiency and elegant design.</p>
+                <p style="margin-bottom: 1rem;">Every product we build is crafted with meticulous attention to detail, ensuring you get tools that are not only powerful but also intuitive and enjoyable to use.</p>
             </div>
         </section>
 
-        <section class="values-section">
-            <h2>Our Values</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-icon">
+        <section class="product-section" style="max-width: 1000px; margin: 2rem auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+            <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1.5rem;">Our Solutions</h2>
+            <div class="solutions-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="solution-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="solution-icon" style="margin-bottom: 1rem;">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#4F46E5" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3>Innovation</h3>
-                    <p>We're constantly pushing boundaries to create cutting-edge solutions that solve real problems in new and better ways.</p>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">Chrome Extensions</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Our browser extensions add powerful capabilities to your everyday browsing, from citation tools for researchers to productivity boosters for professionals.</p>
                 </div>
                 
-                <div class="product-card">
-                    <div class="product-icon">
+                <div class="solution-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="solution-icon" style="margin-bottom: 1rem;">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="16" cy="16" r="12" stroke="#4F46E5" stroke-width="2"/>
                             <path d="M16 10V22M10 16H22" stroke="#EC4899" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3>Simplicity</h3>
-                    <p>We believe in making complex things beautifully simple. Our tools are powerful yet intuitive, requiring minimal learning curve.</p>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">Web Tools</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Our specialized web applications solve specific needs for designers and developers, from SVG optimization to gradient generation and color palettes.</p>
                 </div>
                 
-                <div class="product-card">
-                    <div class="product-icon">
+                <div class="solution-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="solution-icon" style="margin-bottom: 1rem;">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M26 6H6V26H26V6Z" stroke="#4F46E5" stroke-width="2"/>
                             <path d="M10 16L14 20L22 12" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3>Reliability</h3>
-                    <p>We're committed to building tools you can depend on. Quality, security, and performance are at the core of everything we create.</p>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">Workflow Automation</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Our automation tools help you streamline repetitive tasks, integrate different platforms, and create efficient workflows that save you time.</p>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-icon">
+            </div>
+        </section>
+
+        <section class="benefits-section" style="max-width: 1000px; margin: 2rem auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+            <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1.5rem;">Why Choose Our Tools</h2>
+            <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="benefit-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="benefit-icon" style="margin-bottom: 1rem;">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="16" cy="16" r="12" stroke="#4F46E5" stroke-width="2"/>
-                            <path d="M12 16C12 13.8 13.8 12 16 12C18.2 12 20 13.8 20 16C20 18.2 18.2 20 16 20" stroke="#EC4899" stroke-width="2"/>
-                            <circle cx="16" cy="22" r="1" fill="#EC4899"/>
+                            <path d="M16 4C18.3734 4 20.6935 4.70379 22.6668 6.02236C24.6402 7.34094 26.1783 9.21508 27.0866 11.4078C27.9948 13.6005 28.2325 16.0133 27.7694 18.3411C27.3064 20.6689 26.1635 22.8071 24.4853 24.4853C22.8071 26.1635 20.6689 27.3064 18.3411 27.7694C16.0133 28.2325 13.6005 27.9948 11.4078 27.0866C9.21508 26.1783 7.34094 24.6402 6.02236 22.6668C4.70379 20.6935 4 18.3734 4 16" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M16 4V10" stroke="#EC4899" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3>User-Centered</h3>
-                    <p>We design with users in mind, constantly gathering feedback and iterating to ensure our tools truly meet your needs.</p>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">Time-Saving</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Our tools are designed to save you valuable time by automating repetitive tasks and streamlining complex processes into simple workflows.</p>
+                </div>
+                
+                <div class="benefit-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="benefit-icon" style="margin-bottom: 1rem;">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 16H26M6 8H26M6 24H26" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">User-Friendly</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">We prioritize intuitive design and seamless user experience, making powerful functionality accessible through simple, clean interfaces.</p>
+                </div>
+                
+                <div class="benefit-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="benefit-icon" style="margin-bottom: 1rem;">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#4F46E5" stroke-width="2"/>
+                            <path d="M16 20C18.2091 20 20 18.2091 20 16C20 13.7909 18.2091 12 16 12C13.7909 12 12 13.7909 12 16C12 18.2091 13.7909 20 16 20Z" stroke="#EC4899" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">Integration</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Our products are designed to work seamlessly with the tools you already use, enhancing your existing workflows rather than disrupting them.</p>
+                </div>
+                
+                <div class="benefit-card" style="padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="benefit-icon" style="margin-bottom: 1rem;">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4L19.2411 12.8819H28.5106L21.1347 18.2362L24.3758 27.1181L16 21.7638L7.62423 27.1181L10.8653 18.2362L3.48944 12.8819H12.7589L16 4Z" stroke="#4F46E5" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">Quality</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">We take pride in building high-quality software with attention to performance, security, and reliability, ensuring a premium experience every time.</p>
                 </div>
             </div>
         </section>
 
-        <section class="team-section">
-            <h2>Our Team</h2>
-            <div class="team-content">
-                <p>We're a diverse team of developers, designers, and product specialists united by our passion for creating exceptional digital tools. Based across multiple time zones, we bring global perspectives to solving everyday challenges.</p>
-                
-                <p>Our team combines deep technical expertise with a keen eye for design and user experience. We're constantly learning, experimenting, and refining our craft to deliver the best possible products.</p>
+        <section class="contact-section" style="max-width: 1000px; margin: 2rem auto 4rem; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white; text-align: center;">
+            <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">Get in Touch</h2>
+            <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">Have questions about our products or need assistance? We're here to help. Reach out via email and our team will get back to you promptly.</p>
+            
+            <div class="contact-methods" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
+                <div class="contact-item" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 7H28V24C28 24.5304 27.7893 25.0391 27.4142 25.4142C27.0391 25.7893 26.5304 26 26 26H6C5.46957 26 4.96086 25.7893 4.58579 25.4142C4.21071 25.0391 4 24.5304 4 24V7Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M28 7L16 18L4 7" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; color: var(--text);">Email</h3>
+                    <a href="mailto:hello@startupmachine.co" style="color: var(--primary); text-decoration: none; font-weight: 500;">hello@startupmachine.co</a>
+                </div>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Get In Touch</h2>
-            <p>Interested in learning more about StartupMachine or have a question? We'd love to hear from you.</p>
-            <a href="mailto:hello@startupmachine.co" class="contact-button">Contact Us</a>
         </section>
     </main>
 
@@ -144,6 +195,7 @@
                 <ul class="main-links">
                     <li><a href="tools.html">Tools</a></li>
                     <li><a href="extensions.html">Extensions</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </div>

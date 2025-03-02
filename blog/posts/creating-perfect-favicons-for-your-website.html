@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Perfect Favicons for Your Website: A Complete Guide | StartupMachine Blog</title>
+    <meta name="description" content="Learn how to create professional favicons that enhance your website's brand identity with our step-by-step guide using the Favicon Generator tool.">
+    <meta name="keywords" content="favicon generator, create favicon, website icon, browser icon, favicon design, web development">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+    <link rel="stylesheet" href="../assets/css/post.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Syntax Highlighting for Code Blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Creating Perfect Favicons for Your Website: A Complete Guide">
+    <meta property="og:description" content="Learn how to create professional favicons that enhance your website's brand identity with our step-by-step guide using the Favicon Generator tool.">
+    <meta property="og:image" content="https://startupmachine.co/blog/assets/images/posts/tools/favicon-generator/favicon-generator_initial.png">
+    <meta property="og:url" content="https://startupmachine.co/blog/posts/creating-perfect-favicons-for-your-website.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <style>
+        /* Post-specific styles */
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .info-box {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .tool-screenshot {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 8px;
+            margin-bottom: 30px;
+        }
+        
+        /* Title area optimization */
+        .post-header {
+            padding: 120px 0 20px;  /* Increased top padding to ensure visibility below the navigation */
+            margin-top: 0; /* Reset margin */
+            position: relative; /* Ensure it has positioning context */
+            z-index: 1; /* Ensure it's above other elements */
+            background-color: var(--bg-blog-header);
+            background-image: linear-gradient(to right, rgba(26, 54, 93, 0.9), rgba(44, 82, 130, 0.8));
+            color: white;
+        }
+        
+        .post-header h1 {
+            margin-bottom: 10px; /* Smaller margin below title */
+        }
+        
+        .post-meta {
+            margin-bottom: 8px;
+        }
+        
+        /* Fix layout issues */
+        .post-content {
+            padding: 0 15px;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .post-hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* Ensure proper spacing */
+        .post-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        main {
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        article.single-post {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .table-of-contents {
+            position: sticky;
+            top: 20px;
+            align-self: start;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 0.9rem;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            width: 260px;
+        }
+        
+        @media (max-width: 992px) {
+            .post-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-of-contents {
+                display: none;
+            }
+        }
+        
+        header {
+            position: fixed; /* Ensure the header is fixed at the top */
+            width: 100%;
+            z-index: 1000; /* Higher z-index to ensure it's above other elements */
+            top: 0;
+            background-color: white; /* Ensure it has a background color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../index.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <div class="overlay"></div>
+
+    <main>
+        <article class="single-post">
+            <div class="post-header">
+                <div class="container">
+                    <h1>Creating Perfect Favicons for Your Website: A Complete Guide</h1>
+                    <div class="post-meta">
+                        <span class="post-reading-time">
+                            <i class="far fa-clock"></i> 9 min read
+                        </span>
+                    </div>
+                    <div class="post-categories">
+                        <a href="../index.html#design" class="post-category design">Design</a>
+                        <a href="../index.html#tools" class="post-category tools">Tools</a>
+                        <a href="../index.html#tutorials" class="post-category tutorials">Tutorials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="post-layout">
+                    <aside class="table-of-contents">
+                        <h3>Table of Contents</h3>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#favicon-importance">Why Favicons Matter</a></li>
+                            <li><a href="#favicon-requirements">Understanding Favicon Requirements</a></li>
+                            <li><a href="#favicon-creation">Creating Favicons: Step-by-Step Guide</a>
+                                <ul>
+                                    <li class="toc-h3"><a href="#step-1-access-the-tool">Step 1: Access the Favicon Generator</a></li>
+                                    <li class="toc-h3"><a href="#step-2-upload-image">Step 2: Upload Your Image</a></li>
+                                    <li class="toc-h3"><a href="#step-3-preview-favicons">Step 3: Preview Generated Favicons</a></li>
+                                    <li class="toc-h3"><a href="#step-4-download-package">Step 4: Download the Favicon Package</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#favicon-implementation">Implementing Favicons on Your Website</a></li>
+                            <li><a href="#common-issues">Common Favicon Issues & Solutions</a></li>
+                            <li><a href="#favicon-best-practices">Favicon Best Practices</a></li>
+                            <li><a href="#conclusion">Conclusion</a></li>
+                        </ul>
+                    </aside>
+                    
+                    <div class="post-content">
+                        <div class="featured-image">
+                            <img src="../assets/images/posts/tools/favicon-generator/favicon-generator_initial.png" alt="Favicon Generator tool interface showing icon creation workspace" class="post-hero-image">
+                            <p class="image-caption">StartupMachine's Favicon Generator tool interface</p>
+                        </div>
+                        
+                        <div class="introduction" id="introduction">
+                            <p>Favicons—those tiny icons that appear in browser tabs, bookmarks, and mobile home screens—may be small in size, but they play a crucial role in your website's brand identity and user experience. Despite their importance, creating the perfect favicon that works across all platforms and browsers can be surprisingly challenging.</p>
+                            
+                            <p>In this comprehensive guide, we'll explore how to create professional favicons using our <a href="../../tools/favicon-generator/" target="_blank">free online Favicon Generator tool</a>. Whether you're building a new website or updating an existing one, this tutorial will help you create and implement favicons that enhance your brand's visibility and recognition.</p>
+                        </div>
+                        
+                        <div class="content-highlight-box">
+                            <h4><i class="fas fa-lightbulb"></i> Key Takeaways</h4>
+                            <ul>
+                                <li>Learn why favicons are essential for brand recognition and user experience</li>
+                                <li>Understand the different favicon sizes and formats required for various platforms</li>
+                                <li>Create a complete favicon package with our easy-to-use Favicon Generator</li>
+                                <li>Implement favicons correctly on your website with the right HTML code</li>
+                                <li>Troubleshoot common favicon issues across different browsers and devices</li>
+                            </ul>
+                        </div>
+
+                        <h2 id="favicon-importance">Why Favicons Matter</h2>
+                        <p>Favicons might seem like a minor detail, but they serve several important functions for your website:</p>
+                        
+                        <ul>
+                            <li><strong>Brand Recognition</strong> - Favicons reinforce your brand identity, making your site instantly recognizable in a crowded browser tab bar</li>
+                            <li><strong>User Experience</strong> - They help users navigate between multiple open tabs more efficiently</li>
+                            <li><strong>Professionalism</strong> - A custom favicon gives your website a more polished, professional appearance</li>
+                            <li><strong>Mobile Presence</strong> - When users add your site to their home screen, your favicon becomes the app icon</li>
+                            <li><strong>Browser Bookmarks</strong> - Favicons make your site stand out in bookmark lists and browsing history</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> Did You Know?</h4>
+                            <p>The term "favicon" originated from "favorites icon" because these icons were initially used primarily in browser bookmarks (favorites). Today, they're used in many more contexts, from browser tabs to mobile home screens.</p>
+                        </div>
+                        
+                        <h2 id="favicon-requirements">Understanding Favicon Requirements</h2>
+                        
+                        <p>One of the challenges of favicon creation is the variety of sizes and formats required for different platforms and browsers. Here's what you need to know:</p>
+                        
+                        <div class="data-table">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Platform/Context</th>
+                                        <th>Recommended Size</th>
+                                        <th>Format</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Standard Favicon</td>
+                                        <td>16×16, 32×32 pixels</td>
+                                        <td>ICO, PNG</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple Touch Icon</td>
+                                        <td>180×180 pixels</td>
+                                        <td>PNG</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Android Chrome</td>
+                                        <td>192×192 pixels</td>
+                                        <td>PNG</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Windows Tiles</td>
+                                        <td>270×270 pixels</td>
+                                        <td>PNG</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Safari Pinned Tab</td>
+                                        <td>SVG format (any size)</td>
+                                        <td>SVG</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>Creating all these variants manually would be time-consuming, which is why our Favicon Generator tool automatically generates all the necessary sizes and formats from a single source image.</p>
+                        
+                        <h2 id="favicon-creation">Creating Favicons: Step-by-Step Guide</h2>
+                        
+                        <h3 id="step-1-access-the-tool">Step 1: Access the Favicon Generator</h3>
+                        <p>Begin by visiting our <a href="../../tools/favicon-generator/" target="_blank">Favicon Generator tool</a>. The interface is clean and intuitive, making the process easy even if you've never created a favicon before.</p>
+                        
+                        <div class="tool-screenshot-container">
+                            <div class="tool-screenshot-overlay"></div>
+                            <img src="../assets/images/posts/tools/favicon-generator/favicon-generator_initial.png" alt="Favicon Generator initial interface" class="tool-screenshot">
+                        </div>
+                        <p class="screenshot-caption">The Favicon Generator tool's main interface</p>
+                        
+                        <h3 id="step-2-upload-image">Step 2: Upload Your Image</h3>
+                        <p>To create your favicon, you'll need to upload a source image. Here are some tips for selecting or creating the right image:</p>
+                        
+                        <ul>
+                            <li>Use a square image for best results (recommended minimum size: 260×260 pixels)</li>
+                            <li>Choose a simple design that's recognizable even at small sizes</li>
+                            <li>Your company logo or a simplified version of it often works well</li>
+                            <li>Ensure good contrast so the favicon remains visible on different backgrounds</li>
+                            <li>Avoid fine details that will be lost when scaled down</li>
+                        </ul>
+                        
+                        <p>Upload your image by clicking on the upload area or drag and drop your file directly onto it. The tool accepts JPG, PNG, and SVG formats.</p>
+                        
+                        <div class="warning-box">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Important</h4>
+                            <p>If your source image isn't square, the tool will automatically crop it to a square shape. For best results, crop your image to a square before uploading.</p>
+                        </div>
+                        
+                        <h3 id="step-3-preview-favicons">Step 3: Preview Generated Favicons</h3>
+                        <p>After uploading your image, the Favicon Generator will process it and generate all the necessary favicon sizes and formats. You'll see a preview of how your favicon will look in different contexts:</p>
+                        
+                        <div class="tool-screenshot-container">
+                            <div class="tool-screenshot-overlay"></div>
+                            <img src="../assets/images/posts/tools/favicon-generator/favicon-generator_preview.png" alt="Preview of generated favicons in different sizes" class="tool-screenshot">
+                        </div>
+                        <p class="screenshot-caption">Previewing your favicon in different sizes and contexts</p>
+                        
+                        <p>Take a moment to review the previews and make sure your favicon looks good at all sizes. If anything doesn't look right, you might want to adjust your source image and try again.</p>
+                        
+                        <h3 id="step-4-download-package">Step 4: Download the Favicon Package</h3>
+                        <p>Once you're satisfied with the preview, download your complete favicon package by clicking the "Download Favicon Package" button. The package includes:</p>
+                        
+                        <ul>
+                            <li>favicon.ico (16×16, 32×32 pixels)</li>
+                            <li>Various PNG files in different sizes (16×16 to 512×512 pixels)</li>
+                            <li>Apple Touch Icons for iOS devices</li>
+                            <li>Android Chrome icons</li>
+                            <li>Microsoft Windows Tile icons</li>
+                            <li>A browserconfig.xml file for Microsoft browsers</li>
+                            <li>A site.webmanifest file for Android Chrome</li>
+                            <li>HTML code snippets for implementation</li>
+                        </ul>
+                        
+                        <div class="tool-screenshot-container">
+                            <div class="tool-screenshot-overlay"></div>
+                            <img src="../assets/images/posts/tools/favicon-generator/favicon-generator_download-options.png" alt="Download options for favicon package" class="tool-screenshot">
+                        </div>
+                        <p class="screenshot-caption">Download options for your favicon package</p>
+                        
+                        <h2 id="favicon-implementation">Implementing Favicons on Your Website</h2>
+                        
+                        <p>After downloading your favicon package, you'll need to implement it on your website. Here's how:</p>
+                        
+                        <h3>Step 1: Upload the Files</h3>
+                        <p>Upload all favicon files to your web server. It's recommended to place them in the root directory of your website for best compatibility.</p>
+                        
+                        <h3>Step 2: Add HTML Code</h3>
+                        <p>The downloaded package includes HTML code snippets. Copy these lines and paste them into the <code>&lt;head&gt;</code> section of your HTML document:</p>
+                        
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
+&lt;link rel="manifest" href="/site.webmanifest"&gt;
+&lt;link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"&gt;
+&lt;meta name="msapplication-TileColor" content="#da532c"&gt;
+&lt;meta name="theme-color" content="#ffffff"&gt;</code></pre>
+                        </div>
+                        
+                        <p>If you've placed your favicon files in a subdirectory rather than the root, make sure to adjust the paths in the code accordingly.</p>
+                        
+                        <h3>Step 3: Test Across Browsers and Devices</h3>
+                        <p>After implementing your favicons, test your website on different browsers and devices to ensure they appear correctly in all contexts.</p>
+                        
+                        <h2 id="common-issues">Common Favicon Issues & Solutions</h2>
+                        
+                        <h3>Issue: Favicon Not Showing in Browsers</h3>
+                        <p><strong>Solution:</strong> Clear your browser cache or use private/incognito browsing to test. Make sure the paths in your HTML code are correct.</p>
+                        
+                        <h3>Issue: Favicons Look Pixelated</h3>
+                        <p><strong>Solution:</strong> Use a higher resolution source image when generating your favicons.</p>
+                        
+                        <h3>Issue: Favicon Only Works in Some Browsers</h3>
+                        <p><strong>Solution:</strong> Ensure you've included all the necessary favicon types and related HTML code for different browsers.</p>
+                        
+                        <h3>Issue: Favicon Looks Different Than Expected</h3>
+                        <p><strong>Solution:</strong> Some browsers may apply background colors or effects to favicons. Test with a transparent background to see if that helps.</p>
+                        
+                        <div class="warning-box">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Browser Caching</h4>
+                            <p>Browsers aggressively cache favicons, so changes may not appear immediately. Use Ctrl+F5 (Windows) or Cmd+Shift+R (Mac) to force a complete refresh, or clear your browser cache.</p>
+                        </div>
+                        
+                        <h2 id="favicon-best-practices">Favicon Best Practices</h2>
+                        
+                        <h3>1. Keep it Simple</h3>
+                        <p>Minimalist designs work best for favicons. Avoid complex details that will be lost at small sizes.</p>
+                        
+                        <h3>2. Ensure Contrast</h3>
+                        <p>Your favicon should stand out against both light and dark backgrounds in browser tabs.</p>
+                        
+                        <h3>3. Maintain Brand Consistency</h3>
+                        <p>Your favicon should be recognizable as part of your brand and align with your overall design language.</p>
+                        
+                        <h3>4. Test at Multiple Sizes</h3>
+                        <p>What looks good at 32×32 might not work at 16×16. Our tool helps by showing previews at different sizes.</p>
+                        
+                        <h3>5. Consider Dark Mode</h3>
+                        <p>If possible, create a version of your favicon that works well in dark mode browsers.</p>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
+                            <p>For added versatility, consider using an SVG format for your source image. SVGs are vector-based and scale perfectly to any size without losing quality.</p>
+                        </div>
+
+                        <h2 id="conclusion">Conclusion</h2>
+                        
+                        <p>While favicons may be small in size, they play a significant role in your website's brand identity and user experience. With our Favicon Generator tool, creating a complete package of favicons for all platforms and browsers is simple and straightforward.</p>
+                        
+                        <p>By following the steps outlined in this guide, you can create professional favicons that enhance your website's visual identity and help users recognize your brand across browsers, bookmarks, and mobile devices.</p>
+                        
+                        <p>Remember that attention to detail matters in web design, and a well-crafted favicon is one of those details that shows users you care about every aspect of their experience—even the smallest ones.</p>
+                        
+                        <div class="cta-box">
+                            <h3>Ready to Create Your Website's Favicon?</h3>
+                            <p>Visit our <a href="../../tools/favicon-generator/" target="_blank">Favicon Generator</a> to create a professional favicon package for your website in just a few clicks.</p>
+                            <a href="../../tools/favicon-generator/" class="button primary-button">Try Favicon Generator <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <!-- Related Articles -->
+                        <div class="related-articles">
+                            <h3>Related Articles</h3>
+                            <div class="related-posts-grid">
+                                <a href="how-to-optimize-svg-files-for-better-web-performance.html" class="related-post">
+                                    <div class="related-post-image">
+                                        <img src="../assets/images/posts/tools/svg-optimizer/svg-optimizer_initial.png" alt="SVG Optimizer Tool">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <h4>How to Optimize SVG Files for Better Web Performance</h4>
+                                        <p>Learn how to reduce SVG file sizes and optimize vector graphics for better web performance.</p>
+                                    </div>
+                                </a>
+                                <a href="how-to-use-svg-viewer-for-inspecting-vector-graphics.html" class="related-post">
+                                    <div class="related-post-image">
+                                        <img src="../assets/images/posts/tools/svg-viewer/svg-viewer_initial.png" alt="SVG Viewer Tool">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <h4>How to Use SVG Viewer for Inspecting Vector Graphics</h4>
+                                        <p>Learn how to inspect and analyze SVG files to better understand and work with vector graphics.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../index.html">Blog</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../../tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../../tools/favicon-generator/">Favicon Generator</a></li>
+                    <li><a href="../../tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../assets/js/blog.js"></script>
+</body>
+</html> 

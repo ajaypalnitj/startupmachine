@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Extract and Use a Color Palette from Your Favorite Photos | StartupMachine Blog</title>
+    <meta name="description" content="Learn step-by-step how to extract beautiful color palettes from photos and use them effectively in your design projects. A practical guide for designers and marketers.">
+    <meta name="keywords" content="extract color palette, photo color palette, image color extraction, create palette from image, website color scheme from photograph">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+    <link rel="stylesheet" href="../assets/css/post.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Syntax Highlighting for Code Blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="How to Extract and Use a Color Palette from Your Favorite Photos">
+    <meta property="og:description" content="Learn step-by-step how to extract beautiful color palettes from photos and use them effectively in your design projects.">
+    <meta property="og:image" content="https://startupmachine.co/blog/assets/images/posts/color-palette-extraction.jpg">
+    <meta property="og:url" content="https://startupmachine.co/blog/posts/extracting-colors-from-photos.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <style>
+        /* Post-specific styles */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        /* Title area optimization */
+        .post-header {
+            padding: 20px 0;  /* Reduced padding */
+        }
+        
+        .post-header h1 {
+            margin-bottom: 10px; /* Smaller margin below title */
+        }
+        
+        .post-meta {
+            margin-bottom: 8px;
+        }
+        
+        /* Better use of above-the-fold space */
+        .post-content .featured-image {
+            margin-bottom: 15px; /* Reduced margin after featured image */
+        }
+        
+        .introduction p {
+            margin-bottom: 10px;
+        }
+        
+        .content-highlight-box {
+            margin: 20px 0 25px; /* Adjusted margins to bring more content above the fold */
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+        
+        .gallery-caption {
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            font-size: 0.9rem;
+            color: #343a40;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .tool-screenshot {
+            display: block;
+            max-width: 100%;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .color-swatch {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 1px solid #dee2e6;
+        }
+        
+        .palette-example {
+            display: flex;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .palette-color {
+            flex: 1;
+            height: 60px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 5px;
+        }
+        
+        .palette-color span {
+            background: rgba(255,255,255,0.85);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: monospace;
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #e3f2fd;
+            color: #3366ff;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .info-icon i {
+            font-size: 1.5rem;
+        }
+        
+        .step-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #3366ff;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+        
+        .step-title {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../index.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <div class="overlay"></div>
+
+    <main>
+        <article class="single-post">
+            <div class="post-header">
+                <div class="container">
+                    <h1>How to Extract and Use a Color Palette from Your Favorite Photos</h1>
+                    <div class="post-meta">
+                        <span class="post-reading-time">
+                            <i class="far fa-clock"></i> 8 min read
+                        </span>
+                    </div>
+                    <div class="post-categories">
+                        <a href="../index.html#design" class="post-category design">Design</a>
+                        <a href="../index.html#tutorials" class="post-category tutorials">Tutorials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="post-layout">
+                    <aside class="table-of-contents">
+                        <h3>Table of Contents</h3>
+                        <ul>
+                            <li><a href="#why-extract-colors-from-images">Why Extract Colors from Images?</a></li>
+                            <li><a href="#choosing-the-right-image">Choosing the Right Image</a></li>
+                            <li><a href="#tutorial-extracting-a-color-palette">Tutorial: Extracting a Color Palette</a>
+                                <ul>
+                                    <li class="toc-h3"><a href="#step-1-prepare-your-image">Step 1: Prepare Your Image</a></li>
+                                    <li class="toc-h3"><a href="#step-2-use-color-extraction-tool">Step 2: Use Color Extraction Tool</a></li>
+                                    <li class="toc-h3"><a href="#step-3-refine-your-palette">Step 3: Refine Your Palette</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#applying-extracted-colors">Applying Extracted Colors</a>
+                                <ul>
+                                    <li class="toc-h3"><a href="#website-design">Website Design</a></li>
+                                    <li class="toc-h3"><a href="#branding-materials">Branding Materials</a></li>
+                                    <li class="toc-h3"><a href="#social-media-content">Social Media Content</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#color-harmony-principles">Color Harmony Principles</a></li>
+                            <li><a href="#troubleshooting-common-issues">Troubleshooting Common Issues</a></li>
+                            <li><a href="#inspiration-examples">Inspiration Examples</a></li>
+                            <li><a href="#conclusion">Conclusion</a></li>
+                        </ul>
+                    </aside>
+                    
+                    <div class="post-content">
+                        <div class="featured-image">
+                            <img src="../assets/images/posts/tools/color-palette-generator_initial.png" alt="Color palette extraction tool interface showing a photograph with extracted color swatches" class="post-hero-image" style="object-position: center 35%;">
+                            <p class="image-caption">StartupMachine's Color Palette Generator tool in action</p>
+                        </div>
+                        
+                        <div class="introduction">
+                            <p>Have you ever stumbled upon a photo with the most stunning color combination and wished you could use those exact colors in your design project? Good news: you absolutely can! Extracting color palettes from images is not only possible but also a powerful design technique used by professionals to create cohesive and emotionally resonant visuals.</p>
+                            
+                            <p>In this comprehensive guide, I'll walk you through the entire process of extracting beautiful, usable color palettes from any photograph, and show you how to effectively apply these colors to your design projects. Whether you're a web designer, graphic artist, or digital marketing professional, this technique will elevate your color selection process and help you create more visually harmonious work.</p>
+                        </div>
+                        
+                        <div class="content-highlight-box">
+                            <h4><i class="fas fa-lightbulb"></i> Key Takeaways</h4>
+                            <ul>
+                                <li>Learn why photos make excellent sources for professional color palettes</li>
+                                <li>Discover both automatic and manual techniques for color extraction</li>
+                                <li>Understand how to apply extracted colors effectively in your designs</li>
+                                <li>Master the principles of color harmony to refine your palettes</li>
+                            </ul>
+                        </div>
+
+                        <h2 id="why-extract-colors-from-images">Why Extract Colors from Images?</h2>
+                        <p>Finding the perfect color palette can be one of the most challenging aspects of design. While you could spend hours manually experimenting with color combinations, photographs provide nature's own perfectly harmonized color schemes. Here's why extracting colors from images is such a powerful approach:</p>
+                        
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fas fa-paint-brush"></i></div>
+                                <h3>Natural Harmony</h3>
+                                <p>Colors in photographs—especially in nature—naturally work well together because they exist harmoniously in the real world.</p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fas fa-heart"></i></div>
+                                <h3>Emotional Connection</h3>
+                                <p>Using colors from meaningful images allows you to transfer the emotional impact of the photo to your design.</p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fas fa-magic"></i></div>
+                                <h3>Unique Combinations</h3>
+                                <p>Discover unexpected color combinations you might never consider when creating palettes from scratch.</p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fas fa-seedling"></i></div>
+                                <h3>Brand Authenticity</h3>
+                                <p>For brands with strong visual identities, extracting colors from on-brand photography ensures consistency.</p>
+                            </div>
+                        </div>
+
+                        <h2 id="choosing-the-right-image">Choosing the Right Image</h2>
+                        <p>Not all images will yield equally useful color palettes. The best source images typically have:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Clear color variations</strong> - Images with a good range of both light and dark tones</li>
+                            <li><strong>Complementary colors</strong> - Look for naturally occurring color schemes with good contrast</li>
+                            <li><strong>Relevance to your project</strong> - Images that relate to your brand, product, or content</li>
+                            <li><strong>The right mood</strong> - Colors evoke emotions, so choose images that match your desired feeling</li>
+                        </ul>
+                        
+                        <h2 id="tutorial-extracting-a-color-palette">Tutorial: Extracting a Color Palette</h2>
+                        <p>Now that you understand why image-based color extraction is valuable, let's dive into the actual extraction process using StartupMachine's Color Palette Generator tool.</p>
+
+                        <div class="step-container">
+                            <span class="step-number">1</span>
+                            <span class="step-title" id="step-1-prepare-your-image">Prepare Your Image</span>
+                            <p>Before extracting colors, ensure your image is high quality and properly exposed. For best results:</p>
+                            <ul>
+                                <li>Choose images with clear, distinct colors</li>
+                                <li>Avoid heavily filtered or artificially enhanced photos</li>
+                                <li>Consider cropping to focus on the most relevant color areas</li>
+                            </ul>
+                            <p>If you're using the image for branding purposes, select something that aligns with your brand values and identity.</p>
+                        </div>
+
+                        <div class="step-container">
+                            <span class="step-number">2</span>
+                            <span class="step-title" id="step-2-use-color-extraction-tool">Use the Color Palette Generator</span>
+                            <p>Visit the <a href="../../tools/color-palette-generator/" target="_blank">StartupMachine Color Palette Generator</a> to begin the extraction process:</p>
+                            
+                            <div class="tool-screenshot-container">
+                                <div class="tool-screenshot-overlay"></div>
+                                <img src="../assets/images/posts/tools/color-palette-generator_initial.png" alt="Color Palette Generator tool interface showing the image upload area and initial controls" class="tool-screenshot">
+                            </div>
+                            <p class="screenshot-caption">The initial interface of our Color Palette Generator tool</p>
+                            
+                            <ol>
+                                <li>Click on the "Upload Image" button or drag and drop your photo into the designated area</li>
+                                <li>Wait for the image to upload and process</li>
+                                <li>The tool will automatically extract a balanced color palette from your image</li>
+                            </ol>
+                            
+                            <div class="tool-screenshot-container">
+                                <div class="tool-screenshot-overlay"></div>
+                                <img src="../assets/images/posts/tools/color-palette-generator_base-color.png" alt="Color Palette Generator showing how to select a base color from an uploaded image to build a palette around" class="tool-screenshot">
+                            </div>
+                            <p class="screenshot-caption">Setting a base color to create a harmonious palette</p>
+                            
+                            <p>Alternatively, you can set a base color by clicking on different areas of your image or entering a specific hex code. This allows you to build a palette around a particular color that you want to highlight.</p>
+                        </div>
+
+                        <div class="step-container">
+                            <span class="step-number">3</span>
+                            <span class="step-title" id="step-3-refine-your-palette">Refine Your Palette</span>
+                            <p>Once you have an initial palette, you can further refine it:</p>
+                            
+                            <ul>
+                                <li>Choose different palette types such as analogous, monochromatic, or complementary</li>
+                                <li>Adjust the brightness and saturation of individual colors</li>
+                                <li>Lock colors you want to keep while regenerating others</li>
+                                <li>Manually replace specific colors that don't work for your needs</li>
+                            </ul>
+                            
+                            <div class="tool-screenshot-container">
+                                <div class="tool-screenshot-overlay"></div>
+                                <img src="../assets/images/posts/tools/color-palette-generator_monochromatic.png" alt="Color Palette Generator displaying a monochromatic color scheme with various shades of blue derived from the selected base color" class="tool-screenshot">
+                            </div>
+                            <p class="screenshot-caption">Generating a monochromatic color scheme based on the selected color</p>
+                            
+                            <p>For professional design work, aim for a palette with:</p>
+                            <ul>
+                                <li>1-2 primary colors (for main elements and branding)</li>
+                                <li>2-3 secondary colors (for accents and supporting elements)</li>
+                                <li>1-2 neutral colors (for text, backgrounds, and balance)</li>
+                            </ul>
+                            
+                            <div class="note-box">
+                                <p><strong>Pro Tip:</strong> Make sure your palette includes sufficient contrast for accessibility. At minimum, you need colors that will provide good text-to-background contrast ratios (at least 4.5:1 for standard text).</p>
+                            </div>
+                        </div>
+
+                        <h2 id="applying-extracted-colors">Applying Extracted Colors</h2>
+                        <p>Now that you have your perfect palette, here's how to apply it effectively across different design contexts:</p>
+
+                        <h3 id="website-design">Website Design</h3>
+                        <p>When implementing your palette in web design:</p>
+                        <ul>
+                            <li><strong>Primary color:</strong> Use for main action buttons, key headings, and branded elements</li>
+                            <li><strong>Secondary colors:</strong> Apply to secondary buttons, icons, and supporting elements</li>
+                            <li><strong>Neutral colors:</strong> Ideal for text, backgrounds, and subtle UI elements</li>
+                            <li><strong>Accent colors:</strong> Use sparingly for highlighting important information or creating visual interest</li>
+                        </ul>
+                        
+                        <div class="code-example">
+                            <h4>Implementing Your Palette in CSS</h4>
+                            <pre><code class="language-css">:root {
+  /* Main palette from extracted colors */
+  --primary: #3366ff;
+  --primary-light: #6699ff;
+  --primary-dark: #0044cc;
+  --secondary: #ff6b6b;
+  --accent: #ffd166;
+  --neutral-light: #f8f9fa;
+  --neutral-dark: #343a40;
+  
+  /* Derived semantic colors */
+  --text-primary: var(--neutral-dark);
+  --text-secondary: #495057;
+  --background: var(--neutral-light);
+  --button-primary: var(--primary);
+  --button-hover: var(--primary-dark);
+  --link: var(--primary);
+  --link-hover: var(--primary-dark);
+}
+
+/* Usage examples */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.button {
+  background-color: var(--button-primary);
+  color: white;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}</code></pre>
+                        </div>
+
+                        <h3 id="branding-materials">Branding Materials</h3>
+                        <p>For consistent branding across all materials:</p>
+                        <ul>
+                            <li>Create a brand style guide that documents your palette with hex codes, RGB, and CMYK values</li>
+                            <li>Designate specific colors for different brand elements (logo, tagline, supporting graphics)</li>
+                            <li>Define color usage rules to maintain consistency</li>
+                            <li>Include examples of correct and incorrect color applications</li>
+                        </ul>
+
+                        <h3 id="social-media-content">Social Media Content</h3>
+                        <p>For social media assets:</p>
+                        <ul>
+                            <li>Use your brand colors consistently across all profiles and posts</li>
+                            <li>Create templates with your color palette pre-defined</li>
+                            <li>Develop distinctive color combinations for different content categories</li>
+                            <li>Maintain visual cohesion while allowing flexibility for different platforms</li>
+                        </ul>
+
+                        <h2 id="color-harmony-principles">Color Harmony Principles</h2>
+                        <p>Understanding color theory will help you refine extracted palettes. Here are key harmony principles:</p>
+                        
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <h3>Complementary</h3>
+                                <p>Colors opposite each other on the color wheel, creating high contrast and visual vibrance.</p>
+                                <div class="palette-example">
+                                    <div class="palette-color" style="background-color: #3366ff;"><span>#3366ff</span></div>
+                                    <div class="palette-color" style="background-color: #ff6633;"><span>#ff6633</span></div>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <h3>Analogous</h3>
+                                <p>Colors adjacent to each other on the color wheel, creating harmonious, cohesive palettes.</p>
+                                <div class="palette-example">
+                                    <div class="palette-color" style="background-color: #3366ff;"><span>#3366ff</span></div>
+                                    <div class="palette-color" style="background-color: #3399ff;"><span>#3399ff</span></div>
+                                    <div class="palette-color" style="background-color: #33ccff;"><span>#33ccff</span></div>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <h3>Triadic</h3>
+                                <p>Three colors equally spaced around the color wheel, offering balance with visual interest.</p>
+                                <div class="palette-example">
+                                    <div class="palette-color" style="background-color: #3366ff;"><span>#3366ff</span></div>
+                                    <div class="palette-color" style="background-color: #ff3366;"><span>#ff3366</span></div>
+                                    <div class="palette-color" style="background-color: #66ff33;"><span>#66ff33</span></div>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <h3>Monochromatic</h3>
+                                <p>Different shades, tints, and tones of a single color, creating elegant, cohesive designs.</p>
+                                <div class="palette-example">
+                                    <div class="palette-color" style="background-color: #001a66;"><span>#001a66</span></div>
+                                    <div class="palette-color" style="background-color: #0033cc;"><span>#0033cc</span></div>
+                                    <div class="palette-color" style="background-color: #3366ff;"><span>#3366ff</span></div>
+                                    <div class="palette-color" style="background-color: #99b3ff;"><span>#99b3ff</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+                        <p>Here are solutions to common challenges when working with extracted color palettes:</p>
+                        
+                        <div class="problems-solutions">
+                            <div class="problem">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Colors Look Different Across Devices</h4>
+                                <p><strong>Solution:</strong> Use web-safe colors and test your palette across different screens. Consider using slightly more saturated colors for better consistency.</p>
+                            </div>
+                            
+                            <div class="problem">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Palette Lacks Contrast</h4>
+                                <p><strong>Solution:</strong> Ensure your palette includes at least one very light and one very dark color. Use a contrast checker to verify accessibility standards.</p>
+                            </div>
+                            
+                            <div class="problem">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Colors Look Dull When Applied</h4>
+                                <p><strong>Solution:</strong> Slightly increase saturation or brightness of key colors. Remember that colors often appear less vibrant when used in large areas.</p>
+                            </div>
+                            
+                            <div class="problem">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Too Many Dominant Colors</h4>
+                                <p><strong>Solution:</strong> Limit your palette to 1-2 dominant colors with the rest as supporting hues. Apply the 60-30-10 rule: 60% primary color, 30% secondary, and 10% accent.</p>
+                            </div>
+                        </div>
+
+                        <h2 id="inspiration-examples">Inspiration Examples</h2>
+                        <p>Here are some successful designs using image-extracted color palettes:</p>
+                        
+                        <ul>
+                            <li><strong>Nature-inspired website:</strong> An outdoor equipment retailer using colors extracted from mountain landscapes for their website, creating an immersive brand experience</li>
+                            <li><strong>Food brand packaging:</strong> A gourmet food company pulling colors from ingredient photography for packaging that evokes the flavors inside</li>
+                            <li><strong>Fashion lookbook:</strong> A clothing designer using a cohesive color story extracted from their fabric swatches across their seasonal catalog</li>
+                            <li><strong>Travel website:</strong> A tourism board with different color palettes for different destinations, each extracted from iconic location photos</li>
+                        </ul>
+
+                        <h2 id="conclusion">Conclusion</h2>
+                        <p>Extracting color palettes from images provides an excellent foundation for design projects, offering natural harmony and emotional resonance that's difficult to achieve otherwise. By using StartupMachine's Color Palette Generator and applying the principles outlined in this guide, you can create visually stunning, cohesive designs for any project.</p>
+                        
+                        <p>Remember that while the extracted palette gives you an excellent starting point, don't be afraid to make thoughtful adjustments to better suit your specific design needs. The most successful palettes balance aesthetic appeal with functional considerations like readability and brand alignment.</p>
+                        
+                        <div class="cta-box">
+                            <h3>Ready to Create Your Own Color Palette?</h3>
+                            <p>Visit our <a href="../../tools/color-palette-generator/" target="_blank">Color Palette Generator</a> to extract beautiful colors from your favorite images and take your design projects to the next level.</p>
+                            <a href="../../tools/color-palette-generator/" class="button primary-button">Try Color Palette Generator <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="related-articles">
+                            <h3>Related Articles</h3>
+                            <div class="related-posts-grid">
+                                <a href="creating-beautiful-css-gradients-comprehensive-guide.html" class="related-post">
+                                    <div class="related-post-image">
+                                        <img src="../assets/images/posts/tools/css-gradient-generator/css-gradient-generator_initial-interface.png" alt="CSS Gradient Generator tool interface" loading="lazy">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <h4>Creating Beautiful CSS Gradients: A Comprehensive Guide</h4>
+                                        <p>Master the art of creating stunning CSS gradients for your web projects with our step-by-step guide and free gradient generator tool.</p>
+                                    </div>
+                                </a>
+                                <a href="creating-professional-icons-for-browser-extensions.html" class="related-post">
+                                    <div class="related-post-image">
+                                        <img src="../assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_initial.png" alt="Chrome Extension Icon Generator tool interface" loading="lazy">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <h4>Creating Professional Icons for Browser Extensions</h4>
+                                        <p>Learn how to design and generate professional icons for Chrome extensions with our free tool. Master multiple sizes and formats.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../index.html">Blog</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../../tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../../tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../../tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script src="../assets/js/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</body>
+</html> 

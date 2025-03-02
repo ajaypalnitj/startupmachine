@@ -71,4 +71,7 @@ _site/
 /scripts/
 
 # Website analytics
-analytics.js 
+analytics.js
+
+# Content planning file
+blog/content-plan.html 

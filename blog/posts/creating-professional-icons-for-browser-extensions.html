@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Professional Icons for Browser Extensions: A Complete Guide | StartupMachine Blog</title>
+    <meta name="description" content="Learn how to design and generate professional icons for Chrome extensions with our free Chrome Extension Icon Generator tool. Master multiple sizes and formats.">
+    <meta name="keywords" content="chrome extension icon generator, browser extension icons, extension icon sizes, chrome web store icons, browser addon graphics">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+    <link rel="stylesheet" href="../assets/css/post.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Syntax Highlighting for Code Blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Creating Professional Icons for Browser Extensions: A Complete Guide">
+    <meta property="og:description" content="Learn how to design and generate professional icons for Chrome extensions with our free Chrome Extension Icon Generator tool. Master multiple sizes and formats.">
+    <meta property="og:image" content="https://startupmachine.co/blog/assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_initial.png">
+    <meta property="og:url" content="https://startupmachine.co/blog/posts/creating-professional-icons-for-browser-extensions.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <style>
+        /* Post-specific styles */
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .info-box {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .tool-screenshot {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .tool-screenshot-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .tool-screenshot-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.03);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Title area optimization */
+        .post-header {
+            padding: 120px 0 20px;  /* Increased top padding to ensure visibility below the navigation */
+            margin-top: 0; /* Reset margin */
+            position: relative; /* Ensure it has positioning context */
+            z-index: 1; /* Ensure it's above other elements */
+            background-color: var(--bg-blog-header);
+            background-image: linear-gradient(to right, rgba(26, 54, 93, 0.9), rgba(44, 82, 130, 0.8));
+            color: white;
+        }
+        
+        .post-header h1 {
+            margin-bottom: 10px; /* Smaller margin below title */
+        }
+        
+        .post-meta {
+            margin-bottom: 8px;
+        }
+        
+        /* Fix layout issues */
+        .post-content {
+            padding: 0 15px;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .post-hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* Ensure proper spacing */
+        .post-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        main {
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        article.single-post {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .table-of-contents {
+            position: sticky;
+            top: 20px;
+            align-self: start;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 0.9rem;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            width: 260px;
+        }
+        
+        @media (max-width: 992px) {
+            .post-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-of-contents {
+                display: none;
+            }
+        }
+        
+        .cta-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+        }
+        
+        .cta-box h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .button.primary-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3366ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .button.primary-button:hover {
+            background-color: #2952cc;
+        }
+        
+        header {
+            position: fixed; /* Ensure the header is fixed at the top */
+            width: 100%;
+            z-index: 1000; /* Higher z-index to ensure it's above other elements */
+            top: 0;
+            background-color: white; /* Ensure it has a background color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../index.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <div class="overlay"></div>
+
+    <main>
+        <article class="single-post">
+            <div class="post-header">
+                <div class="container">
+                    <h1>Creating Professional Icons for Browser Extensions: A Complete Guide</h1>
+                    <div class="post-meta">
+                        <span class="post-reading-time">
+                            <i class="far fa-clock"></i> 10 min read
+                        </span>
+                    </div>
+                    <div class="post-categories">
+                        <a href="../index.html#design" class="post-category design">Design</a>
+                        <a href="../index.html#tools" class="post-category tools">Tools</a>
+                        <a href="../index.html#development" class="post-category development">Development</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="post-layout">
+                    <aside class="table-of-contents">
+                        <h3>Table of Contents</h3>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#why-icons-matter">Why Icons Matter</a></li>
+                            <li><a href="#icon-requirements">Chrome Extension Icon Requirements</a></li>
+                            <li><a href="#design-principles">Icon Design Principles</a>
+                                <ul>
+                                    <li class="toc-h3"><a href="#simplicity">Simplicity and Recognition</a></li>
+                                    <li class="toc-h3"><a href="#scalability">Scalability Considerations</a></li>
+                                    <li class="toc-h3"><a href="#color-contrast">Color and Contrast</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#using-tool">Using the Icon Generator Tool</a>
+                                <ul>
+                                    <li class="toc-h3"><a href="#uploading">Uploading Your Icon</a></li>
+                                    <li class="toc-h3"><a href="#previewing">Previewing Different Sizes</a></li>
+                                    <li class="toc-h3"><a href="#downloading">Downloading Icon Sets</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#manifest-integration">Adding Icons to Your Manifest</a></li>
+                            <li><a href="#best-practices">Best Practices</a></li>
+                            <li><a href="#troubleshooting">Troubleshooting Icon Issues</a></li>
+                            <li><a href="#conclusion">Conclusion</a></li>
+                        </ul>
+                    </aside>
+                    
+                    <div class="post-content">
+                        <div class="featured-image">
+                            <img src="../assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_initial.png" alt="Chrome Extension Icon Generator tool interface" class="post-hero-image">
+                            <p class="image-caption">StartupMachine's Chrome Extension Icon Generator tool interface</p>
+                        </div>
+                        
+                        <div class="introduction" id="introduction">
+                            <p>When developing a Chrome extension or any browser add-on, your icon serves as the face of your product. It's the first thing users see in the Chrome Web Store and remains visible in their browser toolbar or menu. A well-designed, professional-looking icon can significantly impact user perception, installs, and overall success of your extension.</p>
+                            
+                            <p>However, creating these icons comes with challenges. Chrome requires multiple icon sizes for different contexts, and ensuring each size looks crisp and professional can be time-consuming. This is especially true when you need to manually resize, export, and organize all the required formats.</p>
+                            
+                            <p>Our <a href="../../tools/chrome-extension-icon-generator/" target="_blank">Chrome Extension Icon Generator</a> tool simplifies this process by allowing you to upload a single high-quality icon and automatically generating all the required sizes. In this comprehensive guide, we'll walk through the importance of extension icons, design principles, how to use our tool effectively, and best practices for implementing icons in your extension.</p>
+                        </div>
+                        
+                        <h2 id="why-icons-matter">Why Icons Matter for Browser Extensions</h2>
+                        
+                        <p>Icons play a crucial role in the success of your browser extension for several reasons:</p>
+                        
+                        <ul>
+                            <li><strong>First Impressions</strong>: In the crowded Chrome Web Store, your icon is often the first element users notice, forming their initial impression of your extension.</li>
+                            
+                            <li><strong>Brand Recognition</strong>: A distinctive icon helps users recognize your extension quickly among others in their browser or store listings.</li>
+                            
+                            <li><strong>Functionality Hint</strong>: Effective icons provide visual cues about what your extension does, helping users understand its purpose at a glance.</li>
+                            
+                            <li><strong>Quality Perception</strong>: A polished, professional icon suggests a well-developed extension, building trust with potential users.</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <p><strong>Did you know?</strong> According to research on conversion optimization, users make judgments about digital products within 50 milliseconds of seeing them. Your extension icon plays a significant role in that instant evaluation.</p>
+                        </div>
+                        
+                        <h2 id="icon-requirements">Chrome Extension Icon Requirements</h2>
+                        
+                        <p>Chrome requires multiple icon sizes to display your extension in different contexts:</p>
+                        
+                        <ul>
+                            <li><strong>16×16 pixels</strong>: Favicon and browser toolbar icon</li>
+                            <li><strong>32×32 pixels</strong>: Windows computers often use this size for shortcuts</li>
+                            <li><strong>48×48 pixels</strong>: Display in the Chrome Web Store and extension management page</li>
+                            <li><strong>128×128 pixels</strong>: Installation and Chrome Web Store main display</li>
+                        </ul>
+                        
+                        <p>Google recommends providing icons in PNG format with transparency. The manifest.json file of your extension must reference these icons to ensure proper display across all contexts.</p>
+                        
+                        <div class="code-example">
+                            <pre><code class="language-json">{
+  "manifest_version": 3,
+  "name": "My Extension",
+  "version": "1.0",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}</code></pre>
+                        </div>
+                        
+                        <h2 id="design-principles">Icon Design Principles</h2>
+                        
+                        <p>Creating effective extension icons requires attention to several key design principles:</p>
+                        
+                        <h3 id="simplicity">Simplicity and Recognition</h3>
+                        
+                        <p>Keep your design simple and easily recognizable, especially at smaller sizes. Complex illustrations or text often become unreadable when scaled down to 16×16 pixels.</p>
+                        
+                        <ul>
+                            <li>Focus on a single, clear concept or symbol</li>
+                            <li>Avoid intricate details that will be lost at small sizes</li>
+                            <li>Use distinctive silhouettes that remain identifiable even at tiny dimensions</li>
+                        </ul>
+                        
+                        <h3 id="scalability">Scalability Considerations</h3>
+                        
+                        <p>Your icon needs to look good at multiple sizes without losing its identity or becoming blurry.</p>
+                        
+                        <ul>
+                            <li>Start with vector graphics when possible (SVG format)</li>
+                            <li>Design at the largest size first (128×128 pixels), then optimize for smaller sizes</li>
+                            <li>Consider creating slightly different versions for very small sizes, with simplified details</li>
+                        </ul>
+                        
+                        <div class="tool-screenshot-container">
+                            <img src="../assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_instructions.png" alt="Icon size comparison" class="tool-screenshot">
+                            <p class="screenshot-caption">Different icon sizes required for Chrome extensions</p>
+                        </div>
+                        
+                        <h3 id="color-contrast">Color and Contrast</h3>
+                        
+                        <p>Effective use of color and contrast ensures your icon remains visible in various contexts:</p>
+                        
+                        <ul>
+                            <li>Use colors that stand out against both light and dark browser themes</li>
+                            <li>Maintain good contrast between elements within your icon</li>
+                            <li>Consider using a limited color palette (2-3 colors) for clarity</li>
+                            <li>Test your icon against different backgrounds</li>
+                        </ul>
+                        
+                        <h2 id="using-tool">Using the Chrome Extension Icon Generator Tool</h2>
+                        
+                        <p>Our tool simplifies the process of creating all required icon sizes from a single image. Here's how to use it:</p>
+                        
+                        <h3 id="uploading">Uploading Your Icon</h3>
+                        
+                        <ol>
+                            <li>
+                                <p>Navigate to the <a href="../../tools/chrome-extension-icon-generator/" target="_blank">Chrome Extension Icon Generator</a> tool</p>
+                                <img src="../assets/images/posts/tools/chrome-extension-icon-generator/chrome-extension-icon-generator_upload-interface.png" alt="Upload interface" class="tool-screenshot">
+                                <p class="screenshot-caption">The icon upload interface</p>
+                            </li>
+                            <li>
+                                <p>Either drag and drop your icon image onto the upload area or click to browse your files</p>
+                                <div class="info-box">
+                                    <p><strong>Best practice:</strong> Upload a high-resolution square image (at least 128×128 pixels) with a transparent background. SVG or PNG formats work best.</p>
+                                </div>
+                            </li>
+                        </ol>
+                        
+                        <h3 id="previewing">Previewing Different Sizes</h3>
+                        
+                        <p>After uploading, the tool automatically generates all required icon sizes:</p>
+                        
+                        <ol>
+                            <li>Review the preview of each generated size (16×16, 32×32, 48×48, and 128×128 pixels)</li>
+                            <li>Check that details remain clear and the icon is recognizable at all sizes</li>
+                            <li>If you notice issues, consider uploading a simpler version of your icon</li>
+                        </ol>
+                        
+                        <h3 id="downloading">Downloading Icon Sets</h3>
+                        
+                        <p>Once you're satisfied with the previews, you can download your icons:</p>
+                        
+                        <ol>
+                            <li>Click "Download All" to get a ZIP file containing all icon sizes</li>
+                            <li>Alternatively, download individual sizes using the download buttons beneath each preview</li>
+                            <li>Extract the downloaded files to your extension project directory, typically in a folder named "icons"</li>
+                        </ol>
+                        
+                        <div class="warning-box">
+                            <p><strong>Note:</strong> All processing occurs in your browser. Your icon is never uploaded to our servers, ensuring complete privacy for your design.</p>
+                        </div>
+                        
+                        <h2 id="manifest-integration">Adding Icons to Your Manifest</h2>
+                        
+                        <p>After generating and downloading your icons, you need to reference them in your extension's manifest.json file:</p>
+                        
+                        <div class="code-example">
+                            <pre><code class="language-json">{
+  "manifest_version": 3,
+  "name": "My Extension",
+  "version": "1.0",
+  "description": "A useful browser extension",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    },
+    "default_title": "My Extension"
+  }
+}</code></pre>
+                        </div>
+                        
+                        <p>The "icons" section defines the extension's general icons, while the "action" section (for extensions with a browser action button) specifies which icons to use in the toolbar.</p>
+                        
+                        <h2 id="best-practices">Best Practices for Extension Icons</h2>
+                        
+                        <ol>
+                            <li>
+                                <p><strong>Start with vector graphics</strong>: Vector formats (like SVG) scale much better than raster formats, maintaining crisp edges at all sizes.</p>
+                            </li>
+                            <li>
+                                <p><strong>Use transparent backgrounds</strong>: This ensures your icon adapts well to different browser themes and backgrounds.</p>
+                            </li>
+                            <li>
+                                <p><strong>Test against different backgrounds</strong>: Verify your icon is visible on both light and dark surfaces.</p>
+                            </li>
+                            <li>
+                                <p><strong>Follow Google's design guidelines</strong>: Align with Material Design principles for a look that fits well within the Chrome ecosystem.</p>
+                            </li>
+                            <li>
+                                <p><strong>Avoid text in icons</strong>: Text becomes unreadable at smaller sizes and doesn't translate well internationally.</p>
+                            </li>
+                            <li>
+                                <p><strong>Consider adaptive icons</strong>: For newer extensions, you might want to provide different versions for light and dark modes.</p>
+                            </li>
+                        </ol>
+                        
+                        <h2 id="troubleshooting">Troubleshooting Icon Issues</h2>
+                        
+                        <p>If you encounter problems with your extension icons, here are common solutions:</p>
+                        
+                        <ul>
+                            <li>
+                                <p><strong>Blurry icons</strong>: Ensure you're using the exact pixel dimensions required without browser scaling. If designing in Photoshop or similar tools, use "Save for Web" options.</p>
+                            </li>
+                            <li>
+                                <p><strong>Icons not appearing</strong>: Verify your manifest.json references the correct file paths. Paths are relative to the extension directory.</p>
+                            </li>
+                            <li>
+                                <p><strong>Icons look different in store vs. browser</strong>: Chrome may apply different processing to icons in different contexts. Test your icon in all environments.</p>
+                            </li>
+                            <li>
+                                <p><strong>Details lost at small sizes</strong>: Simplify your design for smaller icon versions, or manually optimize the 16×16 pixel version.</p>
+                            </li>
+                        </ul>
+                        
+                        <h2 id="conclusion">Conclusion</h2>
+                        
+                        <p>A well-designed icon is essential for a successful Chrome extension. It serves as your extension's visual identity, helping it stand out in the Chrome Web Store and providing users with a recognizable presence in their browser.</p>
+                        
+                        <p>By understanding the icon requirements, following good design principles, and using our Chrome Extension Icon Generator tool, you can create a professional set of icons without the hassle of manually resizing and exporting multiple versions.</p>
+                        
+                        <p>Whether you're a developer with limited design experience or a designer looking to streamline your workflow, our tool makes the icon creation process simple and efficient, allowing you to focus on building a great extension.</p>
+                        
+                        <div class="cta-box">
+                            <h3>Ready to Create Your Extension Icons?</h3>
+                            <p>Try our <a href="../../tools/chrome-extension-icon-generator/" target="_blank">Chrome Extension Icon Generator</a> now to quickly create all the icon sizes you need for your browser extension.</p>
+                            <a href="../../tools/chrome-extension-icon-generator/" class="button primary-button">Try Icon Generator <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <!-- Related Articles -->
+                        <div class="related-articles">
+                            <h3>Related Articles</h3>
+                            <div class="related-posts-grid">
+                                <a href="creating-perfect-favicons-for-your-website.html" class="related-post">
+                                    <div class="related-post-image">
+                                        <img src="../assets/images/posts/tools/favicon-generator/favicon-generator_initial.png" alt="Favicon Generator Tool">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <h4>Creating the Perfect Favicon: A Complete Guide</h4>
+                                        <p>Learn how to design and implement favicons that work across all devices and browsers.</p>
+                                    </div>
+                                </a>
+                                <a href="how-to-optimize-svg-files-for-better-web-performance.html" class="related-post">
+                                    <div class="related-post-image">
+                                        <img src="../assets/images/posts/tools/svg-optimizer/svg-optimizer_initial.png" alt="SVG Optimizer Tool">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <h4>How to Optimize SVG Files for Better Web Performance</h4>
+                                        <p>Discover techniques for reducing SVG file sizes while maintaining visual quality.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../index.html">Blog</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../../tools/chrome-extension-icon-generator/">Chrome Extension Icon Generator</a></li>
+                    <li><a href="../../tools/json-formatter/">JSON Formatter</a></li>
+                    <li><a href="../../tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
+                    <li><a href="../../extensions/mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../assets/js/blog.js"></script>
+</body>
+</html> 
