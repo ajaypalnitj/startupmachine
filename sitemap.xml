@@ -2,115 +2,123 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://startupmachine.co/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://startupmachine.co/tools.html</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://startupmachine.co/extensions.html</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://startupmachine.co/about.html</loc>
-    <lastmod>2025-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://startupmachine.co/tools/color-palette-generator/</loc>
     <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/favicon-generator/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/blog/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Tool Pages -->
+  <url>
+    <loc>https://startupmachine.co/tools/color-palette-generator/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/meta-tags-generator/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/svg-viewer/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/svg-optimizer/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/favicon-generator/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/svg-viewer/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/meta-tags-generator/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/base64-converter/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/svg-optimizer/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/html-entity-converter/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/base64-converter/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/text-case-converter/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/html-entity-converter/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/image-format-converter/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/text-case-converter/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/password-generator/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/image-format-converter/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/image-compressor/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/password-generator/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/markdown-editor/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/image-compressor/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/css-gradient-generator/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/markdown-editor/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/json-formatter/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/css-gradient-generator/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://startupmachine.co/tools/chrome-extension-icon-generator/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <loc>https://startupmachine.co/tools/json-formatter/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startupmachine.co/tools/chrome-extension-icon-generator/index.html</loc>
+    <lastmod>2025-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -74,4 +74,13 @@ _site/
 analytics.js
 
 # Content planning file
-blog/content-plan.html 
+blog/content-plan.html
+
+# Keep SEO files in Git
+!robots.txt
+!sitemap.xml
+!blog-sitemap.xml
+!humans.txt
+!ads.txt
+!CNAME
+!google*.html 

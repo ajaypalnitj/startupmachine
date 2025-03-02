@@ -1,5 +1,19 @@
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /*.DS_Store$
+Disallow: /*.log$
 
-# Sitemap location
-Sitemap: https://startupmachine.co/sitemap.xml 
+# Allow search engines to crawl all important directories
+Allow: /tools/
+Allow: /blog/
+Allow: /extensions/
+Allow: /images/
+Allow: /scripts/
+
+# Sitemap locations
+Sitemap: https://startupmachine.co/sitemap.xml
+Sitemap: https://startupmachine.co/blog-sitemap.xml
+
+# Crawl delay for better server performance
+Crawl-delay: 1 

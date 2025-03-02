@@ -1,0 +1,20 @@
+/* TEAM */
+    Creator: StartupMachine Team
+    Contact: contact@startupmachine.co
+    Twitter: @ajaypalsaggu
+    From: Worldwide
+
+/* SITE */
+    Last update: 2025-03-02
+    Language: English
+    Doctype: HTML5
+    IDE: Visual Studio Code, Cursor
+    Stack: HTML, CSS, JavaScript
+    Tools: All tools featured on our site are built in-house!
+    
+/* THANKS */
+    Users: For your continued support and feedback
+    
+/* NOTE */
+    We're building tools to make developers' lives easier. Have a feature request?
+    Drop us a line at feedback@startupmachine.co 
