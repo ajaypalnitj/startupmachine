@@ -12,14 +12,14 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Cat Facts | StartupMachine</title>
-    <meta name="description" content="Privacy policy for Cat Facts extension. Learn how we protect your data and ensure your privacy while using our tab replacement extension.">
-    <meta name="keywords" content="cat facts privacy, tab extension privacy, browser extension privacy policy">
+    <title>Privacy Policy - New Cat Tab | StartupMachine</title>
+    <meta name="description" content="Privacy policy for New Cat Tab extension. Learn how we protect your data and ensure your privacy while using our tab replacement extension.">
+    <meta name="keywords" content="new cat tab privacy, tab extension privacy, browser extension privacy policy">
     <meta name="author" content="StartupMachine">
-    <meta property="og:title" content="Privacy Policy - Cat Facts | StartupMachine">
-    <meta property="og:description" content="Privacy policy for Cat Facts extension. Learn how we protect your data and ensure your privacy while using our tab replacement extension.">
+    <meta property="og:title" content="Privacy Policy - New Cat Tab | StartupMachine">
+    <meta property="og:description" content="Privacy policy for New Cat Tab extension. Learn how we protect your data and ensure your privacy while using our tab replacement extension.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://startupmachine.co/extensions/cat-facts/privacy.html">
+    <meta property="og:url" content="https://startupmachine.co/extensions/new-cat-tab/privacy.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,19 +90,19 @@
         <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
             <div id="logoPlaceholder" style="max-width: 100px; margin: 0 auto 1.5rem;"></div>
             <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
-            <p>Random Cat Facts Extension</p>
+            <p>New Cat Tab Extension</p>
         </section>
 
         <section class="privacy-content" style="max-width: 800px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);">
             <div class="content-section">
                 <h2 class="section-title">Introduction</h2>
-                <p>This Privacy Policy describes how the Random Cat Facts extension ("we", "our", or "extension") handles your information. We are committed to protecting your privacy and ensuring a safe browsing experience.</p>
+                <p>This Privacy Policy describes how the New Cat Tab extension ("we", "our", or "extension") handles your information. We are committed to protecting your privacy and ensuring a safe browsing experience.</p>
                 <p>Last updated: <strong>May 28, 2025</strong></p>
             </div>
 
             <div class="content-section">
                 <h2 class="section-title">Information Collection</h2>
-                <p><strong>We do not collect any personal information from our users.</strong> The Random Cat Facts extension does not:</p>
+                <p><strong>We do not collect any personal information from our users.</strong> The New Cat Tab extension does not:</p>
                 <ul>
                     <li>Collect your browsing history</li>
                     <li>Track your online activity</li>
@@ -199,50 +199,30 @@
         // Mobile menu toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.overlay').classList.toggle('active');
             this.classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
         });
 
         document.querySelector('.overlay').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.remove('active');
-            document.querySelector('.overlay').classList.remove('active');
             document.querySelector('.mobile-menu-toggle').classList.remove('active');
+            this.classList.remove('active');
         });
 
-        // Set logo placeholder with inline SVG
+        // Add logo SVG 
         document.addEventListener('DOMContentLoaded', function() {
             const logoPlaceholder = document.getElementById('logoPlaceholder');
             logoPlaceholder.innerHTML = `
-                <svg width="100" height="100" viewBox="0 0 120 120" class="logo">
-                    <circle cx="60" cy="60" r="58" fill="#fff" stroke="#FF6B6B" stroke-width="3" />
-                    <g transform="translate(25, 25)">
-                        <!-- Cat face shape -->
-                        <path d="M35,70 C18,70 5,55 5,35 C5,20 18,5 35,5 C52,5 65,20 65,35 C65,55 52,70 35,70 Z" fill="#FF6B6B" opacity="0.1" />
-                        
-                        <!-- Cat ears -->
-                        <path d="M12,18 L20,28 L5,35 Z" fill="#FF6B6B" opacity="0.6" />
-                        <path d="M58,18 L50,28 L65,35 Z" fill="#FF6B6B" opacity="0.6" />
-                        
-                        <!-- Cat eyes -->
-                        <ellipse cx="22" cy="35" rx="5" ry="6" fill="#555" />
-                        <ellipse cx="48" cy="35" rx="5" ry="6" fill="#555" />
-                        
-                        <!-- Eye shine -->
-                        <circle cx="24" cy="33" r="1.5" fill="#fff" />
-                        <circle cx="50" cy="33" r="1.5" fill="#fff" />
-                        
-                        <!-- Cat nose -->
-                        <path d="M35,42 L32,46 L38,46 Z" fill="#FF6B6B" />
-                        
-                        <!-- Cat mouth -->
-                        <path d="M35,46 L35,49 M30,52 Q35,56 40,52" stroke="#555" stroke-width="1.5" fill="none" />
-                        
-                        <!-- Cat whiskers -->
-                        <path d="M26,44 L10,40 M26,46 L12,46 M26,48 L10,52" stroke="#555" stroke-width="1" stroke-linecap="round" opacity="0.6" />
-                        <path d="M44,44 L60,40 M44,46 L58,46 M44,48 L60,52" stroke="#555" stroke-width="1" stroke-linecap="round" opacity="0.6" />
-                    </g>
-                </svg>
-            `;
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="white" stroke="#FF6B6B" stroke-width="4"/>
+                <path d="M65 37C65 33.5 62.5 31 60 31C57.5 31 55 33.5 55 37" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M45 37C45 33.5 42.5 31 40 31C37.5 31 35 33.5 35 37" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M35 50C35 44 40 35 50 35C60 35 65 44 65 50" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="37" cy="47" r="3" fill="#FF6B6B"/>
+                <circle cx="63" cy="47" r="3" fill="#FF6B6B"/>
+                <path d="M40 60C45 65 55 65 60 60" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M80 40L75 35M20 40L25 35" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+            </svg>`;
         });
     </script>
 </body>

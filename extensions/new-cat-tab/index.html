@@ -12,14 +12,14 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Facts - Chrome Extension | StartupMachine</title>
-    <meta name="description" content="Transform your new tab experience with adorable cats and fascinating facts. Cat Facts brings you cute cat images and interesting facts with every new tab.">
-    <meta name="keywords" content="cat facts, chrome extension, browser extension, new tab, cats, cat images, random facts">
+    <title>New Cat Tab - Chrome Extension | StartupMachine</title>
+    <meta name="description" content="Transform your new tab experience with adorable cats and fascinating facts. New Cat Tab brings you cute cat images and interesting facts with every new tab.">
+    <meta name="keywords" content="new cat tab, chrome extension, browser extension, new tab, cats, cat images, random facts">
     <meta name="author" content="StartupMachine">
-    <meta property="og:title" content="Cat Facts - Chrome Extension | StartupMachine">
-    <meta property="og:description" content="Transform your new tab experience with adorable cats and fascinating facts. Cat Facts brings you cute cat images and interesting facts with every new tab.">
+    <meta property="og:title" content="New Cat Tab - Chrome Extension | StartupMachine">
+    <meta property="og:description" content="Transform your new tab experience with adorable cats and fascinating facts. New Cat Tab brings you cute cat images and interesting facts with every new tab.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://startupmachine.co/extensions/cat-facts/">
+    <meta property="og:url" content="https://startupmachine.co/extensions/new-cat-tab/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,7 @@
     <main>
         <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
             <div id="logoPlaceholder" style="max-width: 120px; margin: 0 auto 1.5rem;"></div>
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Cat Facts</h1>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">New Cat Tab</h1>
             <p>Transform your new tab experience with adorable cats and fascinating facts</p>
             <div style="margin-top: 1.5rem;">
                 <button class="cta-button" disabled style="cursor: not-allowed; opacity: 0.9;">Coming Soon</button>
@@ -128,7 +128,7 @@
                 
                 <div class="extension-description" style="flex: 1;">
                     <h2 class="section-title">About the Extension</h2>
-                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">Cat Facts transforms every new tab into a delightful feline experience. Each time you open a new tab, you'll be greeted with a beautiful cat image and an interesting fact about cats - combining cuteness with fascinating knowledge.</p>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">New Cat Tab transforms every new tab into a delightful feline experience. Each time you open a new tab, you'll be greeted with a beautiful cat image and an interesting fact about cats - combining cuteness with fascinating knowledge.</p>
                     
                     <div id="screenshotPlaceholder" class="screenshot" style="margin: 2rem 0;"></div>
                     
@@ -155,7 +155,7 @@
                     </div>
                     
                     <h2 class="section-title">Privacy</h2>
-                    <p style="margin-bottom: 1rem; line-height: 1.6;">We take your privacy seriously. Here's how the Cat Facts extension handles your data:</p>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">We take your privacy seriously. Here's how the New Cat Tab extension handles your data:</p>
                     <div class="feature-item">
                         <span class="feature-icon">🔒</span>
                         <div><strong>No Data Collection</strong> - We do not collect, store, or transmit any user data</div>
@@ -262,41 +262,21 @@
             // Set logo placeholder with cleaner cat SVG
             const logoPlaceholder = document.getElementById('logoPlaceholder');
             logoPlaceholder.innerHTML = `
-                <svg width="120" height="120" viewBox="0 0 120 120" class="logo">
-                    <circle cx="60" cy="60" r="58" fill="#fff" stroke="#FF6B6B" stroke-width="3" />
-                    <g transform="translate(25, 25)">
-                        <!-- Cat face shape -->
-                        <path d="M35,70 C18,70 5,55 5,35 C5,20 18,5 35,5 C52,5 65,20 65,35 C65,55 52,70 35,70 Z" fill="#FF6B6B" opacity="0.1" />
-                        
-                        <!-- Cat ears -->
-                        <path d="M12,18 L20,28 L5,35 Z" fill="#FF6B6B" opacity="0.6" />
-                        <path d="M58,18 L50,28 L65,35 Z" fill="#FF6B6B" opacity="0.6" />
-                        
-                        <!-- Cat eyes -->
-                        <ellipse cx="22" cy="35" rx="5" ry="6" fill="#555" />
-                        <ellipse cx="48" cy="35" rx="5" ry="6" fill="#555" />
-                        
-                        <!-- Eye shine -->
-                        <circle cx="24" cy="33" r="1.5" fill="#fff" />
-                        <circle cx="50" cy="33" r="1.5" fill="#fff" />
-                        
-                        <!-- Cat nose -->
-                        <path d="M35,42 L32,46 L38,46 Z" fill="#FF6B6B" />
-                        
-                        <!-- Cat mouth -->
-                        <path d="M35,46 L35,49 M30,52 Q35,56 40,52" stroke="#555" stroke-width="1.5" fill="none" />
-                        
-                        <!-- Cat whiskers -->
-                        <path d="M26,44 L10,40 M26,46 L12,46 M26,48 L10,52" stroke="#555" stroke-width="1" stroke-linecap="round" opacity="0.6" />
-                        <path d="M44,44 L60,40 M44,46 L58,46 M44,48 L60,52" stroke="#555" stroke-width="1" stroke-linecap="round" opacity="0.6" />
-                    </g>
-                </svg>
-            `;
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="white" stroke="#FF6B6B" stroke-width="4"/>
+                <path d="M65 37C65 33.5 62.5 31 60 31C57.5 31 55 33.5 55 37" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M45 37C45 33.5 42.5 31 40 31C37.5 31 35 33.5 35 37" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M35 50C35 44 40 35 50 35C60 35 65 44 65 50" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="37" cy="47" r="3" fill="#FF6B6B"/>
+                <circle cx="63" cy="47" r="3" fill="#FF6B6B"/>
+                <path d="M40 60C45 65 55 65 60 60" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M80 40L75 35M20 40L25 35" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+            </svg>`;
             
             // Set screenshot placeholder with cat image
             const screenshotPlaceholder = document.getElementById('screenshotPlaceholder');
             screenshotPlaceholder.innerHTML = `
-                <img src="cat-image.png" alt="Screenshot of Cat Facts extension" class="screenshot" style="display: block; margin: 0 auto;">
+                <img src="cat-image.png" alt="Screenshot of New Cat Tab extension" class="screenshot" style="display: block; margin: 0 auto;">
             `;
         });
     </script>
