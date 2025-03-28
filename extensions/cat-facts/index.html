@@ -82,7 +82,7 @@
         
         .paw {
             position: absolute;
-            opacity: 0.1;
+            opacity: 0.05;
         }
     </style>
 </head>
@@ -116,10 +116,10 @@
     <main>
         <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
             <div id="logoPlaceholder" style="max-width: 120px; margin: 0 auto 1.5rem;"></div>
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Random Cat Facts</h1>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Cat Facts</h1>
             <p>Transform your new tab experience with adorable cats and fascinating facts</p>
             <div style="margin-top: 1.5rem;">
-                <a href="https://chrome.google.com/webstore/detail/random-cat-facts/[your-extension-id]" class="cta-button" target="_blank">Add to Chrome</a>
+                <button class="cta-button" disabled style="cursor: not-allowed; opacity: 0.9;">Coming Soon</button>
             </div>
         </section>
 
@@ -128,7 +128,9 @@
                 
                 <div class="extension-description" style="flex: 1;">
                     <h2 class="section-title">About the Extension</h2>
-                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">Random Cat Facts transforms every new tab into a delightful feline experience. Each time you open a new tab, you'll be greeted with a beautiful cat image and an interesting fact about cats - combining cuteness with fascinating knowledge.</p>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">Cat Facts transforms every new tab into a delightful feline experience. Each time you open a new tab, you'll be greeted with a beautiful cat image and an interesting fact about cats - combining cuteness with fascinating knowledge.</p>
+                    
+                    <div id="screenshotPlaceholder" class="screenshot" style="margin: 2rem 0;"></div>
                     
                     <h2 class="section-title">Features</h2>
                     <div class="feature-item">
@@ -141,7 +143,7 @@
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">🎨</span>
-                        <div><strong>Playful Design</strong> - Enjoy adorable paw print animations and a clean, modern interface that makes browsing delightful</div>
+                        <div><strong>Playful Design</strong> - Enjoy adorable paw print animations and a clean, modern interface</div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">🔄</span>
@@ -152,22 +154,8 @@
                         <div><strong>Lightweight</strong> - Fast-loading with minimal impact on your browsing experience</div>
                     </div>
                     
-                    <div id="screenshotPlaceholder" class="screenshot" style="margin: 2rem 0;"></div>
-                    
-                    <h2 class="section-title">What Cat Lovers Say</h2>
-                    
-                    <div style="background-color: rgba(255, 107, 107, 0.05); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="font-style: italic; margin-bottom: 0.5rem;">"I learn something new about cats every day now! This extension makes opening a new tab something to look forward to."</p>
-                        <div style="font-weight: 500; color: var(--text-light);">- Cat Enthusiast</div>
-                    </div>
-                    
-                    <div style="background-color: rgba(255, 107, 107, 0.05); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="font-style: italic; margin-bottom: 0.5rem;">"The cat photos are so adorable, and the facts are genuinely interesting. Perfect for cat lovers!"</p>
-                        <div style="font-weight: 500; color: var(--text-light);">- Feline Fanatic</div>
-                    </div>
-                    
                     <h2 class="section-title">Privacy</h2>
-                    <p style="margin-bottom: 1rem; line-height: 1.6;">We take your privacy seriously. Here's how the Random Cat Facts extension handles your data:</p>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">We take your privacy seriously. Here's how the Cat Facts extension handles your data:</p>
                     <div class="feature-item">
                         <span class="feature-icon">🔒</span>
                         <div><strong>No Data Collection</strong> - We do not collect, store, or transmit any user data</div>
@@ -181,14 +169,8 @@
                         <div><strong>Minimal Permissions</strong> - The extension only replaces the new tab page</div>
                     </div>
                     
-                    <p style="margin: 1.5rem 0; line-height: 1.6;">The Random Cat Facts extension is designed to be simple and respectful of your privacy. We believe you should be able to enjoy cute cat content without sacrificing your personal data.</p>
-                    
-                    <h2 class="section-title">Contact</h2>
-                    <p style="line-height: 1.6;">For questions, feedback, or support, please contact us at:</p>
-                    <p style="margin-bottom: 2rem;"><a href="mailto:support@startupmachine.co" style="color: var(--primary);">support@startupmachine.co</a></p>
-                    
                     <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
-                        <a href="https://chrome.google.com/webstore/detail/random-cat-facts/[your-extension-id]" class="cta-button" target="_blank">Add to Chrome</a>
+                        <button class="cta-button" disabled style="cursor: not-allowed; opacity: 0.9;">Coming Soon</button>
                         <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
                         <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
                     </div>
@@ -267,42 +249,56 @@
             `;
             
             // Create static paw prints
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 15; i++) {
                 const paw = document.createElement('div');
                 paw.className = 'paw';
                 paw.style.top = `${Math.random() * 100}%`;
                 paw.style.left = `${Math.random() * 100}%`;
-                paw.style.transform = `rotate(${Math.random() * 360}deg) scale(${0.5 + Math.random() * 1})`;
+                paw.style.transform = `rotate(${Math.random() * 360}deg) scale(${0.5 + Math.random() * 0.8})`;
                 paw.innerHTML = pawSVG;
                 pawContainer.appendChild(paw);
             }
             
-            // Set logo placeholder with inline SVG
+            // Set logo placeholder with cleaner cat SVG
             const logoPlaceholder = document.getElementById('logoPlaceholder');
             logoPlaceholder.innerHTML = `
-                <svg width="120" height="120" viewBox="0 0 128 128" class="logo">
-                    <circle cx="64" cy="64" r="62" fill="#f5f7fa" stroke="#FF6B6B" stroke-width="4" />
-                    <g transform="translate(24, 24) scale(0.8)">
-                        <circle cx="42" cy="38" r="18" fill="#555" />
-                        <circle cx="86" cy="38" r="18" fill="#555" />
-                        <path d="M64,95 Q81,85 98,95 Q98,115 64,115 Q30,115 30,95 Q47,85 64,95 Z" fill="#555" />
-                        <path d="M42,38 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" fill="white" />
-                        <path d="M86,38 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" fill="white" />
-                        <path d="M20,25 Q15,5 35,10 Q45,15 42,38" stroke="#555" stroke-width="4" fill="none" />
-                        <path d="M108,25 Q113,5 93,10 Q83,15 86,38" stroke="#555" stroke-width="4" fill="none" />
-                        <circle cx="43" cy="36" r="4" fill="#333" />
-                        <circle cx="87" cy="36" r="4" fill="#333" />
+                <svg width="120" height="120" viewBox="0 0 120 120" class="logo">
+                    <circle cx="60" cy="60" r="58" fill="#fff" stroke="#FF6B6B" stroke-width="3" />
+                    <g transform="translate(25, 25)">
+                        <!-- Cat face shape -->
+                        <path d="M35,70 C18,70 5,55 5,35 C5,20 18,5 35,5 C52,5 65,20 65,35 C65,55 52,70 35,70 Z" fill="#FF6B6B" opacity="0.1" />
+                        
+                        <!-- Cat ears -->
+                        <path d="M12,18 L20,28 L5,35 Z" fill="#FF6B6B" opacity="0.6" />
+                        <path d="M58,18 L50,28 L65,35 Z" fill="#FF6B6B" opacity="0.6" />
+                        
+                        <!-- Cat eyes -->
+                        <ellipse cx="22" cy="35" rx="5" ry="6" fill="#555" />
+                        <ellipse cx="48" cy="35" rx="5" ry="6" fill="#555" />
+                        
+                        <!-- Eye shine -->
+                        <circle cx="24" cy="33" r="1.5" fill="#fff" />
+                        <circle cx="50" cy="33" r="1.5" fill="#fff" />
+                        
+                        <!-- Cat nose -->
+                        <path d="M35,42 L32,46 L38,46 Z" fill="#FF6B6B" />
+                        
+                        <!-- Cat mouth -->
+                        <path d="M35,46 L35,49 M30,52 Q35,56 40,52" stroke="#555" stroke-width="1.5" fill="none" />
+                        
+                        <!-- Cat whiskers -->
+                        <path d="M26,44 L10,40 M26,46 L12,46 M26,48 L10,52" stroke="#555" stroke-width="1" stroke-linecap="round" opacity="0.6" />
+                        <path d="M44,44 L60,40 M44,46 L58,46 M44,48 L60,52" stroke="#555" stroke-width="1" stroke-linecap="round" opacity="0.6" />
                     </g>
                 </svg>
             `;
             
-            // Set screenshot placeholder
+            // Set screenshot placeholder with cat image
             const screenshotPlaceholder = document.getElementById('screenshotPlaceholder');
             screenshotPlaceholder.innerHTML = `
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f5f7fa'/%3E%3Crect x='50' y='50' width='700' height='400' rx='10' fill='white' stroke='%23ccc'/%3E%3Crect x='80' y='80' width='640' height='300' rx='5' fill='%23eee'/%3E%3Ccircle cx='400' cy='230' r='100' fill='%23FF6B6B' opacity='0.3'/%3E%3Crect x='200' y='400' width='400' height='30' rx='5' fill='%23ddd'/%3E%3C/svg%3E" alt="Screenshot of Random Cat Facts extension" class="screenshot">
+                <img src="cat-image.png" alt="Screenshot of Cat Facts extension" class="screenshot" style="display: block; margin: 0 auto;">
             `;
         });
     </script>
 </body>
-</html> 
 </html> 
