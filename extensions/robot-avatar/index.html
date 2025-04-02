@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8QXH92Y7GE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Avatar Generator | StartupMachine</title>
+    <meta name="description" content="Create unique, customizable robot avatars for your online profiles with this Chrome extension. Generate infinite variations based on text input.">
+    <meta name="keywords" content="robot avatar, avatar generator, unique avatars, chrome extension, robohash, profile picture, digital identity">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Robot Avatar Generator | StartupMachine">
+    <meta property="og:description" content="Create unique, customizable robot avatars for your online profiles with this Chrome extension. Generate infinite variations based on text input.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/extensions/robot-avatar/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html" class="active">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../blog/index.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="overlay"></div>
+    <main>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Robot Avatar Generator</h1>
+            <p>Create unique, personalized robot avatars for your online profiles with just a few clicks</p>
+        </section>
+
+        <section class="extensions">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0 auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0 auto 1.5rem;">
+                    <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="28" height="28" rx="2" fill="#3498db" opacity="0.2"/>
+                        <rect x="14" y="6" width="20" height="4" rx="2" fill="#3498db"/>
+                        <rect x="12" y="10" width="24" height="20" rx="2" fill="white" stroke="#3498db" stroke-width="2"/>
+                        <circle cx="19" cy="16" r="2" fill="#3498db"/>
+                        <circle cx="29" cy="16" r="2" fill="#3498db"/>
+                        <rect x="17" y="22" width="14" height="3" rx="1.5" fill="#3498db"/>
+                        <rect x="18" y="30" width="4" height="8" fill="#3498db"/>
+                        <rect x="26" y="30" width="4" height="8" fill="#3498db"/>
+                        <rect x="10" y="30" width="2" height="6" fill="#2ecc71"/>
+                        <rect x="36" y="30" width="2" height="6" fill="#2ecc71"/>
+                        <circle cx="11" cy="36" r="2" fill="#2ecc71"/>
+                        <circle cx="37" cy="36" r="2" fill="#2ecc71"/>
+                    </svg>
+                </div>
+                
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Robot Avatar Generator</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Stand out online with a unique robot avatar that's completely personalized to you. The Robot Avatar Generator is a Chrome extension that creates custom robot avatars based on any text you enter. Whether you need a profile picture for social media, gaming platforms, or forums, our extension provides endless possibilities.</p>
+                    
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Powered by the Robohash algorithm, each avatar is deterministically generated - meaning the same text always produces the same robot. This allows you to use your username, email, or any other identifier to create a consistent visual identity across multiple platforms.</p>
+                    
+                    <div class="avatar-demo" style="display: flex; justify-content: center; margin: 2rem 0; flex-wrap: wrap; gap: 20px;">
+                        <div class="avatar-item" style="border-radius: 8px; overflow: hidden; box-shadow: var(--card-shadow); background-color: white; width: 120px; transition: transform 0.3s;">
+                            <img src="https://robohash.org/example1.png?set=set1&size=120x120" alt="Robot Avatar Example 1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="avatar-item" style="border-radius: 8px; overflow: hidden; box-shadow: var(--card-shadow); background-color: white; width: 120px; transition: transform 0.3s;">
+                            <img src="https://robohash.org/example2.png?set=set1&size=120x120" alt="Robot Avatar Example 2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="avatar-item" style="border-radius: 8px; overflow: hidden; box-shadow: var(--card-shadow); background-color: white; width: 120px; transition: transform 0.3s;">
+                            <img src="https://robohash.org/example3.png?set=set2&size=120x120" alt="Robot Avatar Example 3" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="avatar-item" style="border-radius: 8px; overflow: hidden; box-shadow: var(--card-shadow); background-color: white; width: 120px; transition: transform 0.3s;">
+                            <img src="https://robohash.org/example4.png?set=set3&size=120x120" alt="Robot Avatar Example 4" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Key Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Unique Generation:</strong> Create robots based on any text input, ensuring a one-of-a-kind avatar</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Multiple Robot Sets:</strong> Choose from different robot styles to suit your personality</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Background Options:</strong> Select from various background styles or use a transparent background</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>One-Click Copy:</strong> Easily copy avatar URLs or download images directly</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Size Customization:</strong> Generate avatars in different resolutions for various platforms</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Avatar History:</strong> Keep track of previously generated avatars for quick access</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Offline Support:</strong> View your saved avatars even without an internet connection</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">How It Works</h3>
+                    <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Install the Robot Avatar Generator extension from the Chrome Web Store</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Click on the extension icon in your browser toolbar</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Enter any text in the input field (your username, email, or any text)</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Select your preferred robot set and background style</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Click "Generate" to create your unique robot avatar</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Download the image or copy the URL to use it online</li>
+                    </ol>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Robot Sets</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Our extension features several unique robot sets to choose from:</p>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Classic Robots:</strong> The original robot designs with a mechanical appeal</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Monster Robots:</strong> Friendly monster-inspired robot designs</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Robot Heads:</strong> Close-up designs focusing just on robot heads</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Kittens:</strong> For those who prefer feline companions over robots</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Privacy Focused</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">The Robot Avatar Generator is designed with your privacy in mind. All avatar generation happens locally or through the secure Robohash API. We don't collect personal information or tracking data, and avatar history is stored locally on your device.</p>
+                    
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="#" class="extension-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: white; text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: var(--logo-gradient);">Coming Soon</a>
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../blog/index.html">Blog</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../../tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../../tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../../tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../citation-helper/">Citation Helper</a></li>
+                    <li><a href="../mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html> 

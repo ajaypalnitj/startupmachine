@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -10,73 +12,62 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kindness Reminders Privacy Policy | StartupMachine</title>
+    <title>Privacy Policy - Kindness Reminders | StartupMachine</title>
     <meta name="description" content="Privacy policy for the Kindness Reminders Chrome extension. Learn how we protect your data and privacy.">
     <meta name="keywords" content="kindness reminders, privacy policy, chrome extension, data privacy, user privacy">
     <meta name="author" content="StartupMachine">
-    <meta property="og:title" content="Kindness Reminders Privacy Policy | StartupMachine">
+    <meta property="og:title" content="Privacy Policy - Kindness Reminders | StartupMachine">
     <meta property="og:description" content="Privacy policy for the Kindness Reminders Chrome extension by StartupMachine.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://startupmachine.co/extensions/kindness-reminders/privacy.html">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <style>
-        /* Privacy Policy Specific Styles */
-        .privacy-content {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border-radius: 1rem;
-            padding: 2rem;
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
         }
-        .privacy-content h1 {
-            color: #111827;
+        .section-title {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .content-section {
             margin-bottom: 2rem;
         }
-        .privacy-content h2 {
-            color: #4F46E5;
+        .back-link {
+            display: inline-block;
             margin-top: 2rem;
-        }
-        .privacy-content ul {
-            list-style-type: disc;
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-        .privacy-content p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .privacy-content a {
-            color: #4F46E5;
+            color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
         }
-        .privacy-content a:hover {
+        .back-link:hover {
             text-decoration: underline;
         }
-        .last-updated {
-            font-style: italic;
-            color: #6B7280;
-            margin-bottom: 2rem;
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
     </style>
-<style id="inline-variables">
-            :root {
-                --primary: #4F46E5;
-                --secondary: #EC4899;
-                --text: #111827;
-                --text-light: #6B7280;
-                --bg-light: #F5F7FB;
-                --bg-dark: #F9FAFB;
-                --border-color: #E5E7EB;
-                --border-color-light: rgba(229, 231, 235, 0.5);
-                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
-                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-            }
-        </style></head>
+</head>
 <body>
     <header>
         <nav>
@@ -88,7 +79,7 @@
             </div>
             <div class="nav-links">
                 <a href="../../index.html">Home</a>
-                <a href="../../extensions.html">Extensions</a>
+                <a href="../../extensions.html" class="active">Extensions</a>
                 <a href="../../tools.html">Tools</a>
                 <a href="../../blog/index.html">Blog</a>
                 <a href="../../about.html">About</a>
@@ -101,56 +92,87 @@
         </nav>
     </header>
     <div class="overlay"></div>
+
     <main>
-        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
-            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
-            <p>Kindness Reminders Chrome Extension</p>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
+            <p>Kindness Reminders Extension</p>
+            <p><em>Last updated: April 2, 2025</em></p>
         </section>
 
         <section class="privacy-content">
-            <p class="last-updated">Last Updated: March 1, 2025</p>
-            
-            <h2>Introduction</h2>
-            <p>Thank you for using the Kindness Reminders Chrome extension. This Privacy Policy explains what information the extension collects, how it uses that information, and how your data is protected.</p>
-            
-            <h2>Information Collection and Use</h2>
-            <p>The Kindness Reminders extension is designed with privacy in mind:</p>
-            <ul>
-                <li><strong>No Personal Data Collection</strong>: The extension does not collect, store, or transmit any personal information from users.</li>
-                <li><strong>Local Storage Only</strong>: Any data saved (such as your favorite quotes and settings) is stored locally on your device using Chrome's storage API and is never transmitted to our servers or any third parties.</li>
-                <li><strong>No Analytics or Tracking</strong>: The extension does not use any analytics, tracking tools, or cookies.</li>
-                <li><strong>No External Services</strong>: The extension operates entirely offline and does not communicate with external servers.</li>
-            </ul>
-            
-            <h2>Permissions Required</h2>
-            <p>The extension requests the following permissions for the sole purpose of providing its core functionality:</p>
-            <ul>
-                <li><strong>Storage</strong>: To save your settings and favorite quotes locally on your device.</li>
-                <li><strong>Alarms</strong>: To schedule kindness reminders at your preferred frequency.</li>
-                <li><strong>Notifications</strong>: To display kindness quotes and reminders as notifications.</li>
-                <li><strong>Context Menus</strong>: To provide additional functionality through right-click menu options.</li>
-                <li><strong>Clipboard Write</strong>: To enable copying quotes to your clipboard when using the share feature.</li>
-            </ul>
-            
-            <h2>Data Security</h2>
-            <p>Since all data is stored locally on your device, the security of your data is maintained by your browser's built-in security features. We do not have access to this data.</p>
-            
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. Any changes will be reflected in the extension's description on the Chrome Web Store and/or in the extension itself.</p>
-            
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please reach out to us at <a href="mailto:hello@startupmachine.co">hello@startupmachine.co</a>.</p>
-            
-            <hr style="margin: 30px 0;">
-            
-            <p>By using the Kindness Reminders extension, you agree to the terms outlined in this Privacy Policy.</p>
-            
-            <div style="margin-top: 2rem;">
-                <a href="index.html" class="secondary-link">Back to Kindness Reminders</a>
+            <div class="content-section">
+                <h2 class="section-title">Introduction</h2>
+                <p>Thank you for using the Kindness Reminders Chrome extension. This Privacy Policy explains what information the extension collects, how it uses that information, and how your data is protected.</p>
             </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Information We Collect</h2>
+                <p>The Kindness Reminders extension is designed with privacy in mind:</p>
+                <ul>
+                    <li><strong>No Personal Data Collection</strong>: The extension does not collect, store, or transmit any personal information from users.</li>
+                    <li><strong>Local Storage Only</strong>: Any data saved (such as your favorite quotes and settings) is stored locally on your device using Chrome's storage API and is never transmitted to our servers or any third parties.</li>
+                    <li><strong>No Analytics or Tracking</strong>: The extension does not use any analytics, tracking tools, or cookies.</li>
+                    <li><strong>No External Services</strong>: The extension operates entirely offline and does not communicate with external servers.</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">How We Use Information</h2>
+                <p>Since we do not collect any personal information, there is no use of such data. Any settings or preferences you configure are only used locally on your device to provide the functionality of the extension.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Data Storage</h2>
+                <p>Since all data is stored locally on your device, the security of your data is maintained by your browser's built-in security features. We do not have access to this data.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Browser Permissions</h2>
+                <p>The extension requests the following permissions for the sole purpose of providing its core functionality:</p>
+                <ul>
+                    <li><strong>Storage</strong>: To save your settings and favorite quotes locally on your device.</li>
+                    <li><strong>Alarms</strong>: To schedule kindness reminders at your preferred frequency.</li>
+                    <li><strong>Notifications</strong>: To display kindness quotes and reminders as notifications.</li>
+                    <li><strong>Context Menus</strong>: To provide additional functionality through right-click menu options.</li>
+                    <li><strong>Clipboard Write</strong>: To enable copying quotes to your clipboard when using the share feature.</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Analytics</h2>
+                <p>The extension does not use any analytics, tracking tools, or cookies for monitoring usage.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Children's Privacy</h2>
+                <p>The Kindness Reminders extension is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Your Rights and Choices</h2>
+                <p>Since all data is stored locally on your device, you maintain complete control over your information. You can:</p>
+                <ul>
+                    <li>Clear your local storage data by uninstalling the extension or using Chrome's settings</li>
+                    <li>Customize reminder settings through the extension options</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. Any changes will be reflected in the extension's description on the Chrome Web Store and/or in the extension itself.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p>Email: <a href="mailto:privacy@startupmachine.co" style="color: var(--primary);">privacy@startupmachine.co</a></p>
+                <p>Website: <a href="https://startupmachine.co" style="color: var(--primary);">startupmachine.co</a></p>
+            </div>
+            
+            <a href="index.html" class="back-link">← Back to Kindness Reminders</a>
         </section>
-    <section class="extensions"><div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;"><div class="extension-description" style="flex: 1;"><div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;"></div></div></div></section></main>
-
+    </main>
     
     <footer>
         <div class="footer-container">
@@ -194,5 +216,5 @@
     </footer>
 
     <script src="../../script.js"></script>
-
- </body></html>
+</body>
+</html>

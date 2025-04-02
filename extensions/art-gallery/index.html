@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8QXH92Y7GE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery | StartupMachine</title>
+    <meta name="description" content="Transform your new tab into a personal art gallery featuring stunning artwork from around the world.">
+    <meta name="keywords" content="art gallery, chrome extension, art tab, new tab art, browser art gallery">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Art Gallery | StartupMachine">
+    <meta property="og:description" content="Transform your new tab into a personal art gallery featuring stunning artwork from around the world.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/extensions/art-gallery/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../blog/index.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="overlay"></div>
+    <main>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Art Gallery</h1>
+            <p>Transform your new tab into a personal art gallery</p>
+        </section>
+
+        <section class="extensions">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0px auto 1.5rem;">
+                    <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="#E91E63" stroke-width="2"/>
+                        <rect x="14" y="14" width="20" height="20" rx="2" stroke="#E91E63" stroke-width="1.5"/>
+                        <circle cx="24" cy="24" r="4" fill="#E91E63" opacity="0.3"/>
+                        <path d="M18 30L22 26" stroke="#E91E63" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M30 18L26 22" stroke="#E91E63" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Art Gallery</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Transform your new tab into a stunning art gallery with our Art Gallery extension. Discover masterpieces from around the world, learn about famous artists, and bring beauty to your everyday browsing experience.</p>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🖼️ Curated Artworks:</strong> View carefully selected paintings, sculptures, and photographs from renowned museums and collections.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🎨 Artist Information:</strong> Learn about the artists behind the masterpieces with informative details about their lives and work.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>📊 Art History Context:</strong> Understand the historical and cultural significance of each artwork.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>⭐ Favorites Collection:</strong> Save your favorite pieces to revisit and create your personal gallery.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🔍 Search and Filter:</strong> Find artworks by period, style, artist, or keyword.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>🔄 Daily Rotation:</strong> Discover new art every day or set your own refresh preferences.</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">How It Works</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Art Gallery seamlessly integrates with your browser, transforming each new tab into an opportunity to appreciate fine art. The extension draws from a vast database of high-resolution images from public domain collections and museum partnerships. Each artwork is presented with context, history, and artist information, allowing you to not just view but learn and engage with the art world.</p>
+                    
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="#" class="secondary-link" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Coming Soon</a>
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../blog/index.html">Blog</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../../tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../../tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../../tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../citation-helper/">Citation Helper</a></li>
+                    <li><a href="../mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html> 

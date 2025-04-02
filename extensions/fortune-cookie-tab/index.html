@@ -13,11 +13,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fortune Cookie Tab | StartupMachine</title>
-    <meta name="description" content="Transform your new tab experience with wisdom, inspiration, and fun facts. Fortune Cookie Tab brings you a new surprise with every tab you open.">
-    <meta name="keywords" content="fortune cookie, chrome extension, browser extension, new tab, inspirational quotes, fortune, wisdom">
+    <meta name="description" content="Discover a new fortune every time you open a new tab with the Fortune Cookie Tab Chrome extension. Enjoy wisdom, humor, and inspiration throughout your day.">
+    <meta name="keywords" content="fortune cookie, new tab, chrome extension, browser extension, daily fortune, motivation, inspiration">
     <meta name="author" content="StartupMachine">
     <meta property="og:title" content="Fortune Cookie Tab | StartupMachine">
-    <meta property="og:description" content="Transform your new tab experience with wisdom, inspiration, and fun facts. Fortune Cookie Tab brings you a new surprise with every tab you open.">
+    <meta property="og:description" content="Discover a new fortune every time you open a new tab with the Fortune Cookie Tab Chrome extension. Enjoy wisdom, humor, and inspiration throughout your day.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://startupmachine.co/extensions/fortune-cookie-tab/">
     <meta name="twitter:card" content="summary_large_image">
@@ -27,47 +27,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style id="inline-variables">
         :root {
-            --primary: #e67e22;
-            --secondary: #d35400;
+            --primary: #4F46E5;
+            --secondary: #EC4899;
             --text: #111827;
             --text-light: #6B7280;
             --bg-light: #F5F7FB;
             --bg-dark: #F9FAFB;
             --border-color: #E5E7EB;
             --border-color-light: rgba(229, 231, 235, 0.5);
-            --logo-gradient: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
             --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-        }
-        .cta-button {
-            background-color: var(--primary);
-        }
-        .cta-button:hover {
-            background-color: var(--secondary);
-        }
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .feature-icon {
-            color: var(--primary);
-            margin-right: 0.75rem;
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-        .screenshot {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-        .section-title {
-            color: var(--primary);
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
         }
     </style>
 </head>
@@ -82,7 +51,7 @@
             </div>
             <div class="nav-links">
                 <a href="../../index.html">Home</a>
-                <a href="../../extensions.html" class="active">Extensions</a>
+                <a href="../../extensions.html">Extensions</a>
                 <a href="../../tools.html">Tools</a>
                 <a href="../../blog/index.html">Blog</a>
                 <a href="../../about.html">About</a>
@@ -95,77 +64,44 @@
         </nav>
     </header>
     <div class="overlay"></div>
-
     <main>
-        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
-            <img src="icon-cookie.png" alt="Fortune Cookie Logo" style="max-width: 120px; margin-bottom: 1.5rem;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Fortune Cookie Tab</h1>
-            <p>Transform your new tab experience with wisdom, inspiration, and fun facts</p>
-            <div style="margin-top: 1.5rem;">
-                <a href="https://chromewebstore.google.com/detail/fortune-cookie-tab/cgoglcahekipflahbagpkcjfhjnkhnal" class="cta-button" target="_blank">Add to Chrome</a>
-            </div>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Fortune Cookie Tab</h1>
+            <p>Crack open a new fortune cookie with every tab you open, bringing wisdom and inspiration to your browsing.</p>
         </section>
 
         <section class="extensions">
-            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0 auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0px auto 1.5rem;">
+                    <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 30C16 26.6863 18.6863 24 22 24H26C29.3137 24 32 26.6863 32 30V38H16V30Z" stroke="#4F46E5" stroke-width="2"/>
+                        <path d="M12 24C16.4183 24 20 20.4183 20 16C20 11.5817 16.4183 8 12 8C7.58172 8 4 11.5817 4 16C4 20.4183 7.58172 24 12 24Z" stroke="#EC4899" stroke-width="2"/>
+                        <path d="M36 24C40.4183 24 44 20.4183 44 16C44 11.5817 40.4183 8 36 8C31.5817 8 28 11.5817 28 16C28 20.4183 31.5817 24 36 24Z" stroke="#EC4899" stroke-width="2"/>
+                        <path d="M22 16H26" stroke="#4F46E5" stroke-width="2"/>
+                        <path d="M18 31L22 34L30 31" stroke="#EC4899" stroke-width="2"/>
+                    </svg>
+                </div>
                 
                 <div class="extension-description" style="flex: 1;">
-                    <h2 class="section-title">About the Extension</h2>
-                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">Fortune Cookie Tab transforms every new tab into a moment of discovery. Each time you open a new tab, you'll receive a random fortune cookie message, inspirational quote, or fun fact - just like cracking open a digital fortune cookie while browsing.</p>
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Fortune Cookie Tab</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Transform your browsing experience with Fortune Cookie Tab, a delightful Chrome extension that delivers a fresh fortune cookie message every time you open a new tab. Get inspired, motivated, or simply smile with each browsing session.</p>
                     
-                    <h2 class="section-title">Features</h2>
-                    <div class="feature-item">
-                        <span class="feature-icon">✨</span>
-                        <div><strong>Beautiful Design</strong> - Clean, minimalist interface that focuses on the content</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🍪</span>
-                        <div><strong>Fortune Cookies</strong> - Discover wisdom and encouragement with each new tab</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">💭</span>
-                        <div><strong>Inspirational Quotes</strong> - Find motivation from historical figures and thought leaders</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🧠</span>
-                        <div><strong>Fun Facts</strong> - Learn something new and interesting every day</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🔄</span>
-                        <div><strong>Always Fresh</strong> - Random selection ensures you'll see different content each time</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🚀</span>
-                        <div><strong>Lightweight</strong> - Fast-loading with no external dependencies</div>
-                    </div>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">Key Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Daily Fortunes:</strong> Discover new fortunes with every tab you open.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Diverse Fortune Types:</strong> Enjoy wisdom, motivation, humor, and more in our diverse fortune collection.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Beautiful Designs:</strong> Experience visually appealing fortune cookie illustrations with each message.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Fortune History:</strong> Save and revisit your favorite fortunes from the past.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Customization Options:</strong> Choose your preferred background theme and fortune categories.</li>
+                    </ul>
                     
-                    <h2 class="section-title">Privacy</h2>
-                    <p style="margin-bottom: 1rem; line-height: 1.6;">We take your privacy seriously. Here's how the Fortune Cookie Tab extension handles your data:</p>
-                    <div class="feature-item">
-                        <span class="feature-icon">🔒</span>
-                        <div><strong>No Data Collection</strong> - We do not collect, store, or transmit any user data</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🔒</span>
-                        <div><strong>No External Resources</strong> - All content is self-contained; we don't load external scripts or resources</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🔒</span>
-                        <div><strong>No Permissions Required</strong> - The extension only replaces the new tab page and doesn't request access to browsing history</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🔒</span>
-                        <div><strong>No Tracking</strong> - We don't use cookies or any tracking mechanisms</div>
-                    </div>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0px 1rem;">How It Works</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Fortune Cookie Tab replaces your standard new tab page with a beautifully designed fortune cookie experience. Each time you open a new tab, the extension "cracks open" a new fortune cookie and displays a message inside a cookie graphic.</p>
                     
-                    <p style="margin: 1.5rem 0; line-height: 1.6;">The Fortune Cookie Tab extension is designed to be simple and respectful of your privacy. We believe you should be able to enjoy inspirational content without sacrificing your personal data.</p>
-                    
-                    <h2 class="section-title">Contact</h2>
-                    <p style="line-height: 1.6;">For questions, feedback, or support, please contact us at:</p>
-                    <p style="margin-bottom: 2rem;"><a href="mailto:support@startupmachine.co" style="color: var(--primary);">support@startupmachine.co</a></p>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">The extension includes hundreds of handcrafted fortunes spanning categories like wisdom, motivation, humor, and inspiration. You can customize your experience by selecting your preferred categories and visual themes through the settings panel.</p>
                     
                     <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
-                        <a href="https://chromewebstore.google.com/detail/fortune-cookie-tab/cgoglcahekipflahbagpkcjfhjnkhnal" class="cta-button" target="_blank">Add to Chrome</a>
+                        <a href="#" class="extension-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: white; text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: var(--logo-gradient);">Coming Soon</a>
                         <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
                         <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
                     </div>
@@ -173,7 +109,7 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
         <div class="footer-container">
             <div class="footer-row main-nav">
@@ -203,9 +139,9 @@
             <div class="footer-row">
                 <h4>Popular Extensions</h4>
                 <ul class="footer-links">
-                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
-                    <li><a href="https://chromewebstore.google.com/detail/mood-tracker/pbdhbibkmagkbnnfkfkkggbombnjmnfl" target="_blank">Mood Tracker</a></li>
-                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                    <li><a href="../citation-helper/">Citation Helper</a></li>
+                    <li><a href="../mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../kindness-reminders/">Kindness Reminders</a></li>
                 </ul>
             </div>
             
@@ -215,19 +151,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.overlay').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        document.querySelector('.overlay').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.remove('active');
-            document.querySelector('.overlay').classList.remove('active');
-            document.querySelector('.mobile-menu-toggle').classList.remove('active');
-        });
-    </script>
+    <script src="../../script.js"></script>
 </body>
 </html> 

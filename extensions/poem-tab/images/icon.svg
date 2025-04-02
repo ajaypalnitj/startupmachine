@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="#f0f4f9" stroke="#3a506b" stroke-width="2"/>
+  
+  <!-- Book -->
+  <path d="M35 30 L35 98 L93 98 L93 30 Z" fill="#6d9eeb" stroke="#3a506b" stroke-width="2"/>
+  <path d="M35 30 L93 30 L93 98 L35 98 C35 98, 40 91, 40 86 L40 42 C40 37, 35 30, 35 30 Z" fill="#c1d4f7" stroke="#3a506b" stroke-width="2"/>
+  
+  <!-- Pages -->
+  <path d="M40 35 L85 35 L85 93 L40 93 Z" fill="#ffffff" stroke="#3a506b" stroke-width="1"/>
+  
+  <!-- Poetry Lines (Text Representation) -->
+  <path d="M48 48 L77 48" stroke="#5b7baa" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 56 L70 56" stroke="#5b7baa" stroke-width="2" stroke-linecap="round"/>
+  <path d="M45 64 L80 64" stroke="#5b7baa" stroke-width="2" stroke-linecap="round"/>
+  <path d="M55 72 L75 72" stroke="#5b7baa" stroke-width="2" stroke-linecap="round"/>
+  <path d="M45 80 L80 80" stroke="#5b7baa" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Quill Pen -->
+  <path d="M85 40 C88 36, 100 20, 105 15 C105 15, 103 25, 98 35 C95 42, 95 42, 94 44 C93 46, 90 48, 90 48 L85 40 Z" fill="#f5d7ba" stroke="#3a506b" stroke-width="1.5"/>
+  <path d="M85 40 L75 53 L81 56 L91 48 L85 40 Z" fill="#5b7baa" stroke="#3a506b" stroke-width="1.5"/>
+  
+  <!-- Pen Tip -->
+  <path d="M75 53 L71 60 L80 58 L81 56 L75 53 Z" fill="#3a506b" stroke="#3a506b" stroke-width="0.5"/>
+</svg> 

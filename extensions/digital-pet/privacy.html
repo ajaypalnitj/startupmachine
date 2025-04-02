@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -11,32 +13,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Digital Pet | StartupMachine</title>
-    <meta name="description" content="Privacy policy for Digital Pet Chrome extension. Learn about how we protect your data and ensure your privacy while using our virtual pet companion.">
-    <meta name="keywords" content="digital pet privacy, chrome extension privacy, browser pet privacy policy">
+    <meta name="description" content="Privacy policy for Digital Pet Chrome extension. Learn about how we protect your data and ensure your privacy while using our extension.">
+    <meta name="keywords" content="digital pet privacy, virtual pet extension privacy, browser extension privacy policy">
     <meta name="author" content="StartupMachine">
     <meta property="og:title" content="Privacy Policy - Digital Pet | StartupMachine">
-    <meta property="og:description" content="Privacy policy for Digital Pet Chrome extension. Learn about how we protect your data and ensure your privacy while using our virtual pet companion.">
+    <meta property="og:description" content="Privacy policy for Digital Pet Chrome extension. Learn about how we protect your data and ensure your privacy while using our extension.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://startupmachine.co/extensions/digital-pet/privacy.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<style id="inline-variables">
-            :root {
-                --primary: #4F46E5;
-                --secondary: #EC4899;
-                --text: #111827;
-                --text-light: #6B7280;
-                --bg-light: #F5F7FB;
-                --bg-dark: #F9FAFB;
-                --border-color: #E5E7EB;
-                --border-color-light: rgba(229, 231, 235, 0.5);
-                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
-                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-            }
-        </style></head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        }
+        .section-title {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .content-section {
+            margin-bottom: 2rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
 <body>
     <header>
         <nav>
@@ -48,7 +80,7 @@
             </div>
             <div class="nav-links">
                 <a href="../../index.html">Home</a>
-                <a href="../../extensions.html">Extensions</a>
+                <a href="../../extensions.html" class="active">Extensions</a>
                 <a href="../../tools.html">Tools</a>
                 <a href="../../blog/index.html">Blog</a>
                 <a href="../../about.html">About</a>
@@ -61,83 +93,108 @@
         </nav>
     </header>
     <div class="overlay"></div>
+
     <main>
-        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
-            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
             <p>Digital Pet Extension</p>
+            <p><em>Last updated: April 2, 2025</em></p>
         </section>
 
         <section class="privacy-content">
             <div class="content-section">
-                <h2>Introduction</h2>
+                <h2 class="section-title">Introduction</h2>
                 <p>Welcome to the Digital Pet Extension privacy policy. This document outlines how we collect, use, and protect your information when you use our browser extension.</p>
             </div>
 
             <div class="content-section">
-                <h2>Information We Collect</h2>
-                <p>Our extension collects and stores the following information locally in your browser:</p>
+                <h2 class="section-title">Information We Collect</h2>
+                <p>Our extension collects minimal data necessary to provide the digital pet experience:</p>
                 <ul>
-                    <li>Pet state (hunger, energy, cleanliness levels)</li>
-                    <li>Pet customization settings (selected accessories, appearance)</li>
-                    <li>Sound preferences (mute/unmute settings)</li>
-                    <li>Premium status and purchased items</li>
+                    <li><strong>Pet customization settings</strong> (appearance, name)</li>
+                    <li><strong>Pet status information</strong> (health, happiness, hunger levels)</li>
+                    <li><strong>Activity history</strong> (feeding times, interactions)</li>
+                    <li><strong>User preferences</strong> (background settings, notification preferences)</li>
                 </ul>
-                <p>All data is stored locally using Chrome's storage API and is not transmitted to any external servers.</p>
+                <p>All of this information is stored locally in your browser using Chrome's storage APIs. We do not transmit this data to our servers or any third parties.</p>
             </div>
 
             <div class="content-section">
-                <h2>Data Storage</h2>
+                <h2 class="section-title">How We Use Information</h2>
+                <p>The collected information is used exclusively to:</p>
                 <ul>
-                    <li>All data is stored locally on your device</li>
-                    <li>No personal information is collected</li>
-                    <li>No data is shared with third parties</li>
-                    <li>No analytics or tracking tools are used</li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h2>Premium Features</h2>
-                <p>For premium features:</p>
-                <ul>
-                    <li>Payment processing is handled securely through the Chrome Web Store</li>
-                    <li>No payment information is stored by the extension</li>
-                    <li>Premium status is stored locally</li>
+                    <li>Maintain the state of your digital pet</li>
+                    <li>Provide a personalized pet experience</li>
+                    <li>Implement pet progression mechanics</li>
+                    <li>Remember your customization choices</li>
+                    <li>Display appropriate notifications about your pet's status</li>
                 </ul>
             </div>
 
             <div class="content-section">
-                <h2>Children's Privacy</h2>
-                <p>Our extension does not knowingly collect personal information from children under 13.</p>
+                <h2 class="section-title">Data Storage</h2>
+                <ul>
+                    <li>All user data is stored locally on your device using Chrome's secure storage APIs</li>
+                    <li>No data is transmitted to our servers</li>
+                    <li>No personally identifiable information is collected</li>
+                    <li>Data is only accessible by the extension when you're using it</li>
+                </ul>
             </div>
 
             <div class="content-section">
-                <h2>Your Rights</h2>
+                <h2 class="section-title">Browser Permissions</h2>
+                <p>Our extension requests the following permissions:</p>
+                <ul>
+                    <li><strong>Storage:</strong> To save your pet's status and preferences</li>
+                    <li><strong>Notifications:</strong> To alert you about your pet's status (optional)</li>
+                    <li><strong>Idle Detection:</strong> To track when your pet might need attention (optional)</li>
+                </ul>
+                <p>These permissions are used solely for the functions described and not for tracking or data collection purposes.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Analytics</h2>
+                <p>We use limited anonymous usage analytics to improve our extension. This information:</p>
+                <ul>
+                    <li>Does not include any personal identifiers</li>
+                    <li>Only tracks general usage patterns (installation, uninstallation, error events)</li>
+                    <li>Helps us identify and fix bugs</li>
+                    <li>Guides our development of new features</li>
+                </ul>
+                <p>You can opt out of analytics collection in the extension settings.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Children's Privacy</h2>
+                <p>Our extension does not knowingly collect personal information from children under 13. The pet simulation is appropriate for all ages, and no information is collected that could identify a child user.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Your Rights and Choices</h2>
                 <p>You have the right to:</p>
                 <ul>
-                    <li>Access your stored data</li>
-                    <li>Delete your stored data</li>
-                    <li>Opt-out of premium features</li>
-                    <li>Clear all extension data through Chrome's extension management</li>
+                    <li>Reset your pet's data at any time through the extension interface</li>
+                    <li>Clear all local data by uninstalling the extension</li>
+                    <li>Opt out of anonymous analytics</li>
+                    <li>Disable notification permissions</li>
                 </ul>
             </div>
 
             <div class="content-section">
-                <h2>Changes to This Policy</h2>
-                <p>We may update this privacy policy from time to time. We will notify users of any changes by updating the "Last updated" date.</p>
+                <h2 class="section-title">Changes to This Privacy Policy</h2>
+                <p>We may update this privacy policy from time to time. We will notify users of any changes by updating the "Last updated" date at the top of this policy and, where appropriate, via an extension notification.</p>
             </div>
 
             <div class="content-section">
-                <h2>Contact Us</h2>
-                <p>If you have questions about this privacy policy, please contact us at <a href="mailto:hello@startupmachine.co">hello@startupmachine.co</a>.</p>
+                <h2 class="section-title">Contact Us</h2>
+                <p>If you have questions about this privacy policy, please contact us at:</p>
+                <p>Email: <a href="mailto:privacy@startupmachine.co" style="color: var(--primary);">privacy@startupmachine.co</a></p>
+                <p>Website: <a href="https://startupmachine.co" style="color: var(--primary);">startupmachine.co</a></p>
             </div>
-
-            <div class="cta-buttons">
-                <a href="index.html" class="secondary-link">Back to Extension</a>
-                <a href="../../extensions.html" class="secondary-link">View All Extensions</a>
-            </div>
+            
+            <a href="index.html" class="back-link">← Back to Digital Pet</a>
         </section>
-    <section class="extensions"><div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;"><div class="extension-description" style="flex: 1;"><div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;"></div></div></div></section></main>
-
+    </main>
     
     <footer>
         <div class="footer-container">
@@ -181,5 +238,5 @@
     </footer>
 
     <script src="../../script.js"></script>
-
- </body></html>
+</body>
+</html>

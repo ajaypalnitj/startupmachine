@@ -1,70 +1,74 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-8QXH92Y7GE');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8QXH92Y7GE');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citation Helper Privacy Policy | StartupMachine</title>
-    <meta property="og:title" content="Citation Helper Privacy Policy | StartupMachine">
-    <meta property="og:description" content="Privacy policy for the Citation Helper Chrome extension by StartupMachine.">
+    <title>Privacy Policy - Citation Helper | StartupMachine</title>
+    <meta name="description" content="Privacy policy for the Citation Helper Chrome extension. Learn how we handle your data and protect your privacy.">
+    <meta name="keywords" content="citation helper, privacy policy, chrome extension, browser extension, academic, citations">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Privacy Policy - Citation Helper | StartupMachine">
+    <meta property="og:description" content="Privacy policy for the Citation Helper Chrome extension. Learn how we handle your data and protect your privacy.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://startupmachine.co/extensions/citation-helper/privacy.html">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <style>
-        /* Privacy Policy Specific Styles */
-        .privacy-content {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border-radius: 1rem;
-            padding: 2rem;
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
         }
-        .privacy-content h1 {
-            color: #111827;
+        .section-title {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .content-section {
             margin-bottom: 2rem;
         }
-        .privacy-content h2 {
-            color: #4F46E5;
+        .back-link {
+            display: inline-block;
             margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
         }
-        .privacy-content ul {
-            list-style-type: disc;
-            margin-left: 2rem;
-            margin-bottom: 1rem;
+        .back-link:hover {
+            text-decoration: underline;
         }
-        .privacy-content p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .last-updated {
-            color: #6B7280;
-            font-style: italic;
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
     </style>
-<style id="inline-variables">
-            :root {
-                --primary: #4F46E5;
-                --secondary: #EC4899;
-                --text: #111827;
-                --text-light: #6B7280;
-                --bg-light: #F5F7FB;
-                --bg-dark: #F9FAFB;
-                --border-color: #E5E7EB;
-                --border-color-light: rgba(229, 231, 235, 0.5);
-                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
-                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-            }
-        </style></head>
+</head>
 <body>
     <header>
         <nav>
@@ -76,7 +80,7 @@
             </div>
             <div class="nav-links">
                 <a href="../../index.html">Home</a>
-                <a href="../../extensions.html">Extensions</a>
+                <a href="../../extensions.html" class="active">Extensions</a>
                 <a href="../../tools.html">Tools</a>
                 <a href="../../blog/index.html">Blog</a>
                 <a href="../../about.html">About</a>
@@ -89,98 +93,121 @@
         </nav>
     </header>
     <div class="overlay"></div>
+
     <main>
-        <div class="privacy-content">
-            <h1>Citation Helper Privacy Policy</h1>
-            <p class="last-updated">Last Updated: February 2025</p>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
+            <p>Citation Helper Extension</p>
+            <p><em>Last updated: April 2, 2025</em></p>
+        </section>
 
-            <h2>Overview</h2>
-            <p>Citation Helper is committed to protecting your privacy. This privacy policy explains our data collection, use, and protection practices.</p>
-
-            <h2>Website Analytics</h2>
-            <p>Our privacy policy webpage uses Google Analytics to help us understand how visitors interact with our content. This analytics service collects standard internet log information and visitor behavior patterns. This includes:</p>
-            <ul>
-                <li>Pages visited and time spent on each page</li>
-                <li>Browser type and version</li>
-                <li>Operating system</li>
-                <li>Referral source</li>
-                <li>Anonymous usage statistics</li>
-            </ul>
-            <p>This information is processed in a way that does not identify individual users. We do not make, and do not allow Google to make, any attempt to find out the identities of those visiting our website.</p>
-
-            <h2>Data Collection and Usage</h2>
-            <h3>Extension Analytics</h3>
-            <p>Citation Helper uses Google Analytics to collect anonymous usage data that helps us improve the extension. This includes:</p>
-            <ul>
-                <li>Extension installation and uninstallation events</li>
-                <li>Feature usage statistics</li>
-                <li>Extension version information</li>
-                <li>Basic technical information (browser version, operating system)</li>
-                <li>Error reports</li>
-            </ul>
-            <p>This analytics data is anonymous and cannot be used to identify individual users. We use this information solely to understand how the extension is used and to make improvements.</p>
-
-            <h3>Extension Data Collection</h3>
-            <p>In addition to analytics, the extension collects the following data necessary for its core functionality:</p>
-            <h3>What We Collect</h3>
-            <ul>
-                <li>Webpage metadata (title, author, date, URL) from the active tab</li>
-                <li>Your citation history (stored locally)</li>
-                <li>Your format preferences (stored locally)</li>
-            </ul>
-
-            <h3>How We Use Data</h3>
-            <ul>
-                <li>Generate accurate citations</li>
-                <li>Save your citation history</li>
-                <li>Remember your format preferences</li>
-            </ul>
-
-            <h3>What We Don't Collect</h3>
-            <ul>
-                <li>Personal information</li>
-                <li>Complete browsing history</li>
-                <li>Login credentials</li>
-                <li>Payment information</li>
-                <li>Individual user identifiers</li>
-                <li>Content of web pages you visit</li>
-            </ul>
-
-            <h2>Data Storage and Transmission</h2>
-            <ul>
-                <li>Citation data is stored locally on your device</li>
-                <li>Anonymous analytics data is sent to Google Analytics</li>
-                <li>No personal data is transmitted to our servers</li>
-                <li>No data synchronization between devices</li>
-                <li>No third-party access to your citation data</li>
-            </ul>
-
-            <h2>Permissions</h2>
-            <p>Citation Helper requires specific Chrome permissions:</p>
-            <ul>
-                <li>"activeTab": To access current webpage information</li>
-                <li>"storage": To save citations and preferences locally</li>
-                <li>"clipboardWrite": To copy citations to clipboard</li>
-                <li>"scripting": To extract webpage metadata</li>
-            </ul>
-
-            <h2>User Control</h2>
-            <p>You have complete control over your data:</p>
-            <ul>
-                <li>Clear citation history anytime</li>
-                <li>Reset preferences</li>
-                <li>No account required</li>
-                <li>No data lock-in</li>
-            </ul>
-
-            <h2>Updates</h2>
-            <p>We may update this privacy policy from time to time. We will notify users of any significant changes through the extension or our website.</p>
-
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this privacy policy, please contact us at hello@startupmachine.co.</p>
-        </div>
-    <section class="extensions"><div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;"><div class="extension-description" style="flex: 1;"><div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;"></div></div></div></section></main>
-
+        <section class="privacy-content">
+            <div class="content-section">
+                <h2 class="section-title">Introduction</h2>
+                <p>This Privacy Policy explains how the Citation Helper Chrome extension handles user data. Citation Helper is designed to simplify your academic writing by helping you create accurate citations and manage your references.</p>
+                <p>We take your privacy seriously and have designed the extension to minimize data collection while providing a valuable service.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Information We Collect</h2>
+                <p>Citation Helper collects minimal information required for functionality:</p>
+                <ul>
+                    <li><strong>Webpage Metadata</strong>: We collect title, author, date, and URL from the active tab to generate accurate citations.</li>
+                    <li><strong>Local Storage Data</strong>: We store your citation history and format preferences locally on your device using Chrome's storage API. This information remains on your device and is not transmitted to our servers.</li>
+                    <li><strong>Anonymous Usage Statistics</strong>: We may collect anonymous usage statistics to help improve the extension.</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">How We Use Information</h2>
+                <p>The limited information we collect is used exclusively for:</p>
+                <ul>
+                    <li>Generating accurate citations</li>
+                    <li>Saving your citation history</li>
+                    <li>Remembering your format preferences</li>
+                    <li>Improving the extension functionality</li>
+                </ul>
+                <p>We do not use your data for advertising purposes, nor do we sell or share your information with third parties.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">What We Don't Collect</h2>
+                <ul>
+                    <li>Personal information</li>
+                    <li>Complete browsing history</li>
+                    <li>Login credentials</li>
+                    <li>Payment information</li>
+                    <li>Individual user identifiers</li>
+                    <li>Content of web pages you visit</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Data Storage</h2>
+                <p>All user preferences and citation data are stored locally on your device. We do not transmit or store your personal information on external servers.</p>
+                <ul>
+                    <li>Citation data is stored locally on your device</li>
+                    <li>Anonymous analytics data is sent to Google Analytics</li>
+                    <li>No personal data is transmitted to our servers</li>
+                    <li>No data synchronization between devices</li>
+                    <li>No third-party access to your citation data</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Browser Permissions</h2>
+                <p>Citation Helper requires the following permissions:</p>
+                <ul>
+                    <li><strong>activeTab</strong>: To access current webpage information</li>
+                    <li><strong>storage</strong>: To save citations and preferences locally</li>
+                    <li><strong>clipboardWrite</strong>: To copy citations to clipboard</li>
+                    <li><strong>scripting</strong>: To extract webpage metadata</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Analytics</h2>
+                <p>We use Google Analytics to collect anonymous usage statistics that help us improve the extension. This includes:</p>
+                <ul>
+                    <li>Installation and uninstallation events</li>
+                    <li>Feature usage</li>
+                    <li>Extension version information</li>
+                    <li>Basic technical information (browser version, operating system)</li>
+                    <li>Error reporting</li>
+                </ul>
+                <p>The analytics data contains no personally identifiable information.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Children's Privacy</h2>
+                <p>Citation Helper is not directed at persons under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Your Rights and Choices</h2>
+                <p>You have control over your data. You can:</p>
+                <ul>
+                    <li>Clear citation history anytime</li>
+                    <li>Reset preferences</li>
+                    <li>Clear all local storage data by uninstalling the extension</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p>Email: <a href="mailto:privacy@startupmachine.co" style="color: var(--primary);">privacy@startupmachine.co</a></p>
+                <p>Website: <a href="https://startupmachine.co" style="color: var(--primary);">startupmachine.co</a></p>
+            </div>
+            
+            <a href="index.html" class="back-link">← Back to Citation Helper</a>
+        </section>
+    </main>
     
     <footer>
         <div class="footer-container">
@@ -224,5 +251,5 @@
     </footer>
 
     <script src="../../script.js"></script>
-
- </body></html>
+</body>
+</html>

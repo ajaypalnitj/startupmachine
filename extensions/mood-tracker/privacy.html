@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -21,66 +23,52 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        }
+        .section-title {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .content-section {
+            margin-bottom: 2rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
         .privacy-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .privacy-content h2 {
-            color: #4F46E5;
-            margin-top: 2rem;
-        }
-        
-        .privacy-content h3 {
-            color: #6366F1;
-            margin-top: 1.5rem;
-        }
-        
-        .privacy-content p, .privacy-content ul, .privacy-content li {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .privacy-content ul {
-            padding-left: 2rem;
-        }
-        
-        .privacy-content a {
-            color: #4F46E5;
-            text-decoration: none;
-        }
-        
-        .privacy-content a:hover {
-            text-decoration: underline;
-        }
-        
-        .last-updated {
-            font-style: italic;
-            color: #6B7280;
-            margin-bottom: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
     </style>
-<style id="inline-variables">
-            :root {
-                --primary: #4F46E5;
-                --secondary: #EC4899;
-                --text: #111827;
-                --text-light: #6B7280;
-                --bg-light: #F5F7FB;
-                --bg-dark: #F9FAFB;
-                --border-color: #E5E7EB;
-                --border-color-light: rgba(229, 231, 235, 0.5);
-                --logo-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
-                --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-            }
-        </style></head>
+</head>
 <body>
     <header>
         <nav>
@@ -92,7 +80,7 @@
             </div>
             <div class="nav-links">
                 <a href="../../index.html">Home</a>
-                <a href="../../extensions.html">Extensions</a>
+                <a href="../../extensions.html" class="active">Extensions</a>
                 <a href="../../tools.html">Tools</a>
                 <a href="../../blog/index.html">Blog</a>
                 <a href="../../about.html">About</a>
@@ -105,81 +93,117 @@
         </nav>
     </header>
     <div class="overlay"></div>
+
     <main>
-        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0px auto;">
-            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
-            <p>Mood Tracker Chrome Extension</p>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Privacy Policy</h1>
+            <p>Mood Tracker Extension</p>
+            <p><em>Last updated: April 2, 2025</em></p>
         </section>
 
         <section class="privacy-content">
-            <p class="last-updated">Last Updated: May 15, 2025</p>
-            
-            <h2>Introduction</h2>
-            <p>At StartupMachine, we take your privacy seriously. This Privacy Policy explains how our Mood Tracker Chrome extension collects, uses, and protects your information. We've designed this extension with privacy in mind, ensuring that your personal data remains under your control.</p>
-            
-            <h2>Data Collection and Storage</h2>
-            <p>The Mood Tracker extension stores all your mood data <strong>locally</strong> in your browser using Chrome's storage API. This means:</p>
-            <ul>
-                <li>Your mood entries, preferences, and settings are stored only on your device</li>
-                <li>We do not collect, transmit, or store any of your mood data on our servers</li>
-                <li>Your data remains private and accessible only to you</li>
-            </ul>
-            
-            <h2>Information We Do Not Collect</h2>
-            <p>We want to be clear about what we do not collect:</p>
-            <ul>
-                <li>Personal identifiers (name, email, address, etc.)</li>
-                <li>Browsing history or website activity</li>
-                <li>Device information</li>
-                <li>IP addresses</li>
-                <li>Location data</li>
-                <li>Any other personally identifiable information</li>
-            </ul>
-            
-            <h2>Extension Permissions</h2>
-            <p>Our extension requires the following permissions to function properly:</p>
-            <ul>
-                <li><strong>Storage:</strong> To save your mood entries and preferences locally on your device</li>
-                <li><strong>Alarms:</strong> To enable optional mood tracking reminders</li>
-            </ul>
-            <p>These permissions are used solely for the functionality of the extension and not for collecting or transmitting your data.</p>
-            
-            <h2>Data Export and Deletion</h2>
-            <p>You have complete control over your data:</p>
-            <ul>
-                <li>You can export your mood data at any time through the extension's settings</li>
-                <li>You can delete all your stored data from the extension's settings</li>
-                <li>Uninstalling the extension will remove all locally stored data</li>
-            </ul>
-            
-            <h2>Analytics</h2>
-            <p>We use anonymous usage analytics to improve the extension. This includes:</p>
-            <ul>
-                <li>Installation and uninstallation events</li>
-                <li>Feature usage statistics (without any personal data)</li>
-                <li>Error reports</li>
-            </ul>
-            <p>This information is aggregated and cannot be used to identify individual users.</p>
-            
-            <h2>Third-Party Services</h2>
-            <p>Our extension does not integrate with any third-party services that would have access to your mood data or personal information.</p>
-            
-            <h2>Children's Privacy</h2>
-            <p>Our extension is not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13.</p>
-            
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-            
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p>Email: hello@startupmachine.co</p>
-            
-            <div style="margin-top: 2rem;">
-                <a href="index.html" class="secondary-link">Back to Mood Tracker</a>
+            <div class="content-section">
+                <h2 class="section-title">Introduction</h2>
+                <p>At StartupMachine, we take your privacy seriously. This Privacy Policy explains how our Mood Tracker Chrome extension collects, uses, and protects your information. We've designed this extension with privacy in mind, ensuring that your personal data remains under your control.</p>
             </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Information We Collect</h2>
+                <p>The Mood Tracker extension stores all your mood data <strong>locally</strong> in your browser using Chrome's storage API. This means:</p>
+                <ul>
+                    <li>Your mood entries, preferences, and settings are stored only on your device</li>
+                    <li>We do not collect, transmit, or store any of your mood data on our servers</li>
+                    <li>Your data remains private and accessible only to you</li>
+                </ul>
+                <p>We want to be clear about what we do not collect:</p>
+                <ul>
+                    <li>Personal identifiers (name, email, address, etc.)</li>
+                    <li>Browsing history or website activity</li>
+                    <li>Device information</li>
+                    <li>IP addresses</li>
+                    <li>Location data</li>
+                    <li>Any other personally identifiable information</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">How We Use Information</h2>
+                <p>The limited information collected is used exclusively for:</p>
+                <ul>
+                    <li>Saving your mood entries and tracking your mood over time</li>
+                    <li>Remembering your preferences and settings</li>
+                    <li>Providing personalized mood insights and statistics</li>
+                </ul>
+                <p>This information is not used for advertising purposes, nor is it sold or shared with third parties.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Data Storage</h2>
+                <p>All user data is stored locally on your device using Chrome's storage API. Your information does not leave your device and is not shared with us or any third parties.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Browser Permissions</h2>
+                <p>Our extension requires the following permissions to function properly:</p>
+                <ul>
+                    <li><strong>Storage:</strong> To save your mood entries and preferences locally on your device</li>
+                    <li><strong>Alarms:</strong> To enable optional mood tracking reminders</li>
+                </ul>
+                <p>These permissions are used solely for the functionality of the extension and not for collecting or transmitting your data.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Analytics</h2>
+                <p>We use anonymous usage analytics to improve the extension. This includes:</p>
+                <ul>
+                    <li>Installation and uninstallation events</li>
+                    <li>Feature usage statistics (without any personal data)</li>
+                    <li>Error reports</li>
+                </ul>
+                <p>This information is aggregated and cannot be used to identify individual users.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Data Export and Control</h2>
+                <p>You have complete control over your data:</p>
+                <ul>
+                    <li>You can export your mood data at any time through the extension's settings</li>
+                    <li>You can delete all your stored data from the extension's settings</li>
+                    <li>Uninstalling the extension will remove all locally stored data</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Children's Privacy</h2>
+                <p>Our extension is not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Your Rights and Choices</h2>
+                <p>Since all data is stored locally on your device, you maintain complete control over your information. You can:</p>
+                <ul>
+                    <li>Access all your mood data within the extension</li>
+                    <li>Export your data in a portable format</li>
+                    <li>Delete individual entries or all your data</li>
+                    <li>Adjust notification settings</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p>Email: <a href="mailto:privacy@startupmachine.co" style="color: var(--primary);">privacy@startupmachine.co</a></p>
+                <p>Website: <a href="https://startupmachine.co" style="color: var(--primary);">startupmachine.co</a></p>
+            </div>
+            
+            <a href="index.html" class="back-link">← Back to Mood Tracker</a>
         </section>
-    <section class="extensions"><div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0px auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;"><div class="extension-description" style="flex: 1;"><div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;"></div></div></div></section></main>
-
+    </main>
     
     <footer>
         <div class="footer-container">
@@ -223,5 +247,5 @@
     </footer>
 
     <script src="../../script.js"></script>
-
- </body></html>
+</body>
+</html>

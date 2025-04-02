@@ -38,70 +38,6 @@
             --logo-gradient: linear-gradient(135deg, #4a4ec6 0%, #3a3eb6 100%);
             --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
         }
-        .cta-button {
-            background-color: var(--primary);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: var(--secondary);
-            text-decoration: none;
-        }
-        .section-title {
-            color: var(--primary);
-            font-size: 1.75rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .content-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        .feature-card {
-            background-color: var(--bg-light);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.2s;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .feature-card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-        .game-screenshots {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 20px 0;
-            justify-content: center;
-        }
-        .screenshot {
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
-            max-width: 300px;
-            height: auto;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
@@ -131,82 +67,73 @@
 
     <main>
         <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Fun Games</h1>
+            <h1 style="background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">Fun Games</h1>
             <p>A collection of six casual games to play right in your browser</p>
         </section>
 
-        <section class="content-container">
-            <div class="extension-description">
-                <h2 class="section-title">About Fun Games</h2>
-                <p>Fun Games is a Chrome extension that brings six classic mini-games directly to your browser. Perfect for quick breaks, waiting times, or just when you need a moment of entertainment without leaving your browser.</p>
-                
-                <p>All games run completely offline and require no internet connection once installed. The extension is lightweight, fast, and provides hours of casual entertainment.</p>
-                
-                <div style="text-align: center; margin: 2rem 0;">
-                    <a href="#" class="cta-button" style="cursor: default; opacity: 0.8;">Coming Soon</a>
+        <section class="extensions">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0 auto; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); background: white;">
+                <div class="extension-icon" style="text-align: center; margin: 0 auto 1.5rem;">
+                    <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="#4a4ec6" stroke-width="2"/>
+                        <!-- Game controller -->
+                        <rect x="12" y="17" width="24" height="14" rx="7" fill="#3a3eb6"/>
+                        <!-- D-pad -->
+                        <rect x="15" y="21" width="6" height="6" rx="1" fill="#ffffff"/>
+                        <rect x="17" y="19" width="2" height="10" rx="1" fill="#ffffff"/>
+                        <rect x="13" y="23" width="10" height="2" rx="1" fill="#ffffff"/>
+                        <!-- Buttons -->
+                        <circle cx="33" cy="21" r="2" fill="#ffffff"/>
+                        <circle cx="29" cy="25" r="2" fill="#ffffff"/>
+                        <circle cx="33" cy="25" r="2" fill="#ffffff"/>
+                        <circle cx="37" cy="25" r="2" fill="#ffffff"/>
+                    </svg>
                 </div>
                 
-                <h2 class="section-title">Games Included</h2>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Rock Paper Scissors</h3>
-                        <p>Play the classic game against the computer. Choose between rock, paper, and scissors and see who wins! Rock beats scissors, scissors beats paper, and paper beats rock.</p>
-                    </div>
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Fun Games</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Fun Games is a Chrome extension that brings six classic mini-games directly to your browser. Perfect for quick breaks, waiting times, or just when you need a moment of entertainment without leaving your browser.</p>
                     
-                    <div class="feature-card">
-                        <h3>Number Guessing Game</h3>
-                        <p>Can you guess the secret number? The computer will pick a random number between 1 and 100, and you need to guess it with hints about whether your guess is too high or too low.</p>
-                    </div>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">All games run completely offline and require no internet connection once installed. The extension is lightweight, fast, and provides hours of casual entertainment.</p>
                     
-                    <div class="feature-card">
-                        <h3>Hangman</h3>
-                        <p>The classic word guessing game. Guess the word letter by letter before the stick figure is complete. Words come from various categories with helpful hints.</p>
-                    </div>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Games Included</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Rock Paper Scissors:</strong> Play the classic game against the computer. Choose between rock, paper, and scissors and see who wins!</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Number Guessing Game:</strong> Can you guess the secret number? The computer will pick a random number between 1 and 100, and you need to guess it with hints.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Hangman:</strong> The classic word guessing game. Guess the word letter by letter before the stick figure is complete.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Tic-tac-toe:</strong> Play against the computer in this strategic game. You're X, the computer is O.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Word Scramble:</strong> Unscramble letters to form words. The game provides a hint for each scrambled word.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Snake:</strong> Control a snake to eat food and grow without hitting walls or yourself.</li>
+                    </ul>
                     
-                    <div class="feature-card">
-                        <h3>Tic-tac-toe</h3>
-                        <p>Play against the computer in this strategic game. You're X, the computer is O. Get three in a row horizontally, vertically, or diagonally to win!</p>
-                    </div>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Key Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Six different casual games</strong> in one compact extension</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Intuitive controls</strong> with keyboard support for applicable games</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Sound effects</strong> for all games with a global mute option</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Score tracking</strong> with best score saved</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>No internet connection required</strong> after installation</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>No ads or in-app purchases</strong> - completely free to use</li>
+                    </ul>
                     
-                    <div class="feature-card">
-                        <h3>Word Scramble</h3>
-                        <p>Unscramble letters to form words. The game provides a hint for each scrambled word, and you'll get points for every word you successfully unscramble.</p>
-                    </div>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">How to Use</h3>
+                    <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Install the extension from the Chrome Web Store</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Click on the Fun Games icon in your Chrome toolbar</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Select any game from the menu to start playing</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;">Click the "Back" button to return to the games menu at any time</li>
+                    </ol>
                     
-                    <div class="feature-card">
-                        <h3>Snake</h3>
-                        <p>Control a snake to eat food and grow without hitting walls or yourself. The game gets progressively harder as your snake grows longer.</p>
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="#" class="extension-link" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; color: white; text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: var(--logo-gradient);">Coming Soon</a>
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; transition: all 0.2s ease; background: transparent;">View All Extensions</a>
                     </div>
-                </div>
-                
-                <h2 class="section-title">Features</h2>
-                <ul>
-                    <li><strong>Six different casual games</strong> in one compact extension</li>
-                    <li><strong>Intuitive controls</strong> with keyboard support for applicable games</li>
-                    <li><strong>Sound effects</strong> for all games with a global mute option</li>
-                    <li><strong>Score tracking</strong> with best score saved</li>
-                    <li><strong>Compact design</strong> optimized for Chrome's popup interface</li>
-                    <li><strong>Mobile-friendly</strong> design that works on all screen sizes</li>
-                    <li><strong>No internet connection required</strong> after installation</li>
-                    <li><strong>No ads or in-app purchases</strong> - completely free to use</li>
-                </ul>
-                
-                <h2 class="section-title">How to Use</h2>
-                <ol>
-                    <li>Install the extension from the Chrome Web Store</li>
-                    <li>Click on the Fun Games icon in your Chrome toolbar</li>
-                    <li>Select any game from the menu to start playing</li>
-                    <li>Click the "Back" button to return to the games menu at any time</li>
-                </ol>
-                
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="privacy.html" style="color: var(--primary);">View Privacy Policy</a>
                 </div>
             </div>
         </section>
     </main>
-
+    
     <footer>
         <div class="footer-container">
             <div class="footer-row main-nav">
@@ -236,9 +163,9 @@
             <div class="footer-row">
                 <h4>Popular Extensions</h4>
                 <ul class="footer-links">
-                    <li><a href="../../extensions/citation-helper/">Citation Helper</a></li>
-                    <li><a href="https://chromewebstore.google.com/detail/mood-tracker/pbdhbibkmagkbnnfkfkkggbombnjmnfl" target="_blank">Mood Tracker</a></li>
-                    <li><a href="../../extensions/kindness-reminders/">Kindness Reminders</a></li>
+                    <li><a href="../citation-helper/">Citation Helper</a></li>
+                    <li><a href="../mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../kindness-reminders/">Kindness Reminders</a></li>
                 </ul>
             </div>
             
@@ -248,19 +175,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.overlay').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        document.querySelector('.overlay').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.remove('active');
-            document.querySelector('.overlay').classList.remove('active');
-            document.querySelector('.mobile-menu-toggle').classList.remove('active');
-        });
-    </script>
+    <script src="../../script.js"></script>
 </body>
 </html> 
