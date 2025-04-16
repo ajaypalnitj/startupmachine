@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QXH92Y7GE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8QXH92Y7GE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Tab | StartupMachine</title>
+    <meta name="description" content="Get a surprise fact, joke, or interesting content every time you open a new tab. Discover something new with every click!">
+    <meta name="keywords" content="surprise tab, chrome extension, new tab, random facts, jokes, content">
+    <meta name="author" content="StartupMachine">
+    <meta property="og:title" content="Surprise Tab | StartupMachine">
+    <meta property="og:description" content="Get a surprise fact, joke, or interesting content every time you open a new tab. Discover something new with every click!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://startupmachine.co/extensions/surprise-tab/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style id="inline-variables">
+        :root {
+            --primary: #4A6FA5;
+            --secondary: #63c3ff;
+            --text: #111827;
+            --text-light: #6B7280;
+            --bg-light: #F5F7FB;
+            --bg-dark: #F9FAFB;
+            --border-color: #E5E7EB;
+            --border-color-light: rgba(229, 231, 235, 0.5);
+            --logo-gradient: linear-gradient(135deg, #4A6FA5 0%, #63c3ff 100%);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="StartupMachine Logo" width="120">
+                    <span>StartupMachine</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../extensions.html" class="active">Extensions</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../blog/index.html">Blog</a>
+                <a href="../../about.html">About</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="overlay"></div>
+    <main>
+        <section class="hero" style="text-align: center; padding: 4rem 1rem 2rem; max-width: 1000px; margin: 0 auto;">
+            <div style="max-width: 120px; margin: 0 auto 1.5rem;">
+                <img src="images/icon.png" alt="Surprise Tab Logo" style="width: 100%;">
+            </div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Surprise Tab</h1>
+            <p style="font-size: 1.2rem; color: var(--secondary); max-width: 700px; margin: 0 auto 2rem;">Get a surprise fact, joke, or interesting content every time you open a new tab! Discover something new with every click.</p>
+            <a href="#" class="extension-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: white; text-decoration: none; font-weight: 500; border-radius: 0.5rem; background: var(--logo-gradient); opacity: 0.7; cursor: not-allowed;">Coming Soon to Chrome Web Store</a>
+        </section>
+        <section class="extensions">
+            <div class="extension-detail" style="display: flex; flex-direction: column; gap: 2rem; max-width: 1000px; margin: 0 auto; border-radius: 12px; padding: 2rem; box-shadow: var(--card-shadow); background: white;">
+                <div class="extension-description" style="flex: 1;">
+                    <h2 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">About Surprise Tab</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">Surprise Tab brings a delightful twist to your browsing. Each new tab greets you with a random surprise—be it a fun fact, a joke, a meme, a beautiful image, or something else unexpected. Customize your experience by choosing your favorite content types!</p>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Key Features</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Fresh Content:</strong> Every new tab shows you something different—cat facts, astronomy images, jokes, art, and more. Never see the same content twice in a row!</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Customizable:</strong> Choose which content types you want to see. Enable only your favorites or enjoy the full variety of surprises through the easy-to-use preferences popup.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Fast Loading:</strong> Optimized to load quickly so you don't have to wait. Each new tab opens almost instantly with fresh content ready to explore.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Beautiful Design:</strong> Clean, modern interface that's easy on the eyes. Enjoy content displayed in a visually appealing way with responsive design for all screen sizes.</li>
+                    </ul>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin: 1.5rem 0 1rem;">Screenshots</h3>
+                    <div class="screenshots-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin: 1.5rem 0;">
+                        <div class="screenshot-item" style="border-radius: 8px; overflow: hidden; box-shadow: var(--card-shadow);">
+                            <img src="images/screenshot1.png" alt="Surprise Tab Screenshot 1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="screenshot-item" style="border-radius: 8px; overflow: hidden; box-shadow: var(--card-shadow);">
+                            <img src="images/screenshot2.png" alt="Surprise Tab Screenshot 2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                    <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                        <a href="privacy.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; background: transparent;">Privacy Policy</a>
+                        <a href="../../extensions.html" class="secondary-link" style="display: inline-block; padding: 0.75rem 1.5rem; color: var(--primary); text-decoration: none; font-weight: 500; border-radius: 0.5rem; background: transparent;">View All Extensions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row main-nav">
+                <div class="footer-logo">
+                    <a href="../../index.html">
+                        <img src="../../logo.png" alt="StartupMachine Logo">
+                        <span>StartupMachine</span>
+                    </a>
+                </div>
+                <ul class="main-links">
+                    <li><a href="../../tools.html">Tools</a></li>
+                    <li><a href="../../extensions.html">Extensions</a></li>
+                    <li><a href="../../blog/index.html">Blog</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-row">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="../../tools/svg-optimizer/">SVG Optimizer</a></li>
+                    <li><a href="../../tools/css-gradient-generator/">CSS Gradient Generator</a></li>
+                    <li><a href="../../tools/color-palette-generator/">Color Palette Generator</a></li>
+                </ul>
+            </div>
+            <div class="footer-row">
+                <h4>Popular Extensions</h4>
+                <ul class="footer-links">
+                    <li><a href="../citation-helper/">Citation Helper</a></li>
+                    <li><a href="../mood-tracker/">Mood Tracker</a></li>
+                    <li><a href="../kindness-reminders/">Kindness Reminders</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 StartupMachine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+</html>
